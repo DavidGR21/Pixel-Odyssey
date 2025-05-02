@@ -1,0 +1,454 @@
+fileFormatVersion: 2
+guid: 4c463ffdac45a054086ce9a7ab8c1ce3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8800426234377776020
+    second: Caballero Atack_0
+  - first:
+      213: 3386583467018073648
+    second: Caballero Atack_1
+  - first:
+      213: 1127669836897109799
+    second: Caballero Atack_2
+  - first:
+      213: -1807258436986358648
+    second: Caballero Atack_3
+  - first:
+      213: -7968732432053396252
+    second: Caballero Atack_4
+  - first:
+      213: -961114395089321577
+    second: Caballero Atack_5
+  - first:
+      213: 4684746758855863985
+    second: Caballero Atack_6
+  - first:
+      213: -1141575988331789650
+    second: Caballero Atack_7
+  - first:
+      213: 6169016189183996681
+    second: Caballero Atack_8
+  - first:
+      213: -3611735952162723986
+    second: Caballero Atack_9
+  - first:
+      213: -2089913875910085798
+    second: Caballero Atack_10
+  - first:
+      213: -4244192624233145894
+    second: Caballero Atack_11
+  - first:
+      213: 709871645889319470
+    second: Caballero Atack_12
+  - first:
+      213: 1802757768959370937
+    second: Caballero Atack_13
+  - first:
+      213: -102932458202852909
+    second: Caballero Atack_14
+  - first:
+      213: 4561785921130813057
+    second: Caballero Atack_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Caballero Atack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 138
+        width: 65
+        height: 46
+      alignment: 9
+      pivot: {x: 0.4185683, y: 0.3849331}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49bad149805612a70800000000000000
+      internalID: 8800426234377776020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caballero Atack_1
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 138
+        width: 65
+        height: 46
+      alignment: 9
+      pivot: {x: 0.4185683, y: 0.3849331}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 036b2d968bf8ffe20800000000000000
+      internalID: 3386583467018073648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caballero Atack_2
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 138
+        width: 65
+        height: 46
+      alignment: 9
+      pivot: {x: 0.4185683, y: 0.3849331}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 727cc24fdb946af00800000000000000
+      internalID: 1127669836897109799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caballero Atack_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 92
+        width: 65
+        height: 46
+      alignment: 9
+      pivot: {x: 0.4185683, y: 0.3849331}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 884b91ed6045be6e0800000000000000
+      internalID: -1807258436986358648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caballero Atack_4
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 92
+        width: 65
+        height: 46
+      alignment: 9
+      pivot: {x: 0.4185683, y: 0.3849331}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ec925db210696190800000000000000
+      internalID: -7968732432053396252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caballero Atack_5
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 92
+        width: 65
+        height: 46
+      alignment: 9
+      pivot: {x: 0.4185683, y: 0.3849331}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 791cf24cc8f69a2f0800000000000000
+      internalID: -961114395089321577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caballero Atack_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 46
+        width: 65
+        height: 46
+      alignment: 9
+      pivot: {x: 0.4185683, y: 0.3849331}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1be24483b50930140800000000000000
+      internalID: 4684746758855863985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caballero Atack_7
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 46
+        width: 65
+        height: 46
+      alignment: 9
+      pivot: {x: 0.4185683, y: 0.3849331}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea24e5bdfae4820f0800000000000000
+      internalID: -1141575988331789650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caballero Atack_8
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 46
+        width: 65
+        height: 46
+      alignment: 9
+      pivot: {x: 0.4185683, y: 0.3849331}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90332f90a8fbc9550800000000000000
+      internalID: 6169016189183996681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caballero Atack_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 65
+        height: 46
+      alignment: 9
+      pivot: {x: 0.4185683, y: 0.3849331}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6765dc894980edc0800000000000000
+      internalID: -3611735952162723986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caballero Atack_10
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 0
+        width: 65
+        height: 46
+      alignment: 9
+      pivot: {x: 0.4185683, y: 0.3849331}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a53383717622ff2e0800000000000000
+      internalID: -2089913875910085798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caballero Atack_11
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 0
+        width: 65
+        height: 46
+      alignment: 9
+      pivot: {x: 0.4185683, y: 0.3849331}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad910428b499915c0800000000000000
+      internalID: -4244192624233145894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 6036fe7fd81387342b111611678b651e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Caballero Atack_0: 8800426234377776020
+      Caballero Atack_1: 3386583467018073648
+      Caballero Atack_10: -2089913875910085798
+      Caballero Atack_11: -4244192624233145894
+      Caballero Atack_2: 1127669836897109799
+      Caballero Atack_3: -1807258436986358648
+      Caballero Atack_4: -7968732432053396252
+      Caballero Atack_5: -961114395089321577
+      Caballero Atack_6: 4684746758855863985
+      Caballero Atack_7: -1141575988331789650
+      Caballero Atack_8: 6169016189183996681
+      Caballero Atack_9: -3611735952162723986
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
