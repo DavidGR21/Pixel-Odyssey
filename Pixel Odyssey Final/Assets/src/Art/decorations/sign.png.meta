@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9e277feda7af37c43ae3c1b4b336cd12
+guid: 3b554144fbe1f2e4f9de55ff5e7a8219
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7671222294944505988
-    second: fondoMenuPrincipal_0
+      213: 7168540986364394743
+    second: sign_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fondoMenuPrincipal_0
+      name: sign_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 735
-        height: 490
+        width: 22
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c7f96c477f75a8590800000000000000
-      internalID: -7671222294944505988
+      spriteID: 7fcf31aeb06cb7360800000000000000
+      internalID: 7168540986364394743
       vertices: []
       indices: 
       edges: []
@@ -147,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      fondoMenuPrincipal_0: -7671222294944505988
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
