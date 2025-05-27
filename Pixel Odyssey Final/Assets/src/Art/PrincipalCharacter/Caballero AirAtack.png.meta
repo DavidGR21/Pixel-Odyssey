@@ -1,37 +1,31 @@
 fileFormatVersion: 2
-guid: 4c463ffdac45a054086ce9a7ab8c1ce3
+guid: 66d4942be2583204a8f422714ea088d4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8800426234377776020
-    second: Caballero Atack_0
+      213: 2672325159727095808
+    second: Caballero AirAtack_0
   - first:
-      213: 3386583467018073648
-    second: Caballero Atack_1
+      213: -6983062250607712711
+    second: Caballero AirAtack_1
   - first:
-      213: 1127669836897109799
-    second: Caballero Atack_2
+      213: 5327526734603881758
+    second: Caballero AirAtack_2
   - first:
-      213: -1807258436986358648
-    second: Caballero Atack_3
+      213: -568318730534080574
+    second: Caballero AirAtack_3
   - first:
-      213: -7968732432053396252
-    second: Caballero Atack_4
+      213: -4669478844792993210
+    second: Caballero AirAtack_4
   - first:
-      213: -961114395089321577
-    second: Caballero Atack_5
+      213: 437749383471561077
+    second: Caballero AirAtack_5
   - first:
-      213: 4684746758855863985
-    second: Caballero Atack_6
+      213: -4597095664379561023
+    second: Caballero AirAtack_6
   - first:
-      213: -1141575988331789650
-    second: Caballero Atack_7
-  - first:
-      213: 6169016189183996681
-    second: Caballero Atack_8
-  - first:
-      213: -3611735952162723986
-    second: Caballero Atack_9
+      213: 4916379940008710535
+    second: Caballero AirAtack_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -140,51 +134,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Caballero Atack_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 138
-        width: 64
-        height: 46
-      alignment: 9
-      pivot: {x: 0.4328028, y: 0.3849331}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 043092935dff1494c95d147175f79115
-      internalID: 297696510
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Caballero Atack_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 138
-        width: 64
-        height: 46
-      alignment: 9
-      pivot: {x: 0.4328028, y: 0.3849331}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 43b9eef67763cda4e81d218e56c618c5
-      internalID: -822461568
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Caballero Atack_2
+      name: Caballero AirAtack_0
       rect:
         serializedVersion: 2
         x: 0
@@ -192,21 +142,21 @@ TextureImporter:
         width: 64
         height: 46
       alignment: 9
-      pivot: {x: 0.4328028, y: 0.3849331}
+      pivot: {x: 0.4263417, y: 0.3921252}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 35daa54eae5af5340ac56b66fc8dbf34
-      internalID: 1872242058
+      spriteID: 0006fddf291061520800000000000000
+      internalID: 2672325159727095808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caballero Atack_3
+      name: Caballero AirAtack_1
       rect:
         serializedVersion: 2
         x: 64
@@ -214,21 +164,21 @@ TextureImporter:
         width: 64
         height: 46
       alignment: 9
-      pivot: {x: 0.4328028, y: 0.3849331}
+      pivot: {x: 0.4263417, y: 0.3921252}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 0655886a7b16eda4896183ff6392956d
-      internalID: -1119205535
+      spriteID: 936661481ed271f90800000000000000
+      internalID: -6983062250607712711
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caballero Atack_4
+      name: Caballero AirAtack_2
       rect:
         serializedVersion: 2
         x: 0
@@ -236,21 +186,21 @@ TextureImporter:
         width: 64
         height: 46
       alignment: 9
-      pivot: {x: 0.4328028, y: 0.3849331}
+      pivot: {x: 0.4263417, y: 0.3921252}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: d44c73d7c3b46bf4789cc48577b3860d
-      internalID: -968991703
+      spriteID: e1d0673b65d2fe940800000000000000
+      internalID: 5327526734603881758
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caballero Atack_5
+      name: Caballero AirAtack_3
       rect:
         serializedVersion: 2
         x: 64
@@ -258,21 +208,21 @@ TextureImporter:
         width: 64
         height: 46
       alignment: 9
-      pivot: {x: 0.4328028, y: 0.3849331}
+      pivot: {x: 0.4263417, y: 0.3921252}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 6282eb65ed30bee47a513f7cfa1d32b4
-      internalID: -671041852
+      spriteID: 2cfa05b202dec18f0800000000000000
+      internalID: -568318730534080574
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caballero Atack_6
+      name: Caballero AirAtack_4
       rect:
         serializedVersion: 2
         x: 0
@@ -280,15 +230,15 @@ TextureImporter:
         width: 64
         height: 46
       alignment: 9
-      pivot: {x: 0.4328028, y: 0.3849331}
+      pivot: {x: 0.4263417, y: 0.3921252}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 7494a64cd1ea8f54a8e966f0faf0e0fe
-      internalID: -1948064677
+      spriteID: 64a89e90bbda23fb0800000000000000
+      internalID: -4669478844792993210
       vertices: []
       indices: 
       edges: []
@@ -297,7 +247,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 57e11393bf15fcd45933a7aaa211c7ad
+    spriteID: d88a953f0df22914787e9deb091243b0
     internalID: 0
     vertices: []
     indices: 
@@ -307,13 +257,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Caballero Atack_0: 297696510
-      Caballero Atack_1: -822461568
-      Caballero Atack_2: 1872242058
-      Caballero Atack_3: -1119205535
-      Caballero Atack_4: -968991703
-      Caballero Atack_5: -671041852
-      Caballero Atack_6: -1948064677
+      Caballero AirAtack_0: 2672325159727095808
+      Caballero AirAtack_1: -6983062250607712711
+      Caballero AirAtack_2: 5327526734603881758
+      Caballero AirAtack_3: -568318730534080574
+      Caballero AirAtack_4: -4669478844792993210
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
