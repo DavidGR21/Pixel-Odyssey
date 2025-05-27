@@ -64,10 +64,19 @@ public class atackPlayer : MonoBehaviour
         {
             if (obj.CompareTag("Enemy"))
             {
-                obj.GetComponent<enemy>().takeDamage(damageAttack);
+                enemy enemyScript = obj.GetComponent<enemy>();
+                if (enemyScript != null)
+                {
+                    // Calcular dirección del golpe
+                    Vector2 knockbackDir = obj.transform.position - transform.position;
+
+                    // Llamar a takeDamage con dirección y fuerza de retroceso
+                    enemyScript.takeDamage(damageAttack, knockbackDir, 5f); // Puedes ajustar la fuerza aquí
+                }
             }
         }
     }
+
 
     // Este método debe llamarse al final de la animación
     public void EndAttack()

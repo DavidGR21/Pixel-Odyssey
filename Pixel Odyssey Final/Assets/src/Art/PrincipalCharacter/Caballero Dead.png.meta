@@ -1,0 +1,469 @@
+fileFormatVersion: 2
+guid: 273e5c34883287f418dbf3233e6a905b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1679468549277385771
+    second: Caballero Dead_0
+  - first:
+      213: 2779072054604412220
+    second: Caballero Dead_1
+  - first:
+      213: -8751881758320188188
+    second: Caballero Dead_2
+  - first:
+      213: -8148032065069089993
+    second: Caballero Dead_3
+  - first:
+      213: -5738700068050875938
+    second: Caballero Dead_4
+  - first:
+      213: 5680729273338956411
+    second: Caballero Dead_5
+  - first:
+      213: 9032450718880799714
+    second: Caballero Dead_6
+  - first:
+      213: 1050025819226022270
+    second: Caballero Dead_7
+  - first:
+      213: -6875392000509577928
+    second: Caballero Dead_8
+  - first:
+      213: 3363092293457678720
+    second: Caballero Dead_9
+  - first:
+      213: 3354513119416514239
+    second: Caballero Dead_10
+  - first:
+      213: 80007846694508103
+    second: Caballero Dead_11
+  - first:
+      213: 7003710909261581827
+    second: Caballero Dead_12
+  - first:
+      213: 3912625780032794806
+    second: Caballero Dead_13
+  - first:
+      213: -1937731083105510240
+    second: Caballero Dead_14
+  - first:
+      213: -8253070343187578895
+    second: Caballero Dead_15
+  - first:
+      213: -1864681781934630393
+    second: Caballero Dead_16
+  - first:
+      213: -9196037688520903797
+    second: Caballero Dead_17
+  - first:
+      213: 5675646975600921633
+    second: Caballero Dead_18
+  - first:
+      213: 8295877037873156969
+    second: Caballero Dead_19
+  - first:
+      213: 373152698476975553
+    second: Caballero Dead_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Caballero Dead_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 138
+        width: 64
+        height: 46
+      alignment: 9
+      pivot: {x: 0.4172959, y: 0.392125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5db71eca04451b8e0800000000000000
+      internalID: -1679468549277385771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caballero Dead_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 138
+        width: 64
+        height: 46
+      alignment: 9
+      pivot: {x: 0.4172959, y: 0.392125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3539eb3f4f319620800000000000000
+      internalID: 2779072054604412220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caballero Dead_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 138
+        width: 64
+        height: 46
+      alignment: 9
+      pivot: {x: 0.4172959, y: 0.392125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e4aa1709e11b8680800000000000000
+      internalID: -8751881758320188188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caballero Dead_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 92
+        width: 64
+        height: 46
+      alignment: 9
+      pivot: {x: 0.4172959, y: 0.392125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73b7017c1006cee80800000000000000
+      internalID: -8148032065069089993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caballero Dead_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 92
+        width: 64
+        height: 46
+      alignment: 9
+      pivot: {x: 0.4172959, y: 0.392125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed9415b61ba0c50b0800000000000000
+      internalID: -5738700068050875938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caballero Dead_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 92
+        width: 64
+        height: 46
+      alignment: 9
+      pivot: {x: 0.4172959, y: 0.392125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7a08822d2106de40800000000000000
+      internalID: 5680729273338956411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caballero Dead_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 46
+        width: 64
+        height: 46
+      alignment: 9
+      pivot: {x: 0.4172959, y: 0.392125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eb9c16a216b95d70800000000000000
+      internalID: 9032450718880799714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caballero Dead_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 46
+        width: 64
+        height: 46
+      alignment: 9
+      pivot: {x: 0.4172959, y: 0.392125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e71a4f75be0729e00800000000000000
+      internalID: 1050025819226022270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caballero Dead_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 46
+        width: 64
+        height: 46
+      alignment: 9
+      pivot: {x: 0.4172959, y: 0.392125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83570162763b590a0800000000000000
+      internalID: -6875392000509577928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caballero Dead_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 46
+      alignment: 9
+      pivot: {x: 0.4172959, y: 0.392125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 081166a5f9a1cae20800000000000000
+      internalID: 3363092293457678720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caballero Dead_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 46
+      alignment: 9
+      pivot: {x: 0.4172959, y: 0.392125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb6753db8ef9d8e20800000000000000
+      internalID: 3354513119416514239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caballero Dead_11
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 46
+      alignment: 9
+      pivot: {x: 0.4172959, y: 0.392125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 746587176be3c1100800000000000000
+      internalID: 80007846694508103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 6896154e5b3896b4f9a4467cdf99b468
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Caballero Dead_0: -1679468549277385771
+      Caballero Dead_1: 2779072054604412220
+      Caballero Dead_10: 3354513119416514239
+      Caballero Dead_11: 80007846694508103
+      Caballero Dead_2: -8751881758320188188
+      Caballero Dead_3: -8148032065069089993
+      Caballero Dead_4: -5738700068050875938
+      Caballero Dead_5: 5680729273338956411
+      Caballero Dead_6: 9032450718880799714
+      Caballero Dead_7: 1050025819226022270
+      Caballero Dead_8: -6875392000509577928
+      Caballero Dead_9: 3363092293457678720
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
