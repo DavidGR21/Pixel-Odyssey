@@ -3,6 +3,7 @@ using UnityEngine;
 public class enemy : MonoBehaviour
 {
     [SerializeField] private float life;
+    [SerializeField] private float damageEnemy = 5f;
     private Animator animator;
     private Rigidbody2D rb;
     private HealthPlayer healthPlayer;
@@ -21,7 +22,7 @@ public class enemy : MonoBehaviour
             if (playerHealth != null)
             {
                 Vector2 knockbackDirection = collision.transform.position - transform.position;
-                playerHealth.TakeDamage(20, knockbackDirection);
+                playerHealth.TakeDamage(damageEnemy, knockbackDirection);
             }
         }
     }
