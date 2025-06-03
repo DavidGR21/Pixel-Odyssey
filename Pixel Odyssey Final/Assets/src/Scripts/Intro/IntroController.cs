@@ -3,11 +3,19 @@ using UnityEngine.SceneManagement;
 
 public class IntroController : MonoBehaviour
 {
-    public float duracionLogo = 2f; // segundos que dura el logo
+    public float duracionLogo = 7f;
+    public AudioSource sonidoInicio;
 
     void Start()
     {
+        Invoke("ReproducirSonido", duracionLogo - 2.3f);
         Invoke("CargarPantallaCarga", duracionLogo);
+    }
+
+    void ReproducirSonido()
+    {
+        if (sonidoInicio != null)
+            sonidoInicio.Play();
     }
 
     void CargarPantallaCarga()
