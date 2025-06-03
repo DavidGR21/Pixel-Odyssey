@@ -8,7 +8,7 @@ public class LoadingController : MonoBehaviour
 {
     public Slider barraCarga;
     public TextMeshProUGUI textoPorcentaje;
-    public float duracionCarga = 3f;
+    public float duracionCarga = 5f;
 
     void Start()
     {
@@ -25,7 +25,6 @@ public class LoadingController : MonoBehaviour
             float progreso = Mathf.Clamp01(tiempo / duracionCarga);
             barraCarga.value = progreso;
 
-            // Mostrar el porcentaje
             int porcentajeInt = Mathf.RoundToInt(progreso * 100f);
             textoPorcentaje.text = porcentajeInt + "%";
 
