@@ -17,7 +17,7 @@ public class Goblin : Enemy, IMeleeEnemy
     private bool isAttacking;
     private float cronometro;
     private int rutina;
-    private int direccion;
+        private int direccion;
     private float attackCooldown = 2.0f;
     private float attackCooldownTimer = 0.0f;
     private float hurtCooldown = 1.0f;

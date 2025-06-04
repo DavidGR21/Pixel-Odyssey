@@ -24,11 +24,24 @@ public abstract class Enemy : MonoBehaviour
     public virtual void TakeDamage(float damage, Vector2 knockbackDirection, float knockbackForce = 5f)
     {
         Debug.Log($"[Enemy {gameObject.name}] TakeDamage called: damage={damage}, currentHealth={currentHealth} -> {currentHealth - damage} at frame {Time.frameCount}");
-        currentHealth -= damage;
+
+        // Verificar si el enemigo tiene escudo y bloquear daño si aplica
+        float adjustedDamage = damage;
+        if (this is IShieldEnemy shieldEnemy)
+        {
+            if (shieldEnemy.TakeShieldedDamage(damage, out adjustedDamage))
+            {
+                Debug.Log($"[Enemy {gameObject.name}] Damage blocked by shield: {damage} reduced to {adjustedDamage}");
+                return; // Salir si el daño está bloqueado
+            }
+        }
+
+        // Aplicar daño ajustado
+        currentHealth -= adjustedDamage;
         Debug.Log($"[Enemy {gameObject.name}] Damage applied: new health={currentHealth}");
 
         Animator animator = GetComponent<Animator>();
-        if (animator != null && !isHurtActive)
+        if (animator != null && !isHurtActive && adjustedDamage > 0) // Activar hurt solo si hay daño real
         {
             isHurtActive = true;
             animator.SetBool("hurt", true);
@@ -39,7 +52,7 @@ public abstract class Enemy : MonoBehaviour
         {
             Debug.LogWarning($"[Enemy {gameObject.name}] Hurt animation already active, skipping reactivation at frame {Time.frameCount}");
         }
-        else
+        else if (animator == null)
         {
             Debug.LogError($"[Enemy {gameObject.name}] No Animator component found in TakeDamage()");
         }
@@ -76,7 +89,6 @@ public abstract class Enemy : MonoBehaviour
             return 0.8f; // Valor por defecto si no se puede obtener
         }
 
-        // Obtener el AnimatorController
         AnimatorController animatorController = animator.runtimeAnimatorController as AnimatorController;
         if (animatorController == null)
         {
@@ -84,7 +96,6 @@ public abstract class Enemy : MonoBehaviour
             return 0.8f;
         }
 
-        // Buscar el estado Hurt en todas las capas
         foreach (var layer in animatorController.layers)
         {
             foreach (var state in layer.stateMachine.states)
@@ -94,7 +105,7 @@ public abstract class Enemy : MonoBehaviour
                     AnimationClip clip = state.state.motion as AnimationClip;
                     if (clip != null)
                     {
-                        float duration = clip.length / (state.state.speed != 0 ? state.state.speed : 1); // Ajustar por la velocidad del estado
+                        float duration = clip.length / (state.state.speed != 0 ? state.state.speed : 1);
                         Debug.Log($"[Enemy {gameObject.name}] Hurt animation duration: {duration} seconds (clip length: {clip.length}, speed: {state.state.speed})");
                         return duration;
                     }
@@ -108,7 +119,7 @@ public abstract class Enemy : MonoBehaviour
         }
 
         Debug.LogWarning($"[Enemy {gameObject.name}] Hurt state not found in AnimatorController, using default duration");
-        return 0.8f; // Valor por defecto si no se encuentra el estado
+        return 0.8f;
     }
 
     private IEnumerator ResetHurtAnimation(Animator animator)

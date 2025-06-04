@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 5273797279623188579}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.42, y: 0.1, z: -0.025771309}
-  m_LocalScale: {x: -3.089154, y: 1.8248173, z: 0.91161}
+  m_LocalPosition: {x: 1.79, y: 0.15, z: -0.025771309}
+  m_LocalScale: {x: -3.9181623, y: 2.694635, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6140578535260093475}
@@ -105,9 +105,9 @@ GameObject:
   - component: {fileID: 234710875230024532}
   - component: {fileID: 708216939640263945}
   - component: {fileID: 7674721027732243211}
-  - component: {fileID: 7634319349199755413}
+  - component: {fileID: -3347570424681500983}
   m_Layer: 0
-  m_Name: Goblin
+  m_Name: Skeleton
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,7 +123,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2222, y: 1.2456, z: 1}
+  m_LocalScale: {x: 1.5613606, y: 1.2120216, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2045216458164119628}
@@ -174,7 +174,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4723107735738678597, guid: 97253e83b4b9fa94d93b37a7a0d75836, type: 3}
+  m_Sprite: {fileID: 4723107735738678597, guid: e3077eddf19001243b88b35e8a97bc4f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -195,7 +195,7 @@ Animator:
   m_GameObject: {fileID: 5318791810628185415}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 301dad76a63b50a448b6b43aca0a819b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6252d75edae8a794ca534b5407146baf, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -237,21 +237,21 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0032373667, y: -0.0031877756}
+  m_Offset: {x: -0.1158185, y: 0.0021595955}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.09375, y: 1.1875}
+    oldSize: {x: 1.46875, y: 1.65625}
     newSize: {x: 1.09375, y: 1.1875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.0813317, y: 1.1795759}
+  m_Size: {x: 1.2590292, y: 1.6785262}
   m_EdgeRadius: 0
 --- !u!50 &7674721027732243211
 Rigidbody2D:
@@ -280,7 +280,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7634319349199755413
+--- !u!114 &-3347570424681500983
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -289,16 +289,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 5318791810628185415}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e76fb945799b9624c94740c637cc9767, type: 3}
+  m_Script: {fileID: 11500000, guid: 9da3ef97272a9bd4e9dfc5cd72640b37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  speedWalk: 2
-  speedRun: 4
+  speedWalk: 1
+  speedRun: 2
   visionRange: 5
-  attackRange: 1
-  damage: 2
-  health: 40
+  attackRange: 1.5
+  damage: 10
+  health: 50
   enemyName: 
   target: {fileID: 0}
   hitCollider: {fileID: 8410608645369673588}
@@ -331,8 +331,8 @@ Transform:
   m_GameObject: {fileID: 8410608645369673588}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.9, y: 0.05, z: 0}
-  m_LocalScale: {x: -1.8607374, y: 1.3216121, z: 1}
+  m_LocalPosition: {x: 1.23, y: 0, z: 0}
+  m_LocalScale: {x: -2.458231, y: 1.9230169, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6140578535260093475}

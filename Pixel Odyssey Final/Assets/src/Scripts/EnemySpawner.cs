@@ -11,6 +11,11 @@ public class EnemySpawner : MonoBehaviour
 
     public GameObject MushroomPrefab;
     private MushroomFactory MushroomFactory;
+
+    public GameObject skeletonPrefab;
+    private SkeletonFactory SkeletonFactory;
+
+
     private List<Enemy> activeEnemies = new List<Enemy>();
 
     void Start()
@@ -22,12 +27,13 @@ public class EnemySpawner : MonoBehaviour
         }
 
         OgreFactory = new OgreFactory(OgrePrefab);
-      //  SpawnOgre(new Vector3(1, (float)-1.4, 0)); // Posici�n inicial aproximada
+        //  SpawnOgre(new Vector3(1, (float)-1.4, 0)); // Posici�n inicial aproximada
         GoblinFactory = new GoblinFactory(GoblinPrefab);
         SpawnGoblin(new Vector3(2, (float)-1.73, 0)); // Posici�n inicial aproximada
         MushroomFactory = new MushroomFactory(MushroomPrefab);
-        SpawnMushroom(new Vector3(7, (float)-1.73, 0)); // Posici�n inicial aproximada
-
+        SpawnMushroom(new Vector3(7, (float)-1.73, 0)); 
+        SkeletonFactory = new SkeletonFactory(skeletonPrefab);
+        SpawnSkeleton(new Vector3(4, (float)-1.73, 0));
     }
 
     void Update()
@@ -69,7 +75,7 @@ public class EnemySpawner : MonoBehaviour
             Debug.LogError("No se pudo crear un nuevo Ogre.");
         }
     }
-        public void SpawnMushroom(Vector3 position)
+    public void SpawnMushroom(Vector3 position)
     {
         // Ajustar la posici�n al suelo usando Raycast
         Vector3 spawnPosition = AdjustToGround(position);
@@ -83,6 +89,21 @@ public class EnemySpawner : MonoBehaviour
             Debug.LogError("No se pudo crear un nuevo Mushroom.");
         }
     }
+    public void SpawnSkeleton(Vector3 position)
+    {
+        // Ajustar la posici�n al suelo usando Raycast
+        Vector3 spawnPosition = AdjustToGround(position);
+        Enemy newEnemy = SkeletonFactory.CreateEnemy(spawnPosition);
+        if (newEnemy != null)
+        {
+            activeEnemies.Add(newEnemy);
+        }
+        else
+        {
+            Debug.LogError("No se pudo crear un nuevo Skeleton.");
+        }
+    }
+
     private Vector3 AdjustToGround(Vector3 spawnPosition)
     {
         // Lanza un Raycast hacia abajo desde una altura suficiente
