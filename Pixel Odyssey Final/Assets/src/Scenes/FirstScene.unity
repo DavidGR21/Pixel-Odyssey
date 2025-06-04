@@ -1643,10 +1643,20 @@ MonoBehaviour:
     m_Bits: 64
   floorControler: {fileID: 50794336}
   boxDimension: {x: 0.5, y: 0.1, z: 0}
-  inFloor: 0
   dashSpeed: 8
   dashTime: 0.3
   timeIntoDash: 0.5
+  rb2d: {fileID: 0}
+  animator: {fileID: 0}
+  attackScript: {fileID: 0}
+  horizontalMovement: 0
+  inFloor: 0
+  jump: 0
+  lookingRight: 1
+  canDoDash: 1
+  canMove: 1
+  initialGravity: 0
+  velocity: {x: 0, y: 0}
 --- !u!95 &846938434
 Animator:
   serializedVersion: 7
@@ -1703,6 +1713,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 100
+  maxShield: 50
+  currentShield: 0
   knockbackForce: 5
 --- !u!1 &857702434
 GameObject:
