@@ -1,9 +1,26 @@
 using UnityEngine;
+using System;
 
 public class HealthPlayer : MonoBehaviour
 {
-    [SerializeField] private float maxHealth = 100f;
-    [SerializeField] private float currentHealth = 100f;
+    // Uso del Patrón Observer:
+    // Se utiliza el patrón Observer mediante eventos (OnDeath, OnHealthChanged, OnShieldChanged)
+    // para permitir que otros objetos (como el HUD, efectos visuales o lógicas externas)
+    // se suscriban y reaccionen automáticamente cuando el estado del jugador cambia,
+    // sin necesidad de acoplarse directamente a esta clase.
+    // Esto promueve un diseño flexible, desacoplado y fácil de mantener.
+    [Header("Vida")]
+    [SerializeField] public float maxHealth = 100f;
+    [SerializeField] private float currentHealth;
+
+    [Header("Escudo")]
+    [SerializeField] public float maxShield = 50f;
+    [SerializeField] private float currentShield;
+
+    public event Action OnDeath;  // Evento de muerte
+    public event Action<float> OnHealthChanged; // Evento de cambio de vida
+    public event Action<float> OnShieldChanged; // Evento de cambio de escudo
+
     [SerializeField] private float knockbackForce = 5f;
     private Animator animator;
     private atackPlayer attackScript;
@@ -11,6 +28,7 @@ public class HealthPlayer : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
+        currentShield = maxShield;
         animator = GetComponent<Animator>();
         attackScript = GetComponent<atackPlayer>();
     }
@@ -19,38 +37,69 @@ public class HealthPlayer : MonoBehaviour
     {
         if (currentHealth <= 0) return;
 
-        currentHealth -= damage;
-        animator.SetTrigger("Hurt");
-
-        // Aplicar retroceso
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        if (rb != null)
+        // Primero el escudo absorbe daño
+        if (currentShield > 0)
         {
-            rb.linearVelocity = Vector2.zero; // Opcional: para reiniciar velocidad actual
-            rb.AddForce(knockbackDirection.normalized * knockbackForce, ForceMode2D.Impulse);
+            float shieldDamage = Mathf.Min(damage, currentShield);
+            currentShield -= shieldDamage;
+            damage -= shieldDamage;
+            OnShieldChanged?.Invoke(currentShield); // Notifica cambio de escudo
+            animator.SetTrigger("Hurt");
+
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.linearVelocity = Vector2.zero;
+                rb.AddForce(knockbackDirection.normalized * knockbackForce, ForceMode2D.Impulse);
+            }
         }
 
-        if (currentHealth <= 0)
+        // El resto del daño afecta la vida
+        if (damage > 0)
         {
-            Die();
+            currentHealth -= damage;
+            OnHealthChanged?.Invoke(currentHealth); // Notifica cambio de salud
+
+            animator.SetTrigger("Hurt");
+
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.linearVelocity = Vector2.zero;
+                rb.AddForce(knockbackDirection.normalized * knockbackForce, ForceMode2D.Impulse);
+            }
+
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
         }
     }
-
 
     private void Die()
     {
         animator.SetTrigger("Die");
+        OnDeath?.Invoke();
 
         if (attackScript != null)
             attackScript.canMove = false;
 
-        // Opcional: desactiva todos los scripts que controlan al jugador
-        GetComponent<Collider2D>().enabled = false;
-        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        GetComponent<MovementPlayer>().enabled = false;
+        GetComponent<atackPlayer>().enabled = false;
 
-        // También puedes desactivar scripts específicos si los tienes
-        if (TryGetComponent<MovementPlayer>(out var move)) move.enabled = false;
-        if (TryGetComponent<atackPlayer>(out var atk)) atk.enabled = false;
+        Destroy(gameObject, 3f);
+    }
+
+    public void Heal(float amount)
+    {
+        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
+        OnHealthChanged?.Invoke(currentHealth); 
+    }
+
+    public void HealShield(float amount)
+    {
+        currentShield = Mathf.Min(currentShield + amount, maxShield);
+        OnShieldChanged?.Invoke(currentShield);
     }
 
 }

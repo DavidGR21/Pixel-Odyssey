@@ -1,120 +1,61 @@
-using System.Collections;
+// MovementPlayer.cs
+using Assets.src.Scripts.Player.States;
 using UnityEngine;
 
 public class MovementPlayer : MonoBehaviour
 {
-    private Rigidbody2D rb2d;
-    private float horizontalMovement = 0f;
-    [SerializeField] private float velocityOfMovement;
-    [Range(0, 0.3f)][SerializeField] private float motionSmotothing = 0.3f;
-    private Vector3 velocity = Vector3.zero;
-    private bool lookingRight = true;
+    // Uso del Patrón State:
+    // Se implementa el patrón State mediante la clase PlayerMovementContext y sus estados asociados (por ejemplo, NormalMovementState).
+    // Este patrón permite cambiar dinámicamente el comportamiento del jugador dependiendo de su estado actual (normal, saltando, dash, etc.)
+    // sin usar múltiples condicionales en una sola clase. Esto facilita la extensibilidad, el mantenimiento y el orden del código.
+    
+    [Header("Movement Settings")]
+    [SerializeField] public float velocityOfMovement = 10f;
+    [Range(0, 0.3f)][SerializeField] public float motionSmotothing = 0.3f;
 
-    // JUMP
-    [SerializeField] private float jumpForce;
-    [SerializeField] private LayerMask isFloor;
-    [SerializeField] private Transform floorControler;
-    [SerializeField] private Vector3 boxDimension;
-    [SerializeField] public bool inFloor;
-    private bool jump = false;
+    [Header("Jump Settings")]
+    [SerializeField] public float jumpForce;
+    [SerializeField] public LayerMask isFloor;
+    [SerializeField] public Transform floorControler;
+    [SerializeField] public Vector3 boxDimension;
 
-    //DASH
-    [SerializeField] private float dashSpeed;
-    [SerializeField] private float dashTime;
-    [SerializeField] private float timeIntoDash;
-    private float initialGravity;
-    private bool canDoDash = true;
-    private bool canMove = true;
+    [Header("Dash Settings")]
+    [SerializeField] public float dashSpeed;
+    [SerializeField] public float dashTime;
+    [SerializeField] public float timeIntoDash;
 
+    // Component references
+    [HideInInspector] public Rigidbody2D rb2d;
+    [HideInInspector] public Animator animator;
+    [HideInInspector] public atackPlayer attackScript;
 
+    // State variables
+    [HideInInspector] public float horizontalMovement;
+    [HideInInspector] public bool inFloor;
+    [HideInInspector] public bool jump;
+    [HideInInspector] public bool lookingRight = true;
+    [HideInInspector] public bool canDoDash = true;
+    [HideInInspector] public bool canMove = true;
+    [HideInInspector] public float initialGravity;
 
-    // ANIMATION
-    private Animator animator;
+    [HideInInspector] public Vector2 velocity = Vector2.zero;
+    private PlayerMovementContext movementContext;
 
-    // REFERENCIA A atackPlayer
-    private atackPlayer attackScript;
-
-    private void Start()
+    private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        attackScript = GetComponent<atackPlayer>(); // <- Referencia al script de ataque
+        attackScript = GetComponent<atackPlayer>();
         initialGravity = rb2d.gravityScale;
+
+        movementContext = new PlayerMovementContext(this);
+        movementContext.TransitionTo(new NormalMovementState());
     }
 
-    private void Update()
-    {
-        // Solo se mueve si no estï¿½ atacando
-        if (attackScript == null || attackScript.canMove)
-        {
-            horizontalMovement = Input.GetAxisRaw("Horizontal") * velocityOfMovement;
-            if (Input.GetButtonDown("Jump"))
-            {
-                jump = true;
-            }
-        }
-        else
-        {
-            horizontalMovement = 0f;
-        }
+    private void Update() => movementContext.Update();
+    private void FixedUpdate() => movementContext.FixedUpdate();
 
-        animator.SetFloat("Horizontal", Mathf.Abs(horizontalMovement));
-        if (Input.GetKeyDown(KeyCode.C) && canDoDash)
-        {
-            StartCoroutine(Dash());
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        inFloor = Physics2D.OverlapBox(floorControler.position, boxDimension, 0f, isFloor);
-        animator.SetBool("inFloor", inFloor);
-        if (canMove) 
-        { 
-            Move(horizontalMovement * Time.fixedDeltaTime, jump);
-        }
-        jump = false;
-    }
-
-    private void Move(float move, bool jump)
-    {
-        Vector3 objectiveVelocity = new Vector2(move, rb2d.linearVelocity.y);
-        rb2d.linearVelocity = Vector3.SmoothDamp(rb2d.linearVelocity, objectiveVelocity, ref velocity, motionSmotothing);
-
-        if (move > 0 && !lookingRight)
-        {
-            spin();
-        }
-        else if (move < 0 && lookingRight)
-        {
-            spin();
-        }
-
-        if (inFloor && jump)
-        {
-            inFloor = false;
-            rb2d.AddForce(new Vector2(0f, jumpForce));
-        }
-    }
-
-    private IEnumerator Dash()
-    { 
-        canMove = false;
-        canDoDash = false;
-        rb2d.gravityScale = 0;
-        rb2d.linearVelocity = new Vector2(dashSpeed * transform.localScale.x,0);
-        animator.SetTrigger("Dash");
-
-        yield return new WaitForSeconds(dashTime);
-
-        canMove = true;
-        rb2d.gravityScale = initialGravity;
-        yield return new WaitForSeconds(timeIntoDash);
-        canDoDash = true;
-
-    }
-
-    private void spin()
+    public void spin()
     {
         lookingRight = !lookingRight;
         Vector3 scale = transform.localScale;
