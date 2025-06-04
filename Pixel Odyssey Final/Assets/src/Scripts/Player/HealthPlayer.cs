@@ -3,6 +3,12 @@ using System;
 
 public class HealthPlayer : MonoBehaviour
 {
+    // Uso del Patrón Observer:
+    // Se utiliza el patrón Observer mediante eventos (OnDeath, OnHealthChanged, OnShieldChanged)
+    // para permitir que otros objetos (como el HUD, efectos visuales o lógicas externas)
+    // se suscriban y reaccionen automáticamente cuando el estado del jugador cambia,
+    // sin necesidad de acoplarse directamente a esta clase.
+    // Esto promueve un diseño flexible, desacoplado y fácil de mantener.
     [Header("Vida")]
     [SerializeField] public float maxHealth = 100f;
     [SerializeField] private float currentHealth;
