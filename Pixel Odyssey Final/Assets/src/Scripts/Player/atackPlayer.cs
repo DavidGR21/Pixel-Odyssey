@@ -1,104 +1,96 @@
-using UnityEngine;
+    using UnityEngine;
 
-public class atackPlayer : MonoBehaviour
-{
-    [SerializeField] private Transform ControllerAttack;
-    [SerializeField] private Transform groundAttackPoint;
-    [SerializeField] private Transform airAttackPoint;
-    [SerializeField] private float radioAttack;
-    [SerializeField] private float damageAttack;
-    [SerializeField] private float timeBetweenAttacks;
-    [SerializeField] private float timeNextAttack;
-
-    private Animator animator;
-    private MovementPlayer movementScript; // Referencia al script de movimiento
-
-    [HideInInspector] public bool canMove = true;
-
-    private void Start()
+    public class atackPlayer : MonoBehaviour
     {
-        animator = GetComponent<Animator>();
-        movementScript = GetComponent<MovementPlayer>(); // Obtener referencia al script de movimiento
-    }
+        [SerializeField] private Transform ControllerAttack;
+        [SerializeField] private Transform groundAttackPoint;
+        [SerializeField] private Transform airAttackPoint;
+        [SerializeField] private float radioAttack;
+        [SerializeField] private float damageAttack;
+        [SerializeField] private float timeBetweenAttacks;
+        [SerializeField] private float timeNextAttack;
 
-    void Update()
-    {
-        if (timeNextAttack > 0)
+        private Animator animator;
+        private MovementPlayer movementScript;
+
+        [HideInInspector] public bool canMove = true;
+
+        private void Start()
         {
-            timeNextAttack -= Time.deltaTime;
+            animator = GetComponent<Animator>();
+            movementScript = GetComponent<MovementPlayer>();
         }
 
-        if (Input.GetButtonDown("Attack") && timeNextAttack <= 0)
+        void Update()
         {
-            Attack();
-            timeNextAttack = timeBetweenAttacks;
-        }
-    }
-
-    private void Attack()
-    {
-        canMove = false;
-
-        // Verificamos si está en el suelo usando la variable pública del script de movimiento
-        bool isGrounded = movementScript != null && movementScript.inFloor;
-
-        // Cambiar el punto de ataque
-        ControllerAttack.position = isGrounded ? groundAttackPoint.position : airAttackPoint.position;
-
-        // Activar animación según el estado
-        if (isGrounded)
-        {
-            animator.SetTrigger("Attack");
-        }
-        else
-        {
-            animator.SetTrigger("AirAttack");
-        }
-    }
-
-    // Este método lo llamará la animación en el momento del impacto
-    public void DoDamage()
-    {
-        Collider2D[] objects = Physics2D.OverlapCircleAll(ControllerAttack.position, radioAttack);
-        foreach (Collider2D obj in objects)
-        {
-            if (obj.CompareTag("Enemy"))
+            if (timeNextAttack > 0)
             {
-                enemy enemyScript = obj.GetComponent<enemy>();
-                if (enemyScript != null)
-                {
-                    // Calcular dirección del golpe
-                    Vector2 knockbackDir = obj.transform.position - transform.position;
+                timeNextAttack -= Time.deltaTime;
+            }
 
-                    // Llamar a takeDamage con dirección y fuerza de retroceso
-                    enemyScript.takeDamage(damageAttack, knockbackDir, 5f); // Puedes ajustar la fuerza aquí
+            if (Input.GetButtonDown("Attack") && timeNextAttack <= 0)
+            {
+                Attack();
+                timeNextAttack = timeBetweenAttacks;
+            }
+        }
+
+        private void Attack()
+        {
+            canMove = false;
+
+            bool isGrounded = movementScript != null && movementScript.inFloor;
+            ControllerAttack.position = isGrounded ? groundAttackPoint.position : airAttackPoint.position;
+
+            if (isGrounded)
+            {
+                animator.SetTrigger("Attack");
+            }
+            else
+            {
+                animator.SetTrigger("AirAttack");
+            }
+        }
+
+        // Llamado por la animación en el momento del impacto
+        public void DoDamage()
+        {
+            Collider2D[] objects = Physics2D.OverlapCircleAll(ControllerAttack.position, radioAttack);
+            foreach (Collider2D obj in objects)
+            {
+                if (obj.CompareTag("Enemy"))
+                {
+                    Enemy enemyScript = obj.GetComponent<Enemy>();
+                    if (enemyScript != null)
+                    {
+                        Vector2 knockbackDir = obj.transform.position - transform.position;
+                        enemyScript.TakeDamage(damageAttack, knockbackDir, 5f);
+                        Debug.Log($"Jugador infligió {damageAttack} de daño al enemigo.");
+                    }
                 }
             }
         }
-    }
 
-
-    // Este método debe llamarse al final de la animación
-    public void EndAttack()
-    {
-        canMove = true;
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        if (Application.isPlaying)
+        public void EndAttack()
         {
-            if (ControllerAttack != null)
-                Gizmos.DrawWireSphere(ControllerAttack.position, radioAttack);
+            canMove = true;
         }
-        else
-        {
-            if (groundAttackPoint != null)
-                Gizmos.DrawWireSphere(groundAttackPoint.position, radioAttack);
 
-            if (airAttackPoint != null)
-                Gizmos.DrawWireSphere(airAttackPoint.position, radioAttack);
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            if (Application.isPlaying)
+            {
+                if (ControllerAttack != null)
+                    Gizmos.DrawWireSphere(ControllerAttack.position, radioAttack);
+            }
+            else
+            {
+                if (groundAttackPoint != null)
+                    Gizmos.DrawWireSphere(groundAttackPoint.position, radioAttack);
+
+                if (airAttackPoint != null)
+                    Gizmos.DrawWireSphere(airAttackPoint.position, radioAttack);
+            }
         }
     }
-}
