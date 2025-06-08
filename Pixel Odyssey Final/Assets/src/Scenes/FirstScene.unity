@@ -1230,7 +1230,7 @@ MonoBehaviour:
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
-    TrackingTarget: {fileID: 846938430}
+    TrackingTarget: {fileID: 0}
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
@@ -1635,9 +1635,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb4ed63b286e5fe4691840f6a5d8f684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityOfMovement: 400
+  velocityOfMovement: 2.7
   motionSmotothing: 0.3
-  jumpForce: 400
+  jumpForce: 8
   isFloor:
     serializedVersion: 2
     m_Bits: 64
@@ -2625,7 +2625,7 @@ PrefabInstance:
     - target: {fileID: 5328905026199423597, guid: 37033ac5c6640c041aedc8f73e65d2f2, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 846938428}
+      objectReference: {fileID: 0}
     - target: {fileID: 5328905026199423597, guid: 37033ac5c6640c041aedc8f73e65d2f2, type: 3}
       propertyPath: atacando
       value: 1

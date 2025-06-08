@@ -1,14 +1,9 @@
 using UnityEngine;
 using System;
+using System.Collections; // Added to include IEnumerator
 
 public class HealthPlayer : MonoBehaviour
 {
-    // Uso del Patrón Observer:
-    // Se utiliza el patrón Observer mediante eventos (OnDeath, OnHealthChanged, OnShieldChanged)
-    // para permitir que otros objetos (como el HUD, efectos visuales o lógicas externas)
-    // se suscriban y reaccionen automáticamente cuando el estado del jugador cambia,
-    // sin necesidad de acoplarse directamente a esta clase.
-    // Esto promueve un diseño flexible, desacoplado y fácil de mantener.
     [Header("Vida")]
     [SerializeField] public float maxHealth = 100f;
     [SerializeField] private float currentHealth;
@@ -21,9 +16,9 @@ public class HealthPlayer : MonoBehaviour
     public event Action<float> OnHealthChanged; // Evento de cambio de vida
     public event Action<float> OnShieldChanged; // Evento de cambio de escudo
 
-    [SerializeField] private float knockbackForce = 5f;
     private Animator animator;
     private atackPlayer attackScript;
+    private Rigidbody2D rb; // Cacheamos el Rigidbody2D para mejor rendimiento
 
     private void Start()
     {
@@ -31,48 +26,64 @@ public class HealthPlayer : MonoBehaviour
         currentShield = maxShield;
         animator = GetComponent<Animator>();
         attackScript = GetComponent<atackPlayer>();
+        rb = GetComponent<Rigidbody2D>();
+        if (rb == null)
+        {
+            Debug.LogError($"[HealthPlayer {gameObject.name}] No Rigidbody2D component found");
+        }
     }
 
-    public void TakeDamage(float damage, Vector2 knockbackDirection)
+    public void TakeDamage(float damage, Vector2 knockbackDirection, float knockbackForce = 5f)
     {
         if (currentHealth <= 0) return;
 
-        // Primero el escudo absorbe daño
+        bool damageApplied = false;
+
+        // Primero el escudo absorbe daÃ±o
         if (currentShield > 0)
         {
             float shieldDamage = Mathf.Min(damage, currentShield);
             currentShield -= shieldDamage;
             damage -= shieldDamage;
             OnShieldChanged?.Invoke(currentShield); // Notifica cambio de escudo
-            animator.SetTrigger("Hurt");
-
-            Rigidbody2D rb = GetComponent<Rigidbody2D>();
-            if (rb != null)
-            {
-                rb.linearVelocity = Vector2.zero;
-                rb.AddForce(knockbackDirection.normalized * knockbackForce, ForceMode2D.Impulse);
-            }
+            damageApplied = true;
         }
 
-        // El resto del daño afecta la vida
+        // El resto del daÃ±o afecta la vida
         if (damage > 0)
         {
             currentHealth -= damage;
             OnHealthChanged?.Invoke(currentHealth); // Notifica cambio de salud
-
-            animator.SetTrigger("Hurt");
-
-            Rigidbody2D rb = GetComponent<Rigidbody2D>();
-            if (rb != null)
-            {
-                rb.linearVelocity = Vector2.zero;
-                rb.AddForce(knockbackDirection.normalized * knockbackForce, ForceMode2D.Impulse);
-            }
+            damageApplied = true;
 
             if (currentHealth <= 0)
             {
                 Die();
             }
+        }
+
+        // Aplicar animaciÃ³n de daÃ±o y knockback si hubo daÃ±o real
+        if (damageApplied)
+        {
+            animator.SetTrigger("Hurt");
+
+            if (rb != null)
+            {
+                rb.linearVelocity = Vector2.zero;
+                rb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+                Debug.Log($"[HealthPlayer {gameObject.name}] Knockback applied: direction={knockbackDirection}, force={knockbackForce}");
+                StartCoroutine(StopMovementAfterKnockback());
+            }
+        }
+    }
+
+    private IEnumerator StopMovementAfterKnockback()
+    {
+        yield return new WaitForSeconds(0.2f); // Ajusta este tiempo si es necesario
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
+            Debug.Log($"[HealthPlayer {gameObject.name}] Movement stopped after knockback");
         }
     }
 
@@ -101,5 +112,4 @@ public class HealthPlayer : MonoBehaviour
         currentShield = Mathf.Min(currentShield + amount, maxShield);
         OnShieldChanged?.Invoke(currentShield);
     }
-
 }
