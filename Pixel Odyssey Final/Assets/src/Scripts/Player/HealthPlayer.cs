@@ -87,7 +87,7 @@ public class HealthPlayer : MonoBehaviour
         }
     }
 
-    private void Die()
+    private void Die() // metodo para manejar la muerte del jugador
     {
         animator.SetTrigger("Die");
         OnDeath?.Invoke();
