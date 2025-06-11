@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEditor.Animations; // Necesario para trabajar con AnimatorController
+using UnityEditor.Animations;
 using System.Collections;
 
 public abstract class Enemy : MonoBehaviour
@@ -8,6 +8,19 @@ public abstract class Enemy : MonoBehaviour
     protected float currentHealth;
     protected Rigidbody2D rb;
     private bool isHurtActive = false;
+    protected IEnemyBehavior currentBehavior;
+
+    // Campos necesarios para los comportamientos
+    public float speedWalk;
+    public float speedRun;
+    public float visionRange;
+    public float attackRange;
+    public int direccion;
+    public int rutina;
+    public float cronometro;
+    public GameObject target;
+
+    public abstract IEnemyAnimator GetAnimator();
 
     public virtual void Initialize()
     {
@@ -19,7 +32,15 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
-    public abstract void UpdateBehavior();
+    public void SetBehavior(IEnemyBehavior behavior)
+    {
+        currentBehavior = behavior;
+    }
+
+    public virtual void UpdateBehavior()
+    {
+        currentBehavior?.Execute(this);
+    }
 
     public virtual void TakeDamage(float damage, Vector2 knockbackDirection, float knockbackForce = 5f)
     {

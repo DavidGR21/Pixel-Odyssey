@@ -3,22 +3,14 @@ using System.Collections;
 
 public class Goblin : Enemy, IMeleeEnemy
 {
-    public float speedWalk;
-    public float speedRun;
-    public float visionRange;
-    public float attackRange = 0.7f;
     public int damage;
     public int health;
     public string enemyName;
-    public GameObject target;
     public GameObject hitCollider;
     public GameObject rangeCollider;
 
     private IEnemyAnimator enemyAnimator;
     private bool isAttacking;
-    private float cronometro;
-    private int rutina;
-    private int direccion;
     private float attackCooldown = 2.0f;
     private float attackCooldownTimer = 0.0f;
     private float hurtCooldown = 1.0f;
@@ -29,6 +21,8 @@ public class Goblin : Enemy, IMeleeEnemy
     public float AttackRange => attackRange;
     public int Damage => damage;
     public bool IsAttacking => isAttacking;
+
+    public override IEnemyAnimator GetAnimator() => enemyAnimator;
 
     public override void Initialize()
     {
@@ -55,75 +49,40 @@ public class Goblin : Enemy, IMeleeEnemy
         if (hurtCooldownTimer > 0)
             hurtCooldownTimer -= Time.deltaTime;
 
+        // Selección de estrategia según el estado
         if (isStunned)
         {
-            enemyAnimator.PlayWalk(false);
-            enemyAnimator.PlayRun(false);
-            return;
+            SetBehavior(null);
         }
-
-        if (enemyAnimator.IsHurt())
+        else if (enemyAnimator.IsHurt())
         {
-            enemyAnimator.PlayWalk(false);
-            enemyAnimator.PlayRun(false);
-            return;
+            SetBehavior(null);
         }
-
-        Comportamientos();
-    }
-
-    private void Comportamientos()
-    {
-        if (target == null) return;
-
-        float distanceToPlayer = Mathf.Abs(transform.position.x - target.transform.position.x);
-
-        if (isAttacking && distanceToPlayer > attackRange)
-            StopAttack();
-
-        if (distanceToPlayer > visionRange && !isAttacking)
-            Patrol();
-        else if (distanceToPlayer <= visionRange && distanceToPlayer > attackRange && !isAttacking)
-            Chase();
-        else if (distanceToPlayer <= attackRange && !isAttacking && attackCooldownTimer <= 0 && hurtCooldownTimer <= 0)
-            Attack();
-    }
-
-    private void Patrol()
-    {
-        enemyAnimator.PlayRun(false);
-        cronometro += Time.deltaTime;
-        if (cronometro >= 4)
+        else if (target == null)
         {
-            rutina = Random.Range(0, 2);
-            cronometro = 0;
+            SetBehavior(null);
         }
-        switch (rutina)
+        else
         {
-            case 0:
-                enemyAnimator.PlayWalk(false);
-                break;
-            case 1:
-                direccion = Random.Range(0, 2);
-                rutina++;
-                break;
-            case 2:
-                transform.rotation = Quaternion.Euler(0, direccion == 0 ? 0 : 180, 0);
-                transform.Translate(Vector3.right * speedWalk * Time.deltaTime);
-                enemyAnimator.PlayWalk(true);
-                break;
+            float distanceToPlayer = Mathf.Abs(transform.position.x - target.transform.position.x);
+
+            if (isAttacking && distanceToPlayer > attackRange)
+                StopAttack();
+
+            if (distanceToPlayer > visionRange && !isAttacking)
+                SetBehavior(new PatrolBehavior());
+            else if (distanceToPlayer <= visionRange && distanceToPlayer > attackRange && !isAttacking)
+                SetBehavior(new ChaseBehavior());
+            else if (distanceToPlayer <= attackRange && !isAttacking && attackCooldownTimer <= 0 && hurtCooldownTimer <= 0)
+                SetBehavior(new AttackBehavior());
+            else
+                SetBehavior(null);
         }
+
+        base.UpdateBehavior();
     }
 
-    private void Chase()
-    {
-        transform.rotation = Quaternion.Euler(0, transform.position.x < target.transform.position.x ? 0 : 180, 0);
-        enemyAnimator.PlayWalk(false);
-        enemyAnimator.PlayRun(true);
-        enemyAnimator.PlayAttack(false);
-        transform.Translate(Vector3.right * speedRun * Time.deltaTime);
-    }
-
+    // Métodos requeridos por IMeleeEnemy
     public void Attack()
     {
         if (enemyAnimator == null) return;
