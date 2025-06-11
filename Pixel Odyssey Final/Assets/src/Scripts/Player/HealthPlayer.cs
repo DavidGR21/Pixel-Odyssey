@@ -2,7 +2,7 @@ using UnityEngine;
 using System;
 using System.Collections; // Added to include IEnumerator
 
-public class HealthPlayer : MonoBehaviour
+public class HealthPlayer : MonoBehaviour, IHealth
 {
     [Header("Vida")]
     [SerializeField] public float maxHealth = 100f;
@@ -20,6 +20,8 @@ public class HealthPlayer : MonoBehaviour
     private atackPlayer attackScript;
     private Rigidbody2D rb; // Cacheamos el Rigidbody2D para mejor rendimiento
 
+    public bool IsAlive => currentHealth > 0;
+
     private void Start()
     {
         currentHealth = maxHealth;
@@ -33,11 +35,12 @@ public class HealthPlayer : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage, Vector2 knockbackDirection, float knockbackForce = 5f)
+    public void TakeDamage(float amount, Vector2 knockbackDirection, float knockbackForce = 5f)
     {
         if (currentHealth <= 0) return;
 
         bool damageApplied = false;
+        float damage = amount;
 
         // Primero el escudo absorbe daño
         if (currentShield > 0)
@@ -65,7 +68,8 @@ public class HealthPlayer : MonoBehaviour
         // Aplicar animación de daño y knockback si hubo daño real
         if (damageApplied)
         {
-            animator.SetTrigger("Hurt");
+            if (animator != null)
+                animator.SetTrigger("Hurt");
 
             if (rb != null)
             {
@@ -89,14 +93,20 @@ public class HealthPlayer : MonoBehaviour
 
     private void Die() // metodo para manejar la muerte del jugador
     {
-        animator.SetTrigger("Die");
+        if (animator != null)
+            animator.SetTrigger("Die");
         OnDeath?.Invoke();
 
         if (attackScript != null)
             attackScript.canMove = false;
 
-        GetComponent<MovementPlayer>().enabled = false;
-        GetComponent<atackPlayer>().enabled = false;
+        var movement = GetComponent<MovementPlayer>();
+        if (movement != null)
+            movement.enabled = false;
+
+        var attack = GetComponent<atackPlayer>();
+        if (attack != null)
+            attack.enabled = false;
 
         Destroy(gameObject, 3f);
     }
