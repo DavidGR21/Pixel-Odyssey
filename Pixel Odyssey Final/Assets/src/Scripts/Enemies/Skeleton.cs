@@ -11,6 +11,7 @@ public class Skeleton : Enemy, IMeleeEnemy, IShieldEnemy
     public GameObject rangeCollider;
 
     private IEnemyAnimator enemyAnimator;
+    private IShieldEnemyAnimator shieldAnimator;
     private bool isAttacking;
     private float attackCooldown = 2.0f;
     private float attackCooldownTimer = 0.0f;
@@ -36,9 +37,15 @@ public class Skeleton : Enemy, IMeleeEnemy, IShieldEnemy
     public override void Initialize()
     {
         base.Initialize();
+
+        // Inicializa ambos adaptadores
+        shieldAnimator = GetComponent<IShieldEnemyAnimator>();
         enemyAnimator = GetComponent<IEnemyAnimator>();
         if (enemyAnimator == null)
             enemyAnimator = GetComponent<EnemyAnimatorAdapter>();
+        if (shieldAnimator == null)
+            shieldAnimator = enemyAnimator as IShieldEnemyAnimator;
+
         target = GameObject.FindWithTag("Player");
         if (rangeCollider == null)
             rangeCollider = transform.Find("Range")?.gameObject;
@@ -169,11 +176,9 @@ public class Skeleton : Enemy, IMeleeEnemy, IShieldEnemy
             return;
         }
 
-       base.TakeDamage(adjustedDamage, knockbackDirection, knockbackForce);
+        base.TakeDamage(adjustedDamage, knockbackDirection, knockbackForce);
         if (currentHealth > 0)
             hurtCooldownTimer = hurtCooldown;
-
-     
     }
 
     private IEnumerator ResetHurtAnimation()
@@ -186,6 +191,9 @@ public class Skeleton : Enemy, IMeleeEnemy, IShieldEnemy
     private IEnumerator ActivateShieldTemporarily()
     {
         isShieldActive = true;
+        if (shieldAnimator != null)
+            shieldAnimator.PlayShield(true); // Activa animación de escudo
+
         if (enemyAnimator != null)
         {
             enemyAnimator.PlayAttack(false);
@@ -194,6 +202,8 @@ public class Skeleton : Enemy, IMeleeEnemy, IShieldEnemy
         }
         yield return new WaitForSeconds(shieldDuration);
         isShieldActive = false;
+        if (shieldAnimator != null)
+            shieldAnimator.PlayShield(false); // Desactiva animación de escudo
         shieldCooldownTimer = shieldCooldown;
     }
 

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyAnimatorAdapter : MonoBehaviour, IEnemyAnimator
+public class EnemyAnimatorAdapter : MonoBehaviour, IEnemyAnimator, IShieldEnemyAnimator
 {
     [SerializeField] private Animator animator;
 
@@ -17,4 +17,6 @@ public class EnemyAnimatorAdapter : MonoBehaviour, IEnemyAnimator
     public void PlayDie() => animator.SetTrigger("die");
     public bool IsHurt() => animator.GetBool("hurt");
     public Animator Animator => animator;
+    public void PlayShield(bool value) => animator.SetBool("shield", value);
+
 }
