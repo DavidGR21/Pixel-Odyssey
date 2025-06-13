@@ -20,6 +20,13 @@ public abstract class Enemy : MonoBehaviour
     public float cronometro;
     public GameObject target;
 
+    protected IEnemyAnimator enemyAnimator;
+
+    public virtual void InjectAnimator(IEnemyAnimator animator)
+    {
+        this.enemyAnimator = animator;
+    }
+
     public abstract IEnemyAnimator GetAnimator();
 
     public virtual void Initialize()

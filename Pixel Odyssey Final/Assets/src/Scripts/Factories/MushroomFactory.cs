@@ -13,20 +13,25 @@ public class MushroomFactory
     {
         if (mushroomPrefab == null)
         {
-            Debug.LogError("MushroomPrefab no esta asignado en MushroomPrefab.");
+            Debug.LogError("mushroomPrefab no está asignado en MushroomFactory.");
             return null;
         }
 
         GameObject mushroomInstance = Object.Instantiate(mushroomPrefab, position, Quaternion.identity);
-        Enemy enemy = mushroomInstance.GetComponent<Enemy>();
-        if (enemy != null)
+        Mushroom mushroom = mushroomInstance.GetComponent<Mushroom>();
+        if (mushroom != null)
         {
-            enemy.Initialize();
+            // Inyección de dependencias
+            var animator = mushroomInstance.GetComponent<IEnemyAnimator>();
+            mushroom.InjectAnimator(animator);
+
+            mushroom.Initialize();
+            return mushroom;
         }
         else
         {
-            Debug.LogError("El prefab no tiene el componente Enemy.");
+            Debug.LogError("El prefab no tiene el componente Mushroom.");
+            return null;
         }
-        return enemy;
     }
 }

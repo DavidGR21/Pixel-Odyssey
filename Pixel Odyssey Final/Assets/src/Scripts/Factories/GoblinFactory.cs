@@ -13,20 +13,25 @@ public class GoblinFactory
     {
         if (goblinPrefab == null)
         {
-            Debug.LogError("OgrePrefab no esta asignado en OgreFactory.");
+            Debug.LogError("goblinPrefab no está asignado en GoblinFactory.");
             return null;
         }
 
         GameObject goblinInstance = Object.Instantiate(goblinPrefab, position, Quaternion.identity);
-        Enemy enemy = goblinInstance.GetComponent<Enemy>();
-        if (enemy != null)
+        Goblin goblin = goblinInstance.GetComponent<Goblin>();
+        if (goblin != null)
         {
-            enemy.Initialize();
+            // Inyección de dependencias
+            var animator = goblinInstance.GetComponent<IEnemyAnimator>();
+            goblin.InjectAnimator(animator);
+
+            goblin.Initialize();
+            return goblin;
         }
         else
         {
-            Debug.LogError("El prefab no tiene el componente Enemy.");
+            Debug.LogError("El prefab no tiene el componente Goblin.");
+            return null;
         }
-        return enemy;
     }
 }

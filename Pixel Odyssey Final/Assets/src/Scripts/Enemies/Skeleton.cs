@@ -5,8 +5,6 @@ public class Skeleton : Enemy, IMeleeEnemy, IShieldEnemy
 {
     [Header("Melee Enemy Properties")]
     public int damage;
-    public int health;
-    public string enemyName;
     public GameObject hitCollider;
     public GameObject rangeCollider;
 
@@ -34,18 +32,17 @@ public class Skeleton : Enemy, IMeleeEnemy, IShieldEnemy
 
     public override IEnemyAnimator GetAnimator() => enemyAnimator;
 
+    // Nuevo método para inyectar ambos adaptadores
+    public void InjectAnimators(IEnemyAnimator animator, IShieldEnemyAnimator shieldAnimator)
+    {
+        this.enemyAnimator = animator;
+        this.shieldAnimator = shieldAnimator;
+    }
+
     public override void Initialize()
     {
         base.Initialize();
-
-        // Inicializa ambos adaptadores
-        shieldAnimator = GetComponent<IShieldEnemyAnimator>();
-        enemyAnimator = GetComponent<IEnemyAnimator>();
-        if (enemyAnimator == null)
-            enemyAnimator = GetComponent<EnemyAnimatorAdapter>();
-        if (shieldAnimator == null)
-            shieldAnimator = enemyAnimator as IShieldEnemyAnimator;
-
+        // Ya no busques los adaptadores aquí, solo asegúrate que están inyectados
         target = GameObject.FindWithTag("Player");
         if (rangeCollider == null)
             rangeCollider = transform.Find("Range")?.gameObject;

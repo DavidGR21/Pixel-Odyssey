@@ -4,8 +4,7 @@ using System.Collections;
 public class Mushroom : Enemy, IMeleeEnemy
 {
     public int damage;
-    public int health;
-    public string enemyName;
+
     public GameObject hitCollider;
     public GameObject rangeCollider;
 
