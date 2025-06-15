@@ -26,7 +26,7 @@ public class EnemySpawner : MonoBehaviour
             return;
         }
 
-        OgreFactory = new OgreFactory(OgrePrefab);
+        OgreFactory =  new OgreFactory(OgrePrefab);
         //  SpawnOgre(new Vector3(1, (float)-1.4, 0)); // Posici�n inicial aproximada
         GoblinFactory = new GoblinFactory(GoblinPrefab);
         SpawnGoblin(new Vector3(2, (float)-1.73, 0)); // Posici�n inicial aproximada

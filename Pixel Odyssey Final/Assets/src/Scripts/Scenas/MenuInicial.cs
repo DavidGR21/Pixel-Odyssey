@@ -16,7 +16,7 @@ public class MenuInicial : MonoBehaviour
     {
         AudioManager.Instance.PlaySound(startSound);
         yield return new WaitForSeconds(startSound.length); // espera hasta que se reproduzca el sonido para cambiar de escena
-        SceneManager.LoadScene("FirstScene");
+        SceneManager.LoadScene("MainScene");
     }
 
     public void Salir()
