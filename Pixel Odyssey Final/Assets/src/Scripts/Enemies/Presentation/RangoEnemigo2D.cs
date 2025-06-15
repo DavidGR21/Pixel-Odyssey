@@ -2,23 +2,24 @@
 
 public class RangoEnemigo2D : MonoBehaviour
 {
-    public Animator animator;
     private IMeleeEnemy meleeEnemy;
+    private IEnemyAnimator enemyAnimator;
 
     private void Start()
     {
         meleeEnemy = GetComponentInParent<IMeleeEnemy>();
+        enemyAnimator = GetComponentInParent<IEnemyAnimator>();
     }
 
     private void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.CompareTag("Player") && meleeEnemy != null)
         {
-            animator.SetBool("walk", false);
-            animator.SetBool("run", false);
-            animator.SetBool("attack", true);
+            enemyAnimator?.PlayWalk(false);
+            enemyAnimator?.PlayRun(false);
+            enemyAnimator?.PlayAttack(true);
             meleeEnemy.Attack();
             GetComponent<BoxCollider2D>().enabled = false;
         }
     }
-}   
+}

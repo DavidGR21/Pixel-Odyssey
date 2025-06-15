@@ -1105,6 +1105,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8631652049903832971, guid: 37033ac5c6640c041aedc8f73e65d2f2, type: 3}
   m_PrefabInstance: {fileID: 1777710229}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &478960213 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7626516086053594211, guid: 37033ac5c6640c041aedc8f73e65d2f2, type: 3}
+  m_PrefabInstance: {fileID: 1777710229}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &478960216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478960209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b22a9d6770a22fb4facd313b69e0418d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 478960213}
 --- !u!1 &549870047
 GameObject:
   m_ObjectHideFlags: 0
@@ -1230,7 +1248,7 @@ MonoBehaviour:
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
-    TrackingTarget: {fileID: 846938430}
+    TrackingTarget: {fileID: 0}
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
@@ -1635,9 +1653,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb4ed63b286e5fe4691840f6a5d8f684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityOfMovement: 400
+  velocityOfMovement: 2.7
   motionSmotothing: 0.3
-  jumpForce: 400
+  jumpForce: 8
   isFloor:
     serializedVersion: 2
     m_Bits: 64
@@ -1715,7 +1733,6 @@ MonoBehaviour:
   currentHealth: 100
   maxShield: 50
   currentShield: 0
-  knockbackForce: 5
 --- !u!1 &857702434
 GameObject:
   m_ObjectHideFlags: 0
@@ -2425,7 +2442,7 @@ Transform:
   m_GameObject: {fileID: 1571167118}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.0593119, y: -0.27187, z: -10}
+  m_LocalPosition: {x: -5.084614, y: -0.27245, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2625,7 +2642,7 @@ PrefabInstance:
     - target: {fileID: 5328905026199423597, guid: 37033ac5c6640c041aedc8f73e65d2f2, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 846938428}
+      objectReference: {fileID: 0}
     - target: {fileID: 5328905026199423597, guid: 37033ac5c6640c041aedc8f73e65d2f2, type: 3}
       propertyPath: atacando
       value: 1
@@ -2695,17 +2712,28 @@ PrefabInstance:
       value: -0.012116671
       objectReference: {fileID: 0}
     - target: {fileID: 9166967817361593677, guid: 37033ac5c6640c041aedc8f73e65d2f2, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 9166967817361593677, guid: 37033ac5c6640c041aedc8f73e65d2f2, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 9166967817361593677, guid: 37033ac5c6640c041aedc8f73e65d2f2, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2.0625
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 9166967817361593677, guid: 37033ac5c6640c041aedc8f73e65d2f2, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.84375
+      value: 0.55
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8631652049903832971, guid: 37033ac5c6640c041aedc8f73e65d2f2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 478960216}
   m_SourcePrefab: {fileID: 100100000, guid: 37033ac5c6640c041aedc8f73e65d2f2, type: 3}
 --- !u!1 &1876256316
 GameObject:

@@ -91,7 +91,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e990c3cb83e795f4280a6a04ae98c029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 234710875230024532}
 --- !u!1 &5318791810628185415
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,6 +105,7 @@ GameObject:
   - component: {fileID: 708216939640263945}
   - component: {fileID: 7674721027732243211}
   - component: {fileID: 7634319349199755413}
+  - component: {fileID: 4904513621195694383}
   m_Layer: 0
   m_Name: Goblin
   m_TagString: Enemy
@@ -297,13 +297,28 @@ MonoBehaviour:
   speedRun: 4
   visionRange: 5
   attackRange: 1
+  direccion: 0
+  rutina: 0
+  cronometro: 0
+  target: {fileID: 0}
   damage: 2
   health: 40
   enemyName: 
-  target: {fileID: 0}
   hitCollider: {fileID: 8410608645369673588}
-  animator: {fileID: 234710875230024532}
   rangeCollider: {fileID: 5273797279623188579}
+--- !u!114 &4904513621195694383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5318791810628185415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b22a9d6770a22fb4facd313b69e0418d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 234710875230024532}
 --- !u!1 &8410608645369673588
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,3 +410,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69242b08e8a2d8f469f50d23b17ce2ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knockbackForce: 5

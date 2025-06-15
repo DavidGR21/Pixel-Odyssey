@@ -18,15 +18,21 @@ public class SkeletonFactory
         }
 
         GameObject skeletonInstance = Object.Instantiate(skeletonPrefab, position, Quaternion.identity);
-        Enemy enemy = skeletonInstance.GetComponent<Enemy>();
-        if (enemy != null)
+        Skeleton skeleton = skeletonInstance.GetComponent<Skeleton>();
+        if (skeleton != null)
         {
-            enemy.Initialize();
+            // Inyección de dependencias
+            var animator = skeletonInstance.GetComponent<IEnemyAnimator>();
+            var shieldAnimator = skeletonInstance.GetComponent<IShieldEnemyAnimator>();
+            skeleton.InjectAnimators(animator, shieldAnimator);
+
+            skeleton.Initialize();
+            return skeleton;
         }
         else
         {
-            Debug.LogError("El prefab no tiene el componente Enemy.");
+            Debug.LogError("El prefab no tiene el componente Skeleton.");
+            return null;
         }
-        return enemy;
     }
 }
