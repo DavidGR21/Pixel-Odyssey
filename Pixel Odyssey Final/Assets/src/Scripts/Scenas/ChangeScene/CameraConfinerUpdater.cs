@@ -18,18 +18,18 @@ public class CameraConfinerUpdater : MonoBehaviour
     void Start()
     {
         // Buscar el confiner en la cámara
-        confiner = FindObjectOfType<CinemachineConfiner2D>();
+        confiner = FindFirstObjectByType<CinemachineConfiner2D>();
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         // Buscar el nuevo collider en la escena cargada
-        PolygonCollider2D newBounds = FindObjectOfType<PolygonCollider2D>();
+        PolygonCollider2D newBounds = FindFirstObjectByType<PolygonCollider2D>();
 
         if (confiner != null && newBounds != null)
         {
             confiner.BoundingShape2D = newBounds;
-            confiner.InvalidateCache(); // muy importante
+            confiner.InvalidateBoundingShapeCache(); // muy importante
             Debug.Log($"Confiner actualizado para la escena: {scene.name}");
         }
         else
