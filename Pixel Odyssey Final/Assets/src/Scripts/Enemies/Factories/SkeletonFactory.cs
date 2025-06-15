@@ -1,6 +1,6 @@
 using UnityEngine;
-
-public class SkeletonFactory
+ 
+public class SkeletonFactory : EnemyFactory
 {
     private GameObject skeletonPrefab;
 
@@ -9,7 +9,7 @@ public class SkeletonFactory
         skeletonPrefab = prefab;
     }
 
-    public Enemy CreateEnemy(Vector3 position)
+    public override Enemy CreateEnemy(Vector3 position)
     {
         if (skeletonPrefab == null)
         {

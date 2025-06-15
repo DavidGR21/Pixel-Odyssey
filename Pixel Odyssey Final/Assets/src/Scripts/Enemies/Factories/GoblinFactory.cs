@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 
-public class GoblinFactory
+public class GoblinFactory : EnemyFactory
 {
-    private GameObject goblinPrefab;
+   [SerializeField] private GameObject goblinPrefab;
 
     public GoblinFactory(GameObject prefab)
     {
         goblinPrefab = prefab;
     }
 
-    public Enemy CreateEnemy(Vector3 position)
+    public override Enemy CreateEnemy(Vector3 position)
     {
         if (goblinPrefab == null)
         {
