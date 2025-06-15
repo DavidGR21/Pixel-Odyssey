@@ -198,7 +198,20 @@ MonoBehaviour:
     m_Bits: 64
   floorControler: {fileID: 1324473964}
   boxDimension: {x: 0.5, y: 0.1, z: 0}
+  dashSpeed: 0
+  dashTime: 0
+  timeIntoDash: 0
+  rb2d: {fileID: 0}
+  animator: {fileID: 0}
+  attackScript: {fileID: 0}
+  horizontalMovement: 0
   inFloor: 0
+  jump: 0
+  lookingRight: 1
+  canDoDash: 1
+  canMove: 1
+  initialGravity: 0
+  velocity: {x: 0, y: 0}
 --- !u!50 &102668640
 Rigidbody2D:
   serializedVersion: 5
@@ -701,7 +714,7 @@ Transform:
   m_GameObject: {fileID: 752191756}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.2494097, y: -0.27208, z: -10}
+  m_LocalPosition: {x: -1.4583802, y: -0.27163, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

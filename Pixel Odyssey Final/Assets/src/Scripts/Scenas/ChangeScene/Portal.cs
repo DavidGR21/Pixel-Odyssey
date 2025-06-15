@@ -8,14 +8,36 @@ public class Portal : MonoBehaviour
     [SerializeField] public string sceneToLoad;
     [SerializeField] public string spawnPointName;
 
+    private Animator transitionAnimator;
+    private bool isTransitioning = false;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !isTransitioning)
         {
+            isTransitioning = true;
             PlayerSpawnManager.nextSpawnPoint = spawnPointName;
-            SceneManager.sceneLoaded += OnSceneLoaded;
-            SceneManager.LoadScene(sceneToLoad);
+
+            // Lanza la animación de salida
+            transitionAnimator = GameObject.Find("SceneTransition")?.GetComponent<Animator>();
+            if (transitionAnimator != null)
+            {
+                transitionAnimator.SetTrigger("Close");
+                // Espera 1 segundo antes de cargar la escena (ajusta al tiempo de tu animación)
+                Invoke(nameof(ChangeScene), 1f);
+            }
+            else
+            {
+                // Si no hay animación, cambia inmediatamente
+                ChangeScene();
+            }
         }
+    }
+
+    private void ChangeScene()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.LoadScene(sceneToLoad);
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -28,8 +50,8 @@ public class Portal : MonoBehaviour
             player.transform.position = spawnPoint.transform.position;
         }
 
-        // Buscar la Cinemachine Virtual Camera y actualizar el confiner
-        CinemachineConfiner2D confiner = FindObjectOfType<CinemachineConfiner2D>();
+        // Actualiza el confiner de la cámara
+        CinemachineConfiner2D confiner = FindFirstObjectByType<CinemachineConfiner2D>();
         GameObject newBounds = GameObject.Find("ConfinerBounds");
 
         if (confiner != null && newBounds != null)
@@ -38,12 +60,18 @@ public class Portal : MonoBehaviour
             if (collider != null)
             {
                 confiner.BoundingShape2D = collider;
-                confiner.InvalidateCache(); // Necesario para que se actualicen los límites
+                confiner.InvalidateBoundingShapeCache();
             }
         }
 
-        // Limpia el evento
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
+        // Lanza animación de entrada
+        transitionAnimator = GameObject.Find("SceneTransition")?.GetComponent<Animator>();
+        if (transitionAnimator != null)
+        {
+            transitionAnimator.SetTrigger("Open");
+        }
 
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        isTransitioning = false;
+    }
 }
