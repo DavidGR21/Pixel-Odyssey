@@ -1184,11 +1184,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
       propertyPath: spawnPoints.Array.data[1].position.x
-      value: 4.3
+      value: -1.843236
       objectReference: {fileID: 0}
     - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
       propertyPath: spawnPoints.Array.data[1].position.y
-      value: -0.91
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
       propertyPath: spawnPoints.Array.data[1].position.z
@@ -1852,80 +1852,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healAmountShield: 25
   destroyDelay: 0.5
---- !u!1001 &1608375879
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 708216939640263945, guid: a38c2fa8b0a80f940aaa51d23ccde9f3, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5318791810628185415, guid: a38c2fa8b0a80f940aaa51d23ccde9f3, type: 3}
-      propertyPath: m_Name
-      value: Goblin (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6140578535260093475, guid: a38c2fa8b0a80f940aaa51d23ccde9f3, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.741253
-      objectReference: {fileID: 0}
-    - target: {fileID: 6140578535260093475, guid: a38c2fa8b0a80f940aaa51d23ccde9f3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.4365103
-      objectReference: {fileID: 0}
-    - target: {fileID: 6140578535260093475, guid: a38c2fa8b0a80f940aaa51d23ccde9f3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 6140578535260093475, guid: a38c2fa8b0a80f940aaa51d23ccde9f3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -8.38
-      objectReference: {fileID: 0}
-    - target: {fileID: 6140578535260093475, guid: a38c2fa8b0a80f940aaa51d23ccde9f3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6140578535260093475, guid: a38c2fa8b0a80f940aaa51d23ccde9f3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6140578535260093475, guid: a38c2fa8b0a80f940aaa51d23ccde9f3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6140578535260093475, guid: a38c2fa8b0a80f940aaa51d23ccde9f3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6140578535260093475, guid: a38c2fa8b0a80f940aaa51d23ccde9f3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6140578535260093475, guid: a38c2fa8b0a80f940aaa51d23ccde9f3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6140578535260093475, guid: a38c2fa8b0a80f940aaa51d23ccde9f3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6140578535260093475, guid: a38c2fa8b0a80f940aaa51d23ccde9f3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a38c2fa8b0a80f940aaa51d23ccde9f3, type: 3}
---- !u!1 &1608375880 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5318791810628185415, guid: a38c2fa8b0a80f940aaa51d23ccde9f3, type: 3}
-  m_PrefabInstance: {fileID: 1608375879}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1730368586
 GameObject:
   m_ObjectHideFlags: 0
@@ -2086,7 +2012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7bf26de34afc5941a2d2bb90491f1db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goblinPrefab: {fileID: 1608375880}
+  goblinPrefab: {fileID: 5318791810628185415, guid: a38c2fa8b0a80f940aaa51d23ccde9f3, type: 3}
 --- !u!4 &1925097933
 Transform:
   m_ObjectHideFlags: 0
@@ -33255,5 +33181,4 @@ SceneRoots:
   - {fileID: 1473551029}
   - {fileID: 922249375}
   - {fileID: 1925097933}
-  - {fileID: 1608375879}
   - {fileID: 1730368588}

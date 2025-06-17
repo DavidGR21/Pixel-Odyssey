@@ -43,6 +43,10 @@ public abstract class Enemy : MonoBehaviour
     {
         currentBehavior = behavior;
     }
+    protected virtual void Update()
+    {
+        UpdateBehavior();
+    }
 
     public virtual void UpdateBehavior()
     {
