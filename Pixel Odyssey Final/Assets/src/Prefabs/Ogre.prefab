@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69242b08e8a2d8f469f50d23b17ce2ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knockbackForce: 5
 --- !u!1 &4572206050625196126
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,7 +183,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e990c3cb83e795f4280a6a04ae98c029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 7626516086053594211}
 --- !u!1 &8631652049903832971
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,8 +359,8 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_GravityScale: 4
+  m_Material: {fileID: 6200000, guid: 233c93fd8bb48fc4388271f5ed0e5a77, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -388,10 +388,10 @@ MonoBehaviour:
   speedRun: 3
   visionRange: 5
   attackRange: 1
-  damage: 1
-  health: 40
-  enemyName: 
+  direccion: 0
+  rutina: 0
+  cronometro: 0
   target: {fileID: 0}
+  damage: 1
   hitCollider: {fileID: 1027018443230312921}
-  animator: {fileID: 7626516086053594211}
   rangeCollider: {fileID: 4572206050625196126}
