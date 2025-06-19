@@ -177,6 +177,16 @@ public class Goblin : Enemy, IMeleeEnemy
         {
             hitCollider.GetComponent<BoxCollider2D>().enabled = enable;
             Debug.Log($"{gameObject.name}: hitCollider {(enable ? "habilitado" : "deshabilitado")}");
+            if (enable)
+            {
+                // Resetea el flag de daño cada vez que se habilita el collider
+                var hitScript = hitCollider.GetComponent<HitEnemigo2D>();
+                if (hitScript != null)
+                {
+                    hitScript.ResetDamage();
+                    Debug.Log($"{gameObject.name}: ResetDamage llamado en HitEnemigo2D");
+                }
+            }
         }
     }
 
