@@ -119,6 +119,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &131868562
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5318791810628185415, guid: a38c2fa8b0a80f940aaa51d23ccde9f3, type: 3}
+      propertyPath: m_Name
+      value: Goblin
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140578535260093475, guid: a38c2fa8b0a80f940aaa51d23ccde9f3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140578535260093475, guid: a38c2fa8b0a80f940aaa51d23ccde9f3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140578535260093475, guid: a38c2fa8b0a80f940aaa51d23ccde9f3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140578535260093475, guid: a38c2fa8b0a80f940aaa51d23ccde9f3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140578535260093475, guid: a38c2fa8b0a80f940aaa51d23ccde9f3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140578535260093475, guid: a38c2fa8b0a80f940aaa51d23ccde9f3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140578535260093475, guid: a38c2fa8b0a80f940aaa51d23ccde9f3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140578535260093475, guid: a38c2fa8b0a80f940aaa51d23ccde9f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140578535260093475, guid: a38c2fa8b0a80f940aaa51d23ccde9f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140578535260093475, guid: a38c2fa8b0a80f940aaa51d23ccde9f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a38c2fa8b0a80f940aaa51d23ccde9f3, type: 3}
 --- !u!1 &267070121
 GameObject:
   m_ObjectHideFlags: 0
@@ -1152,7 +1209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
       propertyPath: spawnPoints.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
       propertyPath: factories.Array.data[0].factory
@@ -1175,6 +1232,10 @@ PrefabInstance:
       value: Mushroom
       objectReference: {fileID: 0}
     - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
+      propertyPath: spawnPoints.Array.data[2].enemyType
+      value: Goblin
+      objectReference: {fileID: 0}
+    - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
       propertyPath: spawnPoints.Array.data[0].position.y
       value: 0.03
       objectReference: {fileID: 0}
@@ -1184,23 +1245,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
       propertyPath: spawnPoints.Array.data[1].position.x
-      value: -1.843236
+      value: 30.26
       objectReference: {fileID: 0}
     - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
       propertyPath: spawnPoints.Array.data[1].position.y
-      value: 0.03
+      value: 5.45
       objectReference: {fileID: 0}
     - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
       propertyPath: spawnPoints.Array.data[1].position.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
+      propertyPath: spawnPoints.Array.data[2].position.x
+      value: 11.77
+      objectReference: {fileID: 0}
+    - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
+      propertyPath: spawnPoints.Array.data[2].position.y
+      value: 23.52
+      objectReference: {fileID: 0}
     - target: {fileID: 412346231793011291, guid: 7a3806726e06bb141898226959b3078a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.3
+      value: 3.17
       objectReference: {fileID: 0}
     - target: {fileID: 412346231793011291, guid: 7a3806726e06bb141898226959b3078a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.91
+      value: 0.68
       objectReference: {fileID: 0}
     - target: {fileID: 412346231793011291, guid: 7a3806726e06bb141898226959b3078a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1891,7 +1960,7 @@ Transform:
   m_GameObject: {fileID: 1730368586}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.3966064, y: -2.7877755, z: -0.09688739}
+  m_LocalPosition: {x: 1.8, y: 0.4, z: -0.09688739}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -33182,3 +33251,4 @@ SceneRoots:
   - {fileID: 922249375}
   - {fileID: 1925097933}
   - {fileID: 1730368588}
+  - {fileID: 131868562}
