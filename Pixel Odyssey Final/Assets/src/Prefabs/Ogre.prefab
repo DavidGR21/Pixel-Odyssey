@@ -359,7 +359,7 @@ Rigidbody2D:
   m_Mass: 300
   m_LinearDamping: 3
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -392,6 +392,12 @@ MonoBehaviour:
   rutina: 0
   cronometro: 0
   target: {fileID: 0}
+  groundCheck: {fileID: 0}
+  wallCheck: {fileID: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  checkRadius: 0.1
   damage: 1
   hitCollider: {fileID: 1027018443230312921}
   rangeCollider: {fileID: 4572206050625196126}

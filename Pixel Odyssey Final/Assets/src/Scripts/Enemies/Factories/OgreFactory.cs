@@ -3,7 +3,7 @@ using UnityEngine;
 public class OgreFactory : EnemyFactory
 
 {
-    private GameObject ogrePrefab;
+   [SerializeField]  private GameObject ogrePrefab;
 
     public OgreFactory(GameObject prefab)
     {

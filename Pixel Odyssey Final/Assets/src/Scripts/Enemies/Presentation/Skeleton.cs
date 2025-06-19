@@ -42,7 +42,7 @@ public class Skeleton : Enemy, IMeleeEnemy, IShieldEnemy
     public override void Initialize()
     {
         base.Initialize();
-        // Ya no busques los adaptadores aquí, solo asegúrate que están inyectados
+        
         target = GameObject.FindWithTag("Player");
         if (rangeCollider == null)
             rangeCollider = transform.Find("Range")?.gameObject;
@@ -59,6 +59,7 @@ public class Skeleton : Enemy, IMeleeEnemy, IShieldEnemy
 
     private void Update()
     {
+        base.Update();
         // Seguridad: desactiva el hitCollider si no está atacando
         if (hitCollider != null && hitCollider.GetComponent<BoxCollider2D>().enabled && !isAttacking)
         {
@@ -68,6 +69,7 @@ public class Skeleton : Enemy, IMeleeEnemy, IShieldEnemy
 
     public override void UpdateBehavior()
     {
+        // Actualiza timers
         if (attackCooldownTimer > 0)
             attackCooldownTimer -= Time.deltaTime;
         if (hurtCooldownTimer > 0)
@@ -75,33 +77,62 @@ public class Skeleton : Enemy, IMeleeEnemy, IShieldEnemy
         if (shieldCooldownTimer > 0)
             shieldCooldownTimer -= Time.deltaTime;
 
+        // Bloquea behaviors si está herido o escudo activo
         bool isHurt = enemyAnimator != null && enemyAnimator.IsHurt();
         if (isHurt || isShieldActive)
         {
-            SetBehavior(null);
+            if (currentBehavior != null)
+                SetBehavior(null);
+            return;
         }
-        else if (target == null)
+
+        if (target == null)
         {
-            SetBehavior(null);
+            if (currentBehavior != null)
+                SetBehavior(null);
+            return;
+        }
+
+        float distanceToPlayerX = Mathf.Abs(transform.position.x - target.transform.position.x);
+        float distanceToPlayerY = Mathf.Abs(transform.position.y - target.transform.position.y);
+
+        // 1. Si el jugador NO está en rango X o Y, patrulla
+        if (distanceToPlayerX > visionRange || distanceToPlayerY > 3f)
+        {
+            if (!(currentBehavior is PatrolBehavior))
+            {
+                SetBehavior(new PatrolBehavior());
+                Debug.Log($"{gameObject.name}: Cambiando a Patrulla");
+            }
+        }
+        // 2. Si está en rango X y Y, pero fuera de ataque, persigue
+        else if (distanceToPlayerX > attackRange)
+        {
+            if (!(currentBehavior is ChaseBehavior))
+            {
+                SetBehavior(new ChaseBehavior());
+                Debug.Log($"{gameObject.name}: Cambiando a Persecución");
+            }
+        }
+        // 3. Si está en rango X y Y, y dentro de ataque, ataca
+        else
+        {
+            if (!(currentBehavior is AttackBehavior))
+            {
+                SetBehavior(new AttackBehavior());
+                Debug.Log($"{gameObject.name}: Cambiando a Ataque");
+            }
+        }
+
+        if (currentBehavior == null)
+        {
+            Debug.Log($"{gameObject.name}: Sin comportamiento asignado (condiciones no cumplidas)");
         }
         else
         {
-            float distanceToPlayer = Mathf.Abs(transform.position.x - target.transform.position.x);
-
-            if (isAttacking && distanceToPlayer > attackRange)
-                StopAttack();
-
-            if (distanceToPlayer > visionRange && !isAttacking)
-                SetBehavior(new PatrolBehavior());
-            else if (distanceToPlayer <= visionRange && distanceToPlayer > attackRange && !isAttacking)
-                SetBehavior(new ChaseBehavior());
-            else if (distanceToPlayer <= attackRange && !isAttacking && attackCooldownTimer <= 0 && hurtCooldownTimer <= 0)
-                SetBehavior(new AttackBehavior());
-            else
-                SetBehavior(null);
+            Debug.Log($"{gameObject.name}: Ejecutando comportamiento: {currentBehavior.GetType().Name}");
+            currentBehavior.Execute(this);
         }
-
-        base.UpdateBehavior();
     }
 
     // Métodos requeridos por IMeleeEnemy

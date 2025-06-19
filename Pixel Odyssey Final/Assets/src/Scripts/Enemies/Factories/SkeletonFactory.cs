@@ -1,8 +1,8 @@
 using UnityEngine;
- 
+
 public class SkeletonFactory : EnemyFactory
 {
-    private GameObject skeletonPrefab;
+    [SerializeField] private GameObject skeletonPrefab;
 
     public SkeletonFactory(GameObject prefab)
     {

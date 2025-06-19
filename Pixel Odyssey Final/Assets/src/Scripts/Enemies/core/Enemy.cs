@@ -7,7 +7,7 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected float maxHealth = 100f;
     protected float currentHealth;
     protected Rigidbody2D rb;
-    private bool isHurtActive = false;
+    protected bool isHurtActive = false;
     protected IEnemyBehavior currentBehavior;
 
     // Campos necesarios para los comportamientos
@@ -19,6 +19,12 @@ public abstract class Enemy : MonoBehaviour
     public int rutina;
     public float cronometro;
     public GameObject target;
+
+    // Nuevos campos para detección de suelo y paredes
+    public Transform groundCheck;
+    public Transform wallCheck;
+    public LayerMask groundLayer;
+    public float checkRadius = 0.1f;
 
     protected IEnemyAnimator enemyAnimator;
 
@@ -50,6 +56,11 @@ public abstract class Enemy : MonoBehaviour
 
     public virtual void UpdateBehavior()
     {
+        if (isHurtActive)
+        {
+            Debug.Log($"[Enemy {gameObject.name}] Está herido, no ejecuta behaviors.");
+            return;
+        }
         currentBehavior?.Execute(this);
     }
 

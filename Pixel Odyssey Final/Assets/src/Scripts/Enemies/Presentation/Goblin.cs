@@ -63,68 +63,61 @@ public class Goblin : Enemy, IMeleeEnemy
 
     public override void UpdateBehavior()
     {
-        if (attackCooldownTimer > 0)
+        // Bloquea behaviors si está herido (usa el flag de la clase base Enemy)
+        if (isHurtActive)
         {
-            attackCooldownTimer -= Time.deltaTime;
-            Debug.Log($"{gameObject.name}: attackCooldownTimer={attackCooldownTimer}");
-        }
-        if (hurtCooldownTimer > 0)
-        {
-            hurtCooldownTimer -= Time.deltaTime;
-            Debug.Log($"{gameObject.name}: hurtCooldownTimer={hurtCooldownTimer}");
+            Debug.Log($"{gameObject.name}: Está herido, no ejecuta behaviors.");
+            return;
         }
 
-        // Selección de estrategia según el estado
-        if (isStunned)
+        if (target == null)
         {
-            SetBehavior(null);
-            Debug.Log($"{gameObject.name}: Estado=Stunned, comportamiento establecido a null");
+            Debug.Log($"{gameObject.name}: Sin target asignado.");
+            return;
         }
-        else if (enemyAnimator.IsHurt())
+
+        float distanceToPlayerX = Mathf.Abs(transform.position.x - target.transform.position.x);
+        float distanceToPlayerY = Mathf.Abs(transform.position.y - target.transform.position.y);
+
+        Debug.Log($"{gameObject.name}: Distancia al jugador X={distanceToPlayerX}, Y={distanceToPlayerY}, visionRange={visionRange}, attackRange={attackRange}");
+
+        // 1. Si el jugador NO está en rango X o Y, patrulla
+        if (distanceToPlayerX > visionRange || distanceToPlayerY > 3f)
         {
-            SetBehavior(null);
-            Debug.Log($"{gameObject.name}: Estado=Hurt, comportamiento establecido a null");
+            if (!(currentBehavior is PatrolBehavior))
+            {
+                SetBehavior(new PatrolBehavior());
+                Debug.Log($"{gameObject.name}: Cambiando a Patrulla");
+            }
         }
-        else if (target == null)
+        // 2. Si está en rango X y Y, pero fuera de ataque, persigue
+        else if (distanceToPlayerX > attackRange)
         {
-            SetBehavior(null);
-            Debug.Log($"{gameObject.name}: Jugador no detectado, comportamiento establecido a null");
+            if (!(currentBehavior is ChaseBehavior))
+            {
+                SetBehavior(new ChaseBehavior());
+                Debug.Log($"{gameObject.name}: Cambiando a Persecución");
+            }
+        }
+        // 3. Si está en rango X y Y, y dentro de ataque, ataca
+        else
+        {
+            if (!(currentBehavior is AttackBehavior))
+            {
+                SetBehavior(new AttackBehavior());
+                Debug.Log($"{gameObject.name}: Cambiando a Ataque");
+            }
+        }
+
+        if (currentBehavior == null)
+        {
+            Debug.Log($"{gameObject.name}: Sin comportamiento asignado (condiciones no cumplidas)");
         }
         else
         {
-            float distanceToPlayer = Mathf.Abs(transform.position.x - target.transform.position.x);
-            Debug.Log($"{gameObject.name}: Distancia al jugador={distanceToPlayer}, visionRange={visionRange}, attackRange={attackRange}");
-
-            if (isAttacking && distanceToPlayer > attackRange)
-            {
-                StopAttack();
-                Debug.Log($"{gameObject.name}: Jugador fuera de rango de ataque, deteniendo ataque");
-            }
-
-            if (distanceToPlayer > visionRange && !isAttacking)
-            {
-                SetBehavior(new PatrolBehavior());
-                Debug.Log($"{gameObject.name}: Ejecutando PatrolBehavior (fuera de visionRange)");
-            }
-            else if (distanceToPlayer <= visionRange && distanceToPlayer > attackRange && !isAttacking)
-            {
-                SetBehavior(new ChaseBehavior());
-                Debug.Log($"{gameObject.name}: Ejecutando ChaseBehavior (dentro de visionRange, fuera de attackRange)");
-            }
-            else if (distanceToPlayer <= attackRange && !isAttacking && attackCooldownTimer <= 0 && hurtCooldownTimer <= 0)
-            {
-                SetBehavior(new AttackBehavior());
-                Debug.Log($"{gameObject.name}: Ejecutando AttackBehavior (dentro de attackRange)");
-            }
-            else
-            {
-                SetBehavior(null);
-                Debug.Log($"{gameObject.name}: Sin comportamiento asignado (condiciones no cumplidas)");
-            }
+            Debug.Log($"{gameObject.name}: Ejecutando comportamiento: {currentBehavior.GetType().Name}");
+            currentBehavior.Execute(this);
         }
-
-        base.UpdateBehavior();
-        Debug.Log($"{gameObject.name}: UpdateBehavior ejecutado, comportamiento actual={(currentBehavior != null ? currentBehavior.GetType().Name : "null")}");
     }
 
     // Métodos requeridos por IMeleeEnemy
