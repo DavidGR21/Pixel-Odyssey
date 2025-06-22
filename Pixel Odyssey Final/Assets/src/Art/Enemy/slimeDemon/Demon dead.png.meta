@@ -1,0 +1,960 @@
+fileFormatVersion: 2
+guid: 3ff0b24ff15fbb14294e03e1825a4c89
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4287842973306667755
+    second: Demon dead_0
+  - first:
+      213: -6137633770937841446
+    second: Demon dead_1
+  - first:
+      213: 5629507427296108527
+    second: Demon dead_2
+  - first:
+      213: 3675485326138686644
+    second: Demon dead_3
+  - first:
+      213: 1537231633701166380
+    second: Demon dead_4
+  - first:
+      213: -44511444926950372
+    second: Demon dead_5
+  - first:
+      213: 4213102450035786359
+    second: Demon dead_6
+  - first:
+      213: 6294356727818569675
+    second: Demon dead_7
+  - first:
+      213: 4802774752452956303
+    second: Demon dead_8
+  - first:
+      213: -4221054012086683363
+    second: Demon dead_9
+  - first:
+      213: -1846983629683387816
+    second: Demon dead_10
+  - first:
+      213: 7918414501102689534
+    second: Demon dead_11
+  - first:
+      213: -248003150789646924
+    second: Demon dead_12
+  - first:
+      213: 5881490081987984545
+    second: Demon dead_13
+  - first:
+      213: -2594771008430195428
+    second: Demon dead_14
+  - first:
+      213: 5512886944040150280
+    second: Demon dead_15
+  - first:
+      213: -1048623487128375025
+    second: Demon dead_16
+  - first:
+      213: -9222849397607679712
+    second: Demon dead_17
+  - first:
+      213: -4523968902319507738
+    second: Demon dead_18
+  - first:
+      213: 8721522836966471617
+    second: Demon dead_19
+  - first:
+      213: 2249498130794513907
+    second: Demon dead_20
+  - first:
+      213: -5658305095338538270
+    second: Demon dead_21
+  - first:
+      213: 6569804413902722359
+    second: Demon dead_22
+  - first:
+      213: 7330567924541354802
+    second: Demon dead_23
+  - first:
+      213: 7751842183597829564
+    second: Demon dead_24
+  - first:
+      213: -4965770870602394656
+    second: Demon dead_25
+  - first:
+      213: -7728249226873684319
+    second: Demon dead_26
+  - first:
+      213: -1949884992512998298
+    second: Demon dead_27
+  - first:
+      213: 4376396024360138228
+    second: Demon dead_28
+  - first:
+      213: -5905056862402431136
+    second: Demon dead_29
+  - first:
+      213: 4969898044055357442
+    second: Demon dead_30
+  - first:
+      213: -8489480568222310381
+    second: Demon dead_31
+  - first:
+      213: -3399893602749057698
+    second: Demon dead_32
+  - first:
+      213: -7304670010508217406
+    second: Demon dead_33
+  - first:
+      213: 5597889241409841797
+    second: Demon dead_34
+  - first:
+      213: 7823076912876035870
+    second: Demon dead_35
+  - first:
+      213: 4923928568918160395
+    second: Demon dead_36
+  - first:
+      213: 4002354517539089209
+    second: Demon dead_37
+  - first:
+      213: 2221446290830145199
+    second: Demon dead_38
+  - first:
+      213: -5403646205296089907
+    second: Demon dead_39
+  - first:
+      213: -4593372666954506531
+    second: Demon dead_40
+  - first:
+      213: 2337783899552573770
+    second: Demon dead_41
+  - first:
+      213: 578343048026612367
+    second: Demon dead_42
+  - first:
+      213: -8463700254629650716
+    second: Demon dead_43
+  - first:
+      213: -2043060759529914290
+    second: Demon dead_44
+  - first:
+      213: -885541772349088449
+    second: Demon dead_45
+  - first:
+      213: -8635346144392013512
+    second: Demon dead_46
+  - first:
+      213: 2068834706638304138
+    second: Demon dead_47
+  - first:
+      213: 6094835701234796122
+    second: Demon dead_48
+  - first:
+      213: -4269335472607187395
+    second: Demon dead_49
+  - first:
+      213: 2396716760178864115
+    second: Demon dead_50
+  - first:
+      213: 526616519043389688
+    second: Demon dead_51
+  - first:
+      213: 3476752501970094251
+    second: Demon dead_52
+  - first:
+      213: -1729583839001473702
+    second: Demon dead_53
+  - first:
+      213: 5896830027147573426
+    second: Demon dead_54
+  - first:
+      213: 19674913009122695
+    second: Demon dead_55
+  - first:
+      213: 6175220311689050710
+    second: Demon dead_56
+  - first:
+      213: -2351329394931302151
+    second: Demon dead_57
+  - first:
+      213: -2106555066533351273
+    second: Demon dead_58
+  - first:
+      213: 730804766228113592
+    second: Demon dead_59
+  - first:
+      213: 1237248454313193685
+    second: Demon dead_60
+  - first:
+      213: -2153225106779765547
+    second: Demon dead_61
+  - first:
+      213: -5979433497000991813
+    second: Demon dead_62
+  - first:
+      213: -6833674902914292187
+    second: Demon dead_63
+  - first:
+      213: -2429931440572328591
+    second: Demon dead_64
+  - first:
+      213: -7769727320827073487
+    second: Demon dead_65
+  - first:
+      213: -6795113983796228863
+    second: Demon dead_66
+  - first:
+      213: -3869992693827316840
+    second: Demon dead_67
+  - first:
+      213: -6998620736956140329
+    second: Demon dead_68
+  - first:
+      213: -7908011797711048057
+    second: Demon dead_69
+  - first:
+      213: -6707897441743719825
+    second: Demon dead_70
+  - first:
+      213: -3231810263389501638
+    second: Demon dead_71
+  - first:
+      213: -2161523379461462591
+    second: Demon dead_72
+  - first:
+      213: -7761634213411252689
+    second: Demon dead_73
+  - first:
+      213: 6968720797562498995
+    second: Demon dead_74
+  - first:
+      213: 8261462378167422707
+    second: Demon dead_75
+  - first:
+      213: -8870002556841293274
+    second: Demon dead_76
+  - first:
+      213: 8223956573751319764
+    second: Demon dead_77
+  - first:
+      213: -2333978371537032429
+    second: Demon dead_78
+  - first:
+      213: -8428638998824362178
+    second: Demon dead_79
+  - first:
+      213: -8673584368481822759
+    second: Demon dead_80
+  - first:
+      213: -8820551570399116987
+    second: Demon dead_81
+  - first:
+      213: -6679196410588860066
+    second: Demon dead_82
+  - first:
+      213: -6550042713795917993
+    second: Demon dead_83
+  - first:
+      213: -4186596380663235648
+    second: Demon dead_84
+  - first:
+      213: -374173978832642650
+    second: Demon dead_85
+  - first:
+      213: 7916060176020256461
+    second: Demon dead_86
+  - first:
+      213: -4203550830058574584
+    second: Demon dead_87
+  - first:
+      213: 2762396413178230064
+    second: Demon dead_88
+  - first:
+      213: -7280937083145503554
+    second: Demon dead_89
+  - first:
+      213: 7734032719551549863
+    second: Demon dead_90
+  - first:
+      213: -9001822712720849634
+    second: Demon dead_91
+  - first:
+      213: -4640073237880862562
+    second: Demon dead_92
+  - first:
+      213: 1582446964000795734
+    second: Demon dead_93
+  - first:
+      213: -8998137745457543297
+    second: Demon dead_94
+  - first:
+      213: 4597613830698548297
+    second: Demon dead_95
+  - first:
+      213: 1520318351071738788
+    second: Demon dead_96
+  - first:
+      213: 2646326985829720968
+    second: Demon dead_97
+  - first:
+      213: -4778792813587633640
+    second: Demon dead_98
+  - first:
+      213: -4621394989915788440
+    second: Demon dead_99
+  - first:
+      213: -229824503184152384
+    second: Demon dead_100
+  - first:
+      213: -7006787579504917986
+    second: Demon dead_101
+  - first:
+      213: -7697955509991198312
+    second: Demon dead_102
+  - first:
+      213: -5840496018462445371
+    second: Demon dead_103
+  - first:
+      213: 1958963255350243291
+    second: Demon dead_104
+  - first:
+      213: 6488594639840366243
+    second: Demon dead_105
+  - first:
+      213: 5654510375940409282
+    second: Demon dead_106
+  - first:
+      213: -8710831523143463843
+    second: Demon dead_107
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Demon dead_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2240
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be2499c577a718b30800000000000000
+      internalID: 4287842973306667755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon dead_1
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 2240
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad80fc99a9eb2daa0800000000000000
+      internalID: -6137633770937841446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon dead_2
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 2240
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fef5860cd27002e40800000000000000
+      internalID: 5629507427296108527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon dead_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1920
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bc38a93e62f10330800000000000000
+      internalID: 3675485326138686644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon dead_4
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 1920
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2d5048b608555510800000000000000
+      internalID: 1537231633701166380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon dead_5
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 1920
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1490b0a31dd16ff0800000000000000
+      internalID: -44511444926950372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon dead_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1600
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77206b83b52f77a30800000000000000
+      internalID: 4213102450035786359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon dead_7
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 1600
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc74733581c0a5750800000000000000
+      internalID: 6294356727818569675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon dead_8
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 1600
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f805c20f032e6a240800000000000000
+      internalID: 4802774752452956303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon dead_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1280
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d19f5d77dbdcb65c0800000000000000
+      internalID: -4221054012086683363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon dead_10
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 1280
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85292ceac223e56e0800000000000000
+      internalID: -1846983629683387816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon dead_11
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 1280
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efc1782090cd3ed60800000000000000
+      internalID: 7918414501102689534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon dead_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b56106c27aee8cf0800000000000000
+      internalID: -248003150789646924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon dead_13
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 960
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ac70ee61104f9150800000000000000
+      internalID: 5881490081987984545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon dead_14
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 960
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1d3909f3858dfbd0800000000000000
+      internalID: -2594771008430195428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon dead_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 805e6629775b18c40800000000000000
+      internalID: 5512886944040150280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon dead_16
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 640
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f01f49a8e7a8271f0800000000000000
+      internalID: -1048623487128375025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon dead_17
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 640
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0293bae665bd10080800000000000000
+      internalID: -9222849397607679712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon dead_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e6f45a9042a731c0800000000000000
+      internalID: -4523968902319507738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon dead_19
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 320
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c7f7d5cfc2190970800000000000000
+      internalID: 8721522836966471617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon dead_20
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 320
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f589e0b1a2d73f10800000000000000
+      internalID: 2249498130794513907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon dead_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ea4099ae79a971b0800000000000000
+      internalID: -5658305095338538270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b7ef7c2abfb36544897c3890814e262e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Demon dead_0: 4287842973306667755
+      Demon dead_1: -6137633770937841446
+      Demon dead_10: -1846983629683387816
+      Demon dead_11: 7918414501102689534
+      Demon dead_12: -248003150789646924
+      Demon dead_13: 5881490081987984545
+      Demon dead_14: -2594771008430195428
+      Demon dead_15: 5512886944040150280
+      Demon dead_16: -1048623487128375025
+      Demon dead_17: -9222849397607679712
+      Demon dead_18: -4523968902319507738
+      Demon dead_19: 8721522836966471617
+      Demon dead_2: 5629507427296108527
+      Demon dead_20: 2249498130794513907
+      Demon dead_21: -5658305095338538270
+      Demon dead_3: 3675485326138686644
+      Demon dead_4: 1537231633701166380
+      Demon dead_5: -44511444926950372
+      Demon dead_6: 4213102450035786359
+      Demon dead_7: 6294356727818569675
+      Demon dead_8: 4802774752452956303
+      Demon dead_9: -4221054012086683363
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,1192 @@
+fileFormatVersion: 2
+guid: 2f55bad54eb595545ba4906ab293ede1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5768937882100181611
+    second: Demon fireblast_0
+  - first:
+      213: -432577142912702828
+    second: Demon fireblast_1
+  - first:
+      213: 2445529006019317490
+    second: Demon fireblast_2
+  - first:
+      213: 2349546957684764102
+    second: Demon fireblast_3
+  - first:
+      213: -3820221665739596440
+    second: Demon fireblast_4
+  - first:
+      213: -3732145093708819068
+    second: Demon fireblast_5
+  - first:
+      213: 219967654985433861
+    second: Demon fireblast_6
+  - first:
+      213: -3205676197262943532
+    second: Demon fireblast_7
+  - first:
+      213: 4403311300846090306
+    second: Demon fireblast_8
+  - first:
+      213: 507255736478864256
+    second: Demon fireblast_9
+  - first:
+      213: 8555673503977668791
+    second: Demon fireblast_10
+  - first:
+      213: 7507311854964995128
+    second: Demon fireblast_11
+  - first:
+      213: 4629321609512872906
+    second: Demon fireblast_12
+  - first:
+      213: 5671736839965610594
+    second: Demon fireblast_13
+  - first:
+      213: 4203365737749843842
+    second: Demon fireblast_14
+  - first:
+      213: -4864027025774308391
+    second: Demon fireblast_15
+  - first:
+      213: -8011399715849605915
+    second: Demon fireblast_16
+  - first:
+      213: 3869012794416610508
+    second: Demon fireblast_17
+  - first:
+      213: 5778467390957509999
+    second: Demon fireblast_18
+  - first:
+      213: -8093223162328938111
+    second: Demon fireblast_19
+  - first:
+      213: -5614238930288159413
+    second: Demon fireblast_20
+  - first:
+      213: 4861651987821470910
+    second: Demon fireblast_21
+  - first:
+      213: 2417904838624086192
+    second: Demon fireblast_22
+  - first:
+      213: -8109307939345014426
+    second: Demon fireblast_23
+  - first:
+      213: 1725123024145122809
+    second: Demon fireblast_24
+  - first:
+      213: -7263635068020925436
+    second: Demon fireblast_25
+  - first:
+      213: 3362183526117763492
+    second: Demon fireblast_26
+  - first:
+      213: -1537671359630752035
+    second: Demon fireblast_27
+  - first:
+      213: 4679208552293942055
+    second: Demon fireblast_28
+  - first:
+      213: -6696526053595895695
+    second: Demon fireblast_29
+  - first:
+      213: 4468724614018850828
+    second: Demon fireblast_30
+  - first:
+      213: 7868508429049671987
+    second: Demon fireblast_31
+  - first:
+      213: 4212128353973480996
+    second: Demon fireblast_32
+  - first:
+      213: -2691123292923037575
+    second: Demon fireblast_33
+  - first:
+      213: 739825304514426272
+    second: Demon fireblast_34
+  - first:
+      213: -3177642520909815257
+    second: Demon fireblast_35
+  - first:
+      213: -4912384134963288774
+    second: Demon fireblast_36
+  - first:
+      213: 6340308275462654314
+    second: Demon fireblast_37
+  - first:
+      213: -3581147762764422948
+    second: Demon fireblast_38
+  - first:
+      213: 761121354193885798
+    second: Demon fireblast_39
+  - first:
+      213: -9201904317518889731
+    second: Demon fireblast_40
+  - first:
+      213: -2461706829368356765
+    second: Demon fireblast_41
+  - first:
+      213: -2529481570938944595
+    second: Demon fireblast_42
+  - first:
+      213: 5929528158522947377
+    second: Demon fireblast_43
+  - first:
+      213: -2201219893090563443
+    second: Demon fireblast_44
+  - first:
+      213: -2267093495694744295
+    second: Demon fireblast_45
+  - first:
+      213: 1670384012042208566
+    second: Demon fireblast_46
+  - first:
+      213: -4113268394938456552
+    second: Demon fireblast_47
+  - first:
+      213: -6172882189021662921
+    second: Demon fireblast_48
+  - first:
+      213: -7402769803107170244
+    second: Demon fireblast_49
+  - first:
+      213: 1248506836860896578
+    second: Demon fireblast_50
+  - first:
+      213: -5246195173238107464
+    second: Demon fireblast_51
+  - first:
+      213: -395887357111877492
+    second: Demon fireblast_52
+  - first:
+      213: 4170343429565545163
+    second: Demon fireblast_53
+  - first:
+      213: 8370285050782263653
+    second: Demon fireblast_54
+  - first:
+      213: -5513562667734336298
+    second: Demon fireblast_55
+  - first:
+      213: -8675706677598052020
+    second: Demon fireblast_56
+  - first:
+      213: -3264458789897268172
+    second: Demon fireblast_57
+  - first:
+      213: 5065019726734230368
+    second: Demon fireblast_58
+  - first:
+      213: 6677901252169664636
+    second: Demon fireblast_59
+  - first:
+      213: 245200892644080610
+    second: Demon fireblast_60
+  - first:
+      213: -1423568565447723895
+    second: Demon fireblast_61
+  - first:
+      213: -533593644302093717
+    second: Demon fireblast_62
+  - first:
+      213: -6635138143823920430
+    second: Demon fireblast_63
+  - first:
+      213: 647697450140820390
+    second: Demon fireblast_64
+  - first:
+      213: -7392808526547145569
+    second: Demon fireblast_65
+  - first:
+      213: 4246496625323628585
+    second: Demon fireblast_66
+  - first:
+      213: 5614528457455475536
+    second: Demon fireblast_67
+  - first:
+      213: 1741205444782153450
+    second: Demon fireblast_68
+  - first:
+      213: -2650918869609131391
+    second: Demon fireblast_69
+  - first:
+      213: -3911739650307525940
+    second: Demon fireblast_70
+  - first:
+      213: -3779843665066415701
+    second: Demon fireblast_71
+  - first:
+      213: 1584372549036186809
+    second: Demon fireblast_72
+  - first:
+      213: 8651500119454350139
+    second: Demon fireblast_73
+  - first:
+      213: -2696006868227895246
+    second: Demon fireblast_74
+  - first:
+      213: 1699555578443488176
+    second: Demon fireblast_75
+  - first:
+      213: 3006128363811519415
+    second: Demon fireblast_76
+  - first:
+      213: -3085154481605839039
+    second: Demon fireblast_77
+  - first:
+      213: -1030071689993299568
+    second: Demon fireblast_78
+  - first:
+      213: -2612181786055319903
+    second: Demon fireblast_79
+  - first:
+      213: 3407933650717226811
+    second: Demon fireblast_80
+  - first:
+      213: 432406429104191323
+    second: Demon fireblast_81
+  - first:
+      213: -1483157860065414608
+    second: Demon fireblast_82
+  - first:
+      213: -1007535556811853463
+    second: Demon fireblast_83
+  - first:
+      213: 1601974197085241023
+    second: Demon fireblast_84
+  - first:
+      213: 5445751537130662541
+    second: Demon fireblast_85
+  - first:
+      213: -4524390345622988952
+    second: Demon fireblast_86
+  - first:
+      213: 4496528778922017074
+    second: Demon fireblast_87
+  - first:
+      213: -9098458234538863488
+    second: Demon fireblast_88
+  - first:
+      213: -297081974566568346
+    second: Demon fireblast_89
+  - first:
+      213: 3511579575083097729
+    second: Demon fireblast_90
+  - first:
+      213: -7080988951276838026
+    second: Demon fireblast_91
+  - first:
+      213: -74865631506504022
+    second: Demon fireblast_92
+  - first:
+      213: 3031481093037051202
+    second: Demon fireblast_93
+  - first:
+      213: 6887258169079614628
+    second: Demon fireblast_94
+  - first:
+      213: -126896587958208377
+    second: Demon fireblast_95
+  - first:
+      213: 3987744763558945707
+    second: Demon fireblast_96
+  - first:
+      213: -8336934546980203102
+    second: Demon fireblast_97
+  - first:
+      213: 3641833299120130972
+    second: Demon fireblast_98
+  - first:
+      213: -4911657593442634273
+    second: Demon fireblast_99
+  - first:
+      213: 8237383278523314160
+    second: Demon fireblast_100
+  - first:
+      213: -3172381740574303071
+    second: Demon fireblast_101
+  - first:
+      213: -2008901910893715557
+    second: Demon fireblast_102
+  - first:
+      213: 9163025681942356491
+    second: Demon fireblast_103
+  - first:
+      213: 6623678571620825337
+    second: Demon fireblast_104
+  - first:
+      213: -9168944955323171071
+    second: Demon fireblast_105
+  - first:
+      213: 4483292649267921871
+    second: Demon fireblast_106
+  - first:
+      213: -169261367019792349
+    second: Demon fireblast_107
+  - first:
+      213: 606336651348548947
+    second: Demon fireblast_108
+  - first:
+      213: -290768729315465562
+    second: Demon fireblast_109
+  - first:
+      213: -585066937539254177
+    second: Demon fireblast_110
+  - first:
+      213: -5501929872914083242
+    second: Demon fireblast_111
+  - first:
+      213: 6196499083485360129
+    second: Demon fireblast_112
+  - first:
+      213: -4892919790291775985
+    second: Demon fireblast_113
+  - first:
+      213: -6247450463339353780
+    second: Demon fireblast_114
+  - first:
+      213: 3026068870354736834
+    second: Demon fireblast_115
+  - first:
+      213: -1177904256860948584
+    second: Demon fireblast_116
+  - first:
+      213: -4889068544419989047
+    second: Demon fireblast_117
+  - first:
+      213: -1593056384548746615
+    second: Demon fireblast_118
+  - first:
+      213: -6186933610183940321
+    second: Demon fireblast_119
+  - first:
+      213: -3349232848012165070
+    second: Demon fireblast_120
+  - first:
+      213: -3587958050107230105
+    second: Demon fireblast_121
+  - first:
+      213: -7427072671320390504
+    second: Demon fireblast_122
+  - first:
+      213: -6559846851436927583
+    second: Demon fireblast_123
+  - first:
+      213: -6043175056951049334
+    second: Demon fireblast_124
+  - first:
+      213: -8131391852376050304
+    second: Demon fireblast_125
+  - first:
+      213: -6682778416214612283
+    second: Demon fireblast_126
+  - first:
+      213: 3884296861920713985
+    second: Demon fireblast_127
+  - first:
+      213: -4280193720142107245
+    second: Demon fireblast_128
+  - first:
+      213: 3764871231737951275
+    second: Demon fireblast_129
+  - first:
+      213: 4706609075523989872
+    second: Demon fireblast_130
+  - first:
+      213: -1824922906427142863
+    second: Demon fireblast_131
+  - first:
+      213: -5029291303475702047
+    second: Demon fireblast_132
+  - first:
+      213: -1603026356093784414
+    second: Demon fireblast_133
+  - first:
+      213: -4516272157763529895
+    second: Demon fireblast_134
+  - first:
+      213: 1659714464707690327
+    second: Demon fireblast_135
+  - first:
+      213: -7976642870503726228
+    second: Demon fireblast_136
+  - first:
+      213: -5773820454989215260
+    second: Demon fireblast_137
+  - first:
+      213: -7375516115148640622
+    second: Demon fireblast_138
+  - first:
+      213: -7923097807702456204
+    second: Demon fireblast_139
+  - first:
+      213: 5346721824933729275
+    second: Demon fireblast_140
+  - first:
+      213: -1566511966691561252
+    second: Demon fireblast_141
+  - first:
+      213: -970500218144131186
+    second: Demon fireblast_142
+  - first:
+      213: -2765918324916918176
+    second: Demon fireblast_143
+  - first:
+      213: -8883594113733107442
+    second: Demon fireblast_144
+  - first:
+      213: 8063933788548958277
+    second: Demon fireblast_145
+  - first:
+      213: 902048995446902228
+    second: Demon fireblast_146
+  - first:
+      213: -4350872020778535741
+    second: Demon fireblast_147
+  - first:
+      213: 400897202168828822
+    second: Demon fireblast_148
+  - first:
+      213: -8447146537511801753
+    second: Demon fireblast_149
+  - first:
+      213: 4097703367040901396
+    second: Demon fireblast_150
+  - first:
+      213: 7918315345584465278
+    second: Demon fireblast_151
+  - first:
+      213: 8983450534117865691
+    second: Demon fireblast_152
+  - first:
+      213: 5628974344716499080
+    second: Demon fireblast_153
+  - first:
+      213: -8112283575178428829
+    second: Demon fireblast_154
+  - first:
+      213: 2171160306876280183
+    second: Demon fireblast_155
+  - first:
+      213: -3101672209802038045
+    second: Demon fireblast_156
+  - first:
+      213: 2367115095622831779
+    second: Demon fireblast_157
+  - first:
+      213: 894123974302900822
+    second: Demon fireblast_158
+  - first:
+      213: -8841963182389630575
+    second: Demon fireblast_159
+  - first:
+      213: 3117275677240394356
+    second: Demon fireblast_160
+  - first:
+      213: -3588361373926932508
+    second: Demon fireblast_161
+  - first:
+      213: 1762574805360279488
+    second: Demon fireblast_162
+  - first:
+      213: 3992686125653660495
+    second: Demon fireblast_163
+  - first:
+      213: -8042819086833220936
+    second: Demon fireblast_164
+  - first:
+      213: -539209570661461958
+    second: Demon fireblast_165
+  - first:
+      213: -5116266842101083117
+    second: Demon fireblast_166
+  - first:
+      213: 5233609568938808863
+    second: Demon fireblast_167
+  - first:
+      213: -1766755078135060571
+    second: Demon fireblast_168
+  - first:
+      213: 5466436980843359590
+    second: Demon fireblast_169
+  - first:
+      213: -7009486570892444971
+    second: Demon fireblast_170
+  - first:
+      213: 9176336722260690293
+    second: Demon fireblast_171
+  - first:
+      213: 234069778201025967
+    second: Demon fireblast_172
+  - first:
+      213: -6098669286424753003
+    second: Demon fireblast_173
+  - first:
+      213: -1119138493568853168
+    second: Demon fireblast_174
+  - first:
+      213: -4453956773091818768
+    second: Demon fireblast_175
+  - first:
+      213: -6055527561990388320
+    second: Demon fireblast_176
+  - first:
+      213: -2170633562837483063
+    second: Demon fireblast_177
+  - first:
+      213: 3432423792518776916
+    second: Demon fireblast_178
+  - first:
+      213: -4683998217694328621
+    second: Demon fireblast_179
+  - first:
+      213: 2801561430181014178
+    second: Demon fireblast_180
+  - first:
+      213: -6024599824643648357
+    second: Demon fireblast_181
+  - first:
+      213: 6939023595626639394
+    second: Demon fireblast_182
+  - first:
+      213: 7037206389429631767
+    second: Demon fireblast_183
+  - first:
+      213: 4604730208854314354
+    second: Demon fireblast_184
+  - first:
+      213: 4474457912191214312
+    second: Demon fireblast_185
+  - first:
+      213: 2656547440685958333
+    second: Demon fireblast_186
+  - first:
+      213: 4947326950491162250
+    second: Demon fireblast_187
+  - first:
+      213: 2583130681637814500
+    second: Demon fireblast_188
+  - first:
+      213: 943678664169838022
+    second: Demon fireblast_189
+  - first:
+      213: -3453152444431169375
+    second: Demon fireblast_190
+  - first:
+      213: 299299305008743676
+    second: Demon fireblast_191
+  - first:
+      213: 663831230184480590
+    second: Demon fireblast_192
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Demon fireblast_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1920
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 595df16bf8d90ffa0800000000000000
+      internalID: -5768937882100181611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon fireblast_1
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 1920
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4962cb2616d2ff9f0800000000000000
+      internalID: -432577142912702828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon fireblast_2
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 1920
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fe02bb8ca340f120800000000000000
+      internalID: 2445529006019317490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon fireblast_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1600
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cd66e372844b9020800000000000000
+      internalID: 2349546957684764102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon fireblast_4
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 1600
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86d175aa2a8dbfac0800000000000000
+      internalID: -3820221665739596440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon fireblast_5
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 1600
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 485d44f9fc1c43cc0800000000000000
+      internalID: -3732145093708819068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon fireblast_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1280
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5038b71ba6b7d0300800000000000000
+      internalID: 219967654985433861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon fireblast_7
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 1280
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4da9735ab762383d0800000000000000
+      internalID: -3205676197262943532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon fireblast_8
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 1280
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 248f4626c44bb1d30800000000000000
+      internalID: 4403311300846090306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon fireblast_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0831a1f97622a0700800000000000000
+      internalID: 507255736478864256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon fireblast_10
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 960
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b08fc2d8bbdbb670800000000000000
+      internalID: 8555673503977668791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon fireblast_11
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 960
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 834744d4b545f2860800000000000000
+      internalID: 7507311854964995128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon fireblast_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acbed060a77ae3040800000000000000
+      internalID: 4629321609512872906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon fireblast_13
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 640
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26295a51b9e06be40800000000000000
+      internalID: 5671736839965610594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon fireblast_14
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 640
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28f80ab3eda555a30800000000000000
+      internalID: 4203365737749843842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon fireblast_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d392d6d0318f7cb0800000000000000
+      internalID: -4864027025774308391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon fireblast_16
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 320
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ec6e17976ac1d090800000000000000
+      internalID: -8011399715849605915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon fireblast_17
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 320
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cccb4aa33ae71b530800000000000000
+      internalID: 3869012794416610508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon fireblast_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6d5338f97d313050800000000000000
+      internalID: 5778467390957509999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon fireblast_19
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1898b61e9681faf80800000000000000
+      internalID: -8093223162328938111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon fireblast_20
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b45510c30773612b0800000000000000
+      internalID: -5614238930288159413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c0e6d00c01640ef42905df83acb6e582
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Demon fireblast_0: -5768937882100181611
+      Demon fireblast_1: -432577142912702828
+      Demon fireblast_10: 8555673503977668791
+      Demon fireblast_11: 7507311854964995128
+      Demon fireblast_12: 4629321609512872906
+      Demon fireblast_13: 5671736839965610594
+      Demon fireblast_14: 4203365737749843842
+      Demon fireblast_15: -4864027025774308391
+      Demon fireblast_16: -8011399715849605915
+      Demon fireblast_17: 3869012794416610508
+      Demon fireblast_18: 5778467390957509999
+      Demon fireblast_19: -8093223162328938111
+      Demon fireblast_2: 2445529006019317490
+      Demon fireblast_20: -5614238930288159413
+      Demon fireblast_3: 2349546957684764102
+      Demon fireblast_4: -3820221665739596440
+      Demon fireblast_5: -3732145093708819068
+      Demon fireblast_6: 219967654985433861
+      Demon fireblast_7: -3205676197262943532
+      Demon fireblast_8: 4403311300846090306
+      Demon fireblast_9: 507255736478864256
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

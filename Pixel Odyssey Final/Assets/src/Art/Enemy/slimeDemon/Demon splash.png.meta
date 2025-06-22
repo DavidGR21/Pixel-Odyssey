@@ -1,0 +1,916 @@
+fileFormatVersion: 2
+guid: 4cd30cec585914b488a7e94f1e383e21
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9162760363275188830
+    second: Demon splash_0
+  - first:
+      213: -2962420685732656278
+    second: Demon splash_1
+  - first:
+      213: 3502062192210814692
+    second: Demon splash_2
+  - first:
+      213: 2185352113228843755
+    second: Demon splash_3
+  - first:
+      213: 8201248417085053304
+    second: Demon splash_4
+  - first:
+      213: -3206718618644484791
+    second: Demon splash_5
+  - first:
+      213: 8896392250991810808
+    second: Demon splash_6
+  - first:
+      213: -5652375737792937328
+    second: Demon splash_7
+  - first:
+      213: -732858469603046382
+    second: Demon splash_8
+  - first:
+      213: -6520210678724123917
+    second: Demon splash_9
+  - first:
+      213: -6402717104788770252
+    second: Demon splash_10
+  - first:
+      213: -9193017149903123527
+    second: Demon splash_11
+  - first:
+      213: -4632730933036850381
+    second: Demon splash_12
+  - first:
+      213: -2430275175297042964
+    second: Demon splash_13
+  - first:
+      213: 509164783990714275
+    second: Demon splash_14
+  - first:
+      213: -7646137821938449052
+    second: Demon splash_15
+  - first:
+      213: 6496680660745019295
+    second: Demon splash_16
+  - first:
+      213: 3045647228992131015
+    second: Demon splash_17
+  - first:
+      213: -6365896738681538971
+    second: Demon splash_18
+  - first:
+      213: 6455740377603064633
+    second: Demon splash_19
+  - first:
+      213: 7095605666932470884
+    second: Demon splash_20
+  - first:
+      213: 607612783038195522
+    second: Demon splash_21
+  - first:
+      213: -3474315951277697504
+    second: Demon splash_22
+  - first:
+      213: 1656529519294013894
+    second: Demon splash_23
+  - first:
+      213: 8774766788468990368
+    second: Demon splash_24
+  - first:
+      213: -6301445407374663950
+    second: Demon splash_25
+  - first:
+      213: 3520807645448620309
+    second: Demon splash_26
+  - first:
+      213: 2557026607231650497
+    second: Demon splash_27
+  - first:
+      213: -5429056655912494607
+    second: Demon splash_28
+  - first:
+      213: 5735832198050877079
+    second: Demon splash_29
+  - first:
+      213: -8480152947356327364
+    second: Demon splash_30
+  - first:
+      213: -2728455652778923774
+    second: Demon splash_31
+  - first:
+      213: -1501030569624968125
+    second: Demon splash_32
+  - first:
+      213: 6742060915945239371
+    second: Demon splash_33
+  - first:
+      213: 507630228801191747
+    second: Demon splash_34
+  - first:
+      213: 345582777299008918
+    second: Demon splash_35
+  - first:
+      213: -3539472922955740472
+    second: Demon splash_36
+  - first:
+      213: 3749112657407074747
+    second: Demon splash_37
+  - first:
+      213: 5466790812707563634
+    second: Demon splash_38
+  - first:
+      213: -5985713962556147693
+    second: Demon splash_39
+  - first:
+      213: 1206060212355780446
+    second: Demon splash_40
+  - first:
+      213: 7336023116381709793
+    second: Demon splash_41
+  - first:
+      213: -7474266009028318390
+    second: Demon splash_42
+  - first:
+      213: -4530383882757282136
+    second: Demon splash_43
+  - first:
+      213: -1921341614409334857
+    second: Demon splash_44
+  - first:
+      213: 5483791876441258948
+    second: Demon splash_45
+  - first:
+      213: -5344117731220803049
+    second: Demon splash_46
+  - first:
+      213: -358926100742717826
+    second: Demon splash_47
+  - first:
+      213: 5680680351350606073
+    second: Demon splash_48
+  - first:
+      213: 8442171828006921448
+    second: Demon splash_49
+  - first:
+      213: 2782823911783381536
+    second: Demon splash_50
+  - first:
+      213: -538712974042111867
+    second: Demon splash_51
+  - first:
+      213: -6439135489395624284
+    second: Demon splash_52
+  - first:
+      213: 7562755030500611157
+    second: Demon splash_53
+  - first:
+      213: 3670450870080475578
+    second: Demon splash_54
+  - first:
+      213: 2710961824228390962
+    second: Demon splash_55
+  - first:
+      213: -7092114435081869219
+    second: Demon splash_56
+  - first:
+      213: 953901000099031212
+    second: Demon splash_57
+  - first:
+      213: 7557977868096331309
+    second: Demon splash_58
+  - first:
+      213: 3364145683833184738
+    second: Demon splash_59
+  - first:
+      213: -5164492911952947013
+    second: Demon splash_60
+  - first:
+      213: 8233027167884368151
+    second: Demon splash_61
+  - first:
+      213: -7054507697215000889
+    second: Demon splash_62
+  - first:
+      213: 2743056326009877662
+    second: Demon splash_63
+  - first:
+      213: 5288242406058355358
+    second: Demon splash_64
+  - first:
+      213: -5941290376562288183
+    second: Demon splash_65
+  - first:
+      213: 7588284392879690357
+    second: Demon splash_66
+  - first:
+      213: -5271882398919766713
+    second: Demon splash_67
+  - first:
+      213: -2387247410776469916
+    second: Demon splash_68
+  - first:
+      213: 6481931079213198563
+    second: Demon splash_69
+  - first:
+      213: -3924802084453295550
+    second: Demon splash_70
+  - first:
+      213: 3711873630983924533
+    second: Demon splash_71
+  - first:
+      213: -5165579113015048396
+    second: Demon splash_72
+  - first:
+      213: -7143106374504370086
+    second: Demon splash_73
+  - first:
+      213: -1298016826525482509
+    second: Demon splash_74
+  - first:
+      213: 5432730184170013863
+    second: Demon splash_75
+  - first:
+      213: -2177630820723524381
+    second: Demon splash_76
+  - first:
+      213: 8276546365154476117
+    second: Demon splash_77
+  - first:
+      213: -7700927316869865578
+    second: Demon splash_78
+  - first:
+      213: 5914249213964286187
+    second: Demon splash_79
+  - first:
+      213: -4190101019280181434
+    second: Demon splash_80
+  - first:
+      213: 3760351678754623055
+    second: Demon splash_81
+  - first:
+      213: 4218192265550180006
+    second: Demon splash_82
+  - first:
+      213: 6113879506762698329
+    second: Demon splash_83
+  - first:
+      213: 4779873084414627851
+    second: Demon splash_84
+  - first:
+      213: -8654172441909454439
+    second: Demon splash_85
+  - first:
+      213: 5983401540315024130
+    second: Demon splash_86
+  - first:
+      213: 1337150963920261978
+    second: Demon splash_87
+  - first:
+      213: 2711658247261245484
+    second: Demon splash_88
+  - first:
+      213: -9180923422917183501
+    second: Demon splash_89
+  - first:
+      213: 8498822603362252507
+    second: Demon splash_90
+  - first:
+      213: -5594374371992039129
+    second: Demon splash_91
+  - first:
+      213: -8833563211278687368
+    second: Demon splash_92
+  - first:
+      213: 720510298794642504
+    second: Demon splash_93
+  - first:
+      213: 593172796050246261
+    second: Demon splash_94
+  - first:
+      213: -5307158887606711956
+    second: Demon splash_95
+  - first:
+      213: -4655585061923177827
+    second: Demon splash_96
+  - first:
+      213: 4521969534022449049
+    second: Demon splash_97
+  - first:
+      213: 359341362642892954
+    second: Demon splash_98
+  - first:
+      213: 2339408200144574772
+    second: Demon splash_99
+  - first:
+      213: -1188992987601196904
+    second: Demon splash_100
+  - first:
+      213: -8157932224566997755
+    second: Demon splash_101
+  - first:
+      213: 7023957728068554274
+    second: Demon splash_102
+  - first:
+      213: 8475553879021569308
+    second: Demon splash_103
+  - first:
+      213: 1283663769964005711
+    second: Demon splash_104
+  - first:
+      213: 3795693291825566476
+    second: Demon splash_105
+  - first:
+      213: 564789577102993954
+    second: Demon splash_106
+  - first:
+      213: 8062893454964996252
+    second: Demon splash_107
+  - first:
+      213: 8240136558314263288
+    second: Demon splash_108
+  - first:
+      213: -6872379321618685956
+    second: Demon splash_109
+  - first:
+      213: 2080072038773140753
+    second: Demon splash_110
+  - first:
+      213: 983478006848773451
+    second: Demon splash_111
+  - first:
+      213: -2790237148351343661
+    second: Demon splash_112
+  - first:
+      213: 7125511873583993935
+    second: Demon splash_113
+  - first:
+      213: 2876769689507251924
+    second: Demon splash_114
+  - first:
+      213: -8169230649893020116
+    second: Demon splash_115
+  - first:
+      213: 6848734312991548694
+    second: Demon splash_116
+  - first:
+      213: -4155148381048251896
+    second: Demon splash_117
+  - first:
+      213: -2973607567114918907
+    second: Demon splash_118
+  - first:
+      213: 6892093305625920248
+    second: Demon splash_119
+  - first:
+      213: 510262173193652941
+    second: Demon splash_120
+  - first:
+      213: -1834154468842735409
+    second: Demon splash_121
+  - first:
+      213: 2444618566323251684
+    second: Demon splash_122
+  - first:
+      213: 780585285635629859
+    second: Demon splash_123
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Demon splash_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1600
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5afb07010aa82f70800000000000000
+      internalID: 9162760363275188830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon splash_1
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 1600
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6bc2a7f41e53e6d0800000000000000
+      internalID: -2962420685732656278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon splash_2
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 1600
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e62d045203d99030800000000000000
+      internalID: 3502062192210814692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon splash_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1280
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bea87222b2ee35e10800000000000000
+      internalID: 2185352113228843755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon splash_4
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 1280
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 879d617bbffa0d170800000000000000
+      internalID: 8201248417085053304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon splash_5
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 1280
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94d601108627f73d0800000000000000
+      internalID: -3206718618644484791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon splash_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f897eefd95567b70800000000000000
+      internalID: 8896392250991810808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon splash_7
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 960
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 092c0dbc63abe81b0800000000000000
+      internalID: -5652375737792937328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon splash_8
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 960
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21c8ca0da1d54d5f0800000000000000
+      internalID: -732858469603046382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon splash_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f2a0f9eeee8385a0800000000000000
+      internalID: -6520210678724123917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon splash_10
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 640
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4327fbb57baf427a0800000000000000
+      internalID: -6402717104788770252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon splash_11
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 640
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bb43fddb97db6080800000000000000
+      internalID: -9193017149903123527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon splash_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 333ef5cf2cb35bfb0800000000000000
+      internalID: -4632730933036850381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon splash_13
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 320
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce538fdaa9de54ed0800000000000000
+      internalID: -2430275175297042964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon splash_14
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 320
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3afa7e16caae01700800000000000000
+      internalID: 509164783990714275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon splash_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4650ea3792673e590800000000000000
+      internalID: -7646137821938449052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon splash_16
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9f5bdad3a8d82a50800000000000000
+      internalID: 6496680660745019295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon splash_17
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cf8a3ba400544a20800000000000000
+      internalID: 3045647228992131015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 0096ca1189f88304da076d2f35d504e7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Demon splash_0: 9162760363275188830
+      Demon splash_1: -2962420685732656278
+      Demon splash_10: -6402717104788770252
+      Demon splash_11: -9193017149903123527
+      Demon splash_12: -4632730933036850381
+      Demon splash_13: -2430275175297042964
+      Demon splash_14: 509164783990714275
+      Demon splash_15: -7646137821938449052
+      Demon splash_16: 6496680660745019295
+      Demon splash_17: 3045647228992131015
+      Demon splash_2: 3502062192210814692
+      Demon splash_3: 2185352113228843755
+      Demon splash_4: 8201248417085053304
+      Demon splash_5: -3206718618644484791
+      Demon splash_6: 8896392250991810808
+      Demon splash_7: -5652375737792937328
+      Demon splash_8: -732858469603046382
+      Demon splash_9: -6520210678724123917
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
