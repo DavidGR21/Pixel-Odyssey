@@ -1,0 +1,352 @@
+fileFormatVersion: 2
+guid: caa2ba33fdb8b8a49815ef5f6c8bf392
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5086945430956821395
+    second: Demon Idle_0
+  - first:
+      213: 3942856525763780662
+    second: Demon Idle_1
+  - first:
+      213: 7791201263163292457
+    second: Demon Idle_2
+  - first:
+      213: 5548001051426315748
+    second: Demon Idle_3
+  - first:
+      213: -8190874815803837326
+    second: Demon Idle_4
+  - first:
+      213: 6485875840971772667
+    second: Demon Idle_5
+  - first:
+      213: 1238154265360261147
+    second: Demon Idle_6
+  - first:
+      213: -6874171150179713937
+    second: Demon Idle_7
+  - first:
+      213: -7984190416698505806
+    second: Demon Idle_8
+  - first:
+      213: -1196118916838761655
+    second: Demon Idle_9
+  - first:
+      213: -748969479559741885
+    second: Demon Idle_10
+  - first:
+      213: -3103025077110865579
+    second: Demon Idle_11
+  - first:
+      213: 2909619856034924915
+    second: Demon Idle_12
+  - first:
+      213: 8139730453761797857
+    second: Demon Idle_13
+  - first:
+      213: -2289689262276623524
+    second: Demon Idle_14
+  - first:
+      213: 4255555606905751562
+    second: Demon Idle_15
+  - first:
+      213: -3983096746575997092
+    second: Demon Idle_16
+  - first:
+      213: 8119855400066595392
+    second: Demon Idle_17
+  - first:
+      213: 9063149742522900871
+    second: Demon Idle_18
+  - first:
+      213: -8968754787088898113
+    second: Demon Idle_19
+  - first:
+      213: 1859486866480865854
+    second: Demon Idle_20
+  - first:
+      213: 4969960562623370873
+    second: Demon Idle_21
+  - first:
+      213: -6912371439875795263
+    second: Demon Idle_22
+  - first:
+      213: -164004721144631073
+    second: Demon Idle_23
+  - first:
+      213: 7635848260810993113
+    second: Demon Idle_24
+  - first:
+      213: -8234510855107109262
+    second: Demon Idle_25
+  - first:
+      213: 1878791058348973555
+    second: Demon Idle_26
+  - first:
+      213: 1313650821318356271
+    second: Demon Idle_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Demon Idle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39b4afbeae5789640800000000000000
+      internalID: 5086945430956821395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon Idle_1
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 640
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6302b7abe17d7b630800000000000000
+      internalID: 3942856525763780662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon Idle_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92b3c60f448ef1c60800000000000000
+      internalID: 7791201263163292457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon Idle_3
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 320
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ed52cbcf857efc40800000000000000
+      internalID: 5548001051426315748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon Idle_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 274b15c80ca245e80800000000000000
+      internalID: -8190874815803837326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon Idle_5
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf21966b6b5720a50800000000000000
+      internalID: 6485875840971772667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 27d08c89d81e3e34a8b40b21487ca2aa
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Demon Idle_0: 5086945430956821395
+      Demon Idle_1: 3942856525763780662
+      Demon Idle_2: 7791201263163292457
+      Demon Idle_3: 5548001051426315748
+      Demon Idle_4: -8190874815803837326
+      Demon Idle_5: 6485875840971772667
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

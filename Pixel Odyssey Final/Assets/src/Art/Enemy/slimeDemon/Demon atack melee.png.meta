@@ -1,0 +1,742 @@
+fileFormatVersion: 2
+guid: 5b4a6668c17d81048ba71ddc139de84d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 471829108478470348
+    second: Demon atack melee_0
+  - first:
+      213: -8035183604679328476
+    second: Demon atack melee_1
+  - first:
+      213: 8772291448922504473
+    second: Demon atack melee_2
+  - first:
+      213: -480193905570991848
+    second: Demon atack melee_3
+  - first:
+      213: 569121178389913428
+    second: Demon atack melee_4
+  - first:
+      213: -462465420841931748
+    second: Demon atack melee_5
+  - first:
+      213: -3657193482224161805
+    second: Demon atack melee_6
+  - first:
+      213: 3216275752488165732
+    second: Demon atack melee_7
+  - first:
+      213: 3160485563583156697
+    second: Demon atack melee_8
+  - first:
+      213: -889809378238267679
+    second: Demon atack melee_9
+  - first:
+      213: -4004585475572211686
+    second: Demon atack melee_10
+  - first:
+      213: -5802828342616972505
+    second: Demon atack melee_11
+  - first:
+      213: -4158758737677082092
+    second: Demon atack melee_12
+  - first:
+      213: 3494176973723234815
+    second: Demon atack melee_13
+  - first:
+      213: -8126246476858914516
+    second: Demon atack melee_14
+  - first:
+      213: 1083863911581279018
+    second: Demon atack melee_15
+  - first:
+      213: -4012959491877443491
+    second: Demon atack melee_16
+  - first:
+      213: -3126757972480187002
+    second: Demon atack melee_17
+  - first:
+      213: 1530173962450492326
+    second: Demon atack melee_18
+  - first:
+      213: -6445341461702786219
+    second: Demon atack melee_19
+  - first:
+      213: 5623139417421235320
+    second: Demon atack melee_20
+  - first:
+      213: 2815080874806217
+    second: Demon atack melee_21
+  - first:
+      213: 9159635112519514512
+    second: Demon atack melee_22
+  - first:
+      213: 5809706355535643573
+    second: Demon atack melee_23
+  - first:
+      213: 4060955791625677485
+    second: Demon atack melee_24
+  - first:
+      213: 7070378225567472819
+    second: Demon atack melee_25
+  - first:
+      213: 6540131225717639612
+    second: Demon atack melee_26
+  - first:
+      213: 1101241314696966256
+    second: Demon atack melee_27
+  - first:
+      213: 1976527124738749853
+    second: Demon atack melee_28
+  - first:
+      213: -6646649463341091594
+    second: Demon atack melee_29
+  - first:
+      213: 1836914258644855455
+    second: Demon atack melee_30
+  - first:
+      213: -7747386976674725682
+    second: Demon atack melee_31
+  - first:
+      213: -1684765415788761862
+    second: Demon atack melee_32
+  - first:
+      213: -2536995573308746535
+    second: Demon atack melee_33
+  - first:
+      213: -2188986994330975888
+    second: Demon atack melee_34
+  - first:
+      213: 6183011670251369009
+    second: Demon atack melee_35
+  - first:
+      213: -1867781591712980717
+    second: Demon atack melee_36
+  - first:
+      213: -8756633173561285920
+    second: Demon atack melee_37
+  - first:
+      213: 6040739121433647488
+    second: Demon atack melee_38
+  - first:
+      213: -3069935972216197877
+    second: Demon atack melee_39
+  - first:
+      213: 5150842120889876256
+    second: Demon atack melee_40
+  - first:
+      213: -6374372462803912585
+    second: Demon atack melee_41
+  - first:
+      213: 5698479171157804457
+    second: Demon atack melee_42
+  - first:
+      213: 1865115017467698657
+    second: Demon atack melee_43
+  - first:
+      213: -4448536812625395887
+    second: Demon atack melee_44
+  - first:
+      213: 1409143314199405362
+    second: Demon atack melee_45
+  - first:
+      213: -1172441338868882225
+    second: Demon atack melee_46
+  - first:
+      213: -399765938927469612
+    second: Demon atack melee_47
+  - first:
+      213: 1007577981569095393
+    second: Demon atack melee_48
+  - first:
+      213: -4133871546727682887
+    second: Demon atack melee_49
+  - first:
+      213: -4279778510417155070
+    second: Demon atack melee_50
+  - first:
+      213: -1302431835878880465
+    second: Demon atack melee_51
+  - first:
+      213: 3215603938278332565
+    second: Demon atack melee_52
+  - first:
+      213: -8986960273892356496
+    second: Demon atack melee_53
+  - first:
+      213: -7434675996375101535
+    second: Demon atack melee_54
+  - first:
+      213: 4844791203676858615
+    second: Demon atack melee_55
+  - first:
+      213: -400921327340352826
+    second: Demon atack melee_56
+  - first:
+      213: -2836950319818974706
+    second: Demon atack melee_57
+  - first:
+      213: -2747962485113210641
+    second: Demon atack melee_58
+  - first:
+      213: 3341094780070136664
+    second: Demon atack melee_59
+  - first:
+      213: 1403495402832230825
+    second: Demon atack melee_60
+  - first:
+      213: -2894286197220202220
+    second: Demon atack melee_61
+  - first:
+      213: 4810955387836196425
+    second: Demon atack melee_62
+  - first:
+      213: 700332489829009935
+    second: Demon atack melee_63
+  - first:
+      213: 2894079437021332899
+    second: Demon atack melee_64
+  - first:
+      213: 7205448541295180826
+    second: Demon atack melee_65
+  - first:
+      213: -6273721439059029587
+    second: Demon atack melee_66
+  - first:
+      213: 5059278104474755129
+    second: Demon atack melee_67
+  - first:
+      213: 3830361947562301743
+    second: Demon atack melee_68
+  - first:
+      213: 6410275859333338105
+    second: Demon atack melee_69
+  - first:
+      213: -4582296024316774375
+    second: Demon atack melee_70
+  - first:
+      213: 7142644781758188336
+    second: Demon atack melee_71
+  - first:
+      213: -119301865346972274
+    second: Demon atack melee_72
+  - first:
+      213: -3311336578557213875
+    second: Demon atack melee_73
+  - first:
+      213: -2298356611021732357
+    second: Demon atack melee_74
+  - first:
+      213: -7433216816176707509
+    second: Demon atack melee_75
+  - first:
+      213: 9186891545482912676
+    second: Demon atack melee_76
+  - first:
+      213: -8039428386527558593
+    second: Demon atack melee_77
+  - first:
+      213: -8326429828990629467
+    second: Demon atack melee_78
+  - first:
+      213: 2121570777562813039
+    second: Demon atack melee_79
+  - first:
+      213: 9212071408078045141
+    second: Demon atack melee_80
+  - first:
+      213: 3650816211661405663
+    second: Demon atack melee_81
+  - first:
+      213: -8196792338776124462
+    second: Demon atack melee_82
+  - first:
+      213: 5055392362851085514
+    second: Demon atack melee_83
+  - first:
+      213: 1033449215359444622
+    second: Demon atack melee_84
+  - first:
+      213: -7819219023221982631
+    second: Demon atack melee_85
+  - first:
+      213: 318144931211319833
+    second: Demon atack melee_86
+  - first:
+      213: 8500541719436779930
+    second: Demon atack melee_87
+  - first:
+      213: 2929787701988713805
+    second: Demon atack melee_88
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Demon atack melee_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1280
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc86c8503164c8600800000000000000
+      internalID: 471829108478470348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon atack melee_1
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 1280
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42dbb02751b4d7090800000000000000
+      internalID: -8035183604679328476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon atack melee_2
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 1280
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91df83f58907db970800000000000000
+      internalID: 8772291448922504473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon atack melee_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8113223ef220659f0800000000000000
+      internalID: -480193905570991848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon atack melee_4
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 960
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45f151842bce5e700800000000000000
+      internalID: 569121178389913428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon atack melee_5
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 960
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1ca0d5662ef499f0800000000000000
+      internalID: -462465420841931748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon atack melee_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fba72197e90f3dc0800000000000000
+      internalID: -3657193482224161805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon atack melee_7
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 640
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46162ce91c182ac20800000000000000
+      internalID: 3216275752488165732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon atack melee_8
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 640
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d1df1700ec4cdb20800000000000000
+      internalID: 3160485563583156697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon atack melee_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1eefb4cb513c6a3f0800000000000000
+      internalID: -889809378238267679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon atack melee_10
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 320
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1064d72abadc68c0800000000000000
+      internalID: -4004585475572211686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon atack melee_11
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 320
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7232fb9fd56387fa0800000000000000
+      internalID: -5802828342616972505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon atack melee_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 412a43e46fe1946c0800000000000000
+      internalID: -4158758737677082092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon atack melee_13
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff17f15d17fcd7030800000000000000
+      internalID: 3494176973723234815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon atack melee_14
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c290e8d42e5c93f80800000000000000
+      internalID: -8126246476858914516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: d31f4b67af4bb214ca0a51e76b24161a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Demon atack melee_0: 471829108478470348
+      Demon atack melee_1: -8035183604679328476
+      Demon atack melee_10: -4004585475572211686
+      Demon atack melee_11: -5802828342616972505
+      Demon atack melee_12: -4158758737677082092
+      Demon atack melee_13: 3494176973723234815
+      Demon atack melee_14: -8126246476858914516
+      Demon atack melee_2: 8772291448922504473
+      Demon atack melee_3: -480193905570991848
+      Demon atack melee_4: 569121178389913428
+      Demon atack melee_5: -462465420841931748
+      Demon atack melee_6: -3657193482224161805
+      Demon atack melee_7: 3216275752488165732
+      Demon atack melee_8: 3160485563583156697
+      Demon atack melee_9: -889809378238267679
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
