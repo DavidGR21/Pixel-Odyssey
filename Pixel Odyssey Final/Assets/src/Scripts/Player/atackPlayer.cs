@@ -64,7 +64,7 @@
                     if (enemyScript != null)
                     {
                         Vector2 knockbackDir = obj.transform.position - transform.position;
-                        enemyScript.TakeDamage(damageAttack, knockbackDir, 5f);
+                        enemyScript.TakeDamage(damageAttack, knockbackDir, 20f);
                         Debug.Log($"Jugador infligió {damageAttack} de daño al enemigo.");
                     }
                 }

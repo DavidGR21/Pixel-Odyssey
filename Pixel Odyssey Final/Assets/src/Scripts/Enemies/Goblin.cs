@@ -26,7 +26,7 @@ public class Goblin : Enemy, IMeleeEnemy
     public float AttackRange => attackRange;
     public int Damage => damage;
     public bool IsAttacking => isAttacking;
-
+    
     public override void Initialize()
     {
         base.Initialize();

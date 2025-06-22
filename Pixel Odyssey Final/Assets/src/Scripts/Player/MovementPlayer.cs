@@ -63,6 +63,25 @@ public class MovementPlayer : MonoBehaviour
         transform.localScale = scale;
     }
 
+    public void BlockPlayerControl(bool block)
+    {
+        canMove = !block;
+        if (attackScript != null)
+        {
+            attackScript.canMove = !block;
+        }
+
+        animator.speed = block ? 0f : 1f;
+
+        if (block)
+        {
+            rb2d.linearVelocity = Vector2.zero; // Detener completamente
+        }
+
+        Debug.Log($"[Jugador] Control {(block ? "bloqueado" : "restablecido")}");
+    }
+
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

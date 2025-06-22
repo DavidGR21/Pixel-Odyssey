@@ -86,14 +86,14 @@ public abstract class Enemy : MonoBehaviour
         if (animator == null)
         {
             Debug.LogError($"[Enemy {gameObject.name}] Animator is null, cannot get hurt animation duration");
-            return 0.8f; // Valor por defecto si no se puede obtener
+            return 0.3f; // Valor por defecto si no se puede obtener
         }
 
         AnimatorController animatorController = animator.runtimeAnimatorController as AnimatorController;
         if (animatorController == null)
         {
             Debug.LogError($"[Enemy {gameObject.name}] AnimatorController not found, using default duration");
-            return 0.8f;
+            return 0.3f;
         }
 
         foreach (var layer in animatorController.layers)
@@ -106,20 +106,20 @@ public abstract class Enemy : MonoBehaviour
                     if (clip != null)
                     {
                         float duration = clip.length / (state.state.speed != 0 ? state.state.speed : 1);
-                        Debug.Log($"[Enemy {gameObject.name}] Hurt animation duration: {duration} seconds (clip length: {clip.length}, speed: {state.state.speed})");
+                        Debug.Log($"[Enemy {gameObject.name}] Hurt an  imation duration: {duration} seconds (clip length: {clip.length}, speed: {state.state.speed})");
                         return duration;
                     }
                     else
                     {
                         Debug.LogWarning($"[Enemy {gameObject.name}] No AnimationClip found for Hurt state, using default duration");
-                        return 0.8f;
+                        return 0.3f;
                     }
                 }
             }
         }
 
         Debug.LogWarning($"[Enemy {gameObject.name}] Hurt state not found in AnimatorController, using default duration");
-        return 0.8f;
+        return 0.3f;
     }
 
     private IEnumerator ResetHurtAnimation(Animator animator)
