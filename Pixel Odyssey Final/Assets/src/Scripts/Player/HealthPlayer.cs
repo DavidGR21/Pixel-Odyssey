@@ -108,8 +108,18 @@ public class HealthPlayer : MonoBehaviour, IHealth
         if (attack != null)
             attack.enabled = false;
 
+
+        // Evitar movimiento horizontal tras la muerte
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero; // Detiene cualquier movimiento actual
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+        }
+
         Destroy(gameObject, 3f);
     }
+
 
     public void Heal(float amount)
     {

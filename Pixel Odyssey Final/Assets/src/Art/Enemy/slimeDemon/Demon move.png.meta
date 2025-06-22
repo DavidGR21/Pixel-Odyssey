@@ -1,0 +1,598 @@
+fileFormatVersion: 2
+guid: 9eb0a73fe8b31f344819361c5928f367
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3842959038322102895
+    second: Demon move_0
+  - first:
+      213: 3018502863581812421
+    second: Demon move_1
+  - first:
+      213: 2060798355614227077
+    second: Demon move_2
+  - first:
+      213: 1150065061978177271
+    second: Demon move_3
+  - first:
+      213: 4083255455588051142
+    second: Demon move_4
+  - first:
+      213: -5954598531262094502
+    second: Demon move_5
+  - first:
+      213: -4593295818103714659
+    second: Demon move_6
+  - first:
+      213: 1650384762456194754
+    second: Demon move_7
+  - first:
+      213: 5967324332456254607
+    second: Demon move_8
+  - first:
+      213: 6928431088775543683
+    second: Demon move_9
+  - first:
+      213: 8926732663615180537
+    second: Demon move_10
+  - first:
+      213: 5569875039330077186
+    second: Demon move_11
+  - first:
+      213: -1275415927848935007
+    second: Demon move_12
+  - first:
+      213: 3938121568654865443
+    second: Demon move_13
+  - first:
+      213: -9131064760526431398
+    second: Demon move_14
+  - first:
+      213: -2596093007930498723
+    second: Demon move_15
+  - first:
+      213: 6595949140074028761
+    second: Demon move_16
+  - first:
+      213: 4591421443660663198
+    second: Demon move_17
+  - first:
+      213: 724822080890143010
+    second: Demon move_18
+  - first:
+      213: 8808334186679533707
+    second: Demon move_19
+  - first:
+      213: -1822903397436468210
+    second: Demon move_20
+  - first:
+      213: 6705697424245828532
+    second: Demon move_21
+  - first:
+      213: 7691147437828369345
+    second: Demon move_22
+  - first:
+      213: 3219397434642627583
+    second: Demon move_23
+  - first:
+      213: 2188713023799575872
+    second: Demon move_24
+  - first:
+      213: -8497554312051248964
+    second: Demon move_25
+  - first:
+      213: 4841486349485803743
+    second: Demon move_26
+  - first:
+      213: 7952378966968117969
+    second: Demon move_27
+  - first:
+      213: -2881743651973531226
+    second: Demon move_28
+  - first:
+      213: 6803412778250620898
+    second: Demon move_29
+  - first:
+      213: -306084700453670730
+    second: Demon move_30
+  - first:
+      213: 4023261311179253591
+    second: Demon move_31
+  - first:
+      213: -8975729410940962756
+    second: Demon move_32
+  - first:
+      213: -747604435564172008
+    second: Demon move_33
+  - first:
+      213: 3898058946389521387
+    second: Demon move_34
+  - first:
+      213: -8107648318328557517
+    second: Demon move_35
+  - first:
+      213: -1742429806864278429
+    second: Demon move_36
+  - first:
+      213: -8973601755618797355
+    second: Demon move_37
+  - first:
+      213: -2675326976179242587
+    second: Demon move_38
+  - first:
+      213: -4699128636500843845
+    second: Demon move_39
+  - first:
+      213: 1251379113684985347
+    second: Demon move_40
+  - first:
+      213: 1774256681594428017
+    second: Demon move_41
+  - first:
+      213: -5215901800078159006
+    second: Demon move_42
+  - first:
+      213: 89758678122240002
+    second: Demon move_43
+  - first:
+      213: 8009914697202452386
+    second: Demon move_44
+  - first:
+      213: 3629669061772507840
+    second: Demon move_45
+  - first:
+      213: -7640222272748452111
+    second: Demon move_46
+  - first:
+      213: -4688443641784363178
+    second: Demon move_47
+  - first:
+      213: 4054325962544118883
+    second: Demon move_48
+  - first:
+      213: 7556210342453446494
+    second: Demon move_49
+  - first:
+      213: 7292853216878872059
+    second: Demon move_50
+  - first:
+      213: -184307944698792876
+    second: Demon move_51
+  - first:
+      213: -7935989584737865510
+    second: Demon move_52
+  - first:
+      213: -7414545876143054952
+    second: Demon move_53
+  - first:
+      213: -8974131116480114303
+    second: Demon move_54
+  - first:
+      213: -6482106339079633194
+    second: Demon move_55
+  - first:
+      213: 1217772924568289069
+    second: Demon move_56
+  - first:
+      213: 6282395758142788737
+    second: Demon move_57
+  - first:
+      213: 1732349012914168530
+    second: Demon move_58
+  - first:
+      213: -8160666420578410801
+    second: Demon move_59
+  - first:
+      213: -5300205215074343002
+    second: Demon move_60
+  - first:
+      213: -1137432229447147174
+    second: Demon move_61
+  - first:
+      213: 840614625424739095
+    second: Demon move_62
+  - first:
+      213: 6978083229565485306
+    second: Demon move_63
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Demon move_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f62d09d62eee45530800000000000000
+      internalID: 3842959038322102895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon move_1
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 960
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c61b499c50e3e920800000000000000
+      internalID: 3018502863581812421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon move_2
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 960
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58a58149f2d699c10800000000000000
+      internalID: 2060798355614227077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon move_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fefbcf941ad5ff00800000000000000
+      internalID: 1150065061978177271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon move_4
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 640
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c8608de333aaa830800000000000000
+      internalID: 4083255455588051142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon move_5
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 640
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a536f044f240d5da0800000000000000
+      internalID: -5954598531262094502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon move_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9c04ad2ac55140c0800000000000000
+      internalID: -4593295818103714659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon move_7
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 320
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ce3be4823857e610800000000000000
+      internalID: 1650384762456194754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon move_8
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 320
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8c99973dd130d250800000000000000
+      internalID: 5967324332456254607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon move_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38b3d39ed5bb62060800000000000000
+      internalID: 6928431088775543683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon move_10
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fec8abcf0022eb70800000000000000
+      internalID: 8926732663615180537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon move_11
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 576
+        height: 320
+      alignment: 9
+      pivot: {x: 0.4897399, y: 0.0430212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20a859a76db2c4d40800000000000000
+      internalID: 5569875039330077186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 87e61e94a213dbb40b97308e2dae4a5f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Demon move_0: 3842959038322102895
+      Demon move_1: 3018502863581812421
+      Demon move_10: 8926732663615180537
+      Demon move_11: 5569875039330077186
+      Demon move_2: 2060798355614227077
+      Demon move_3: 1150065061978177271
+      Demon move_4: 4083255455588051142
+      Demon move_5: -5954598531262094502
+      Demon move_6: -4593295818103714659
+      Demon move_7: 1650384762456194754
+      Demon move_8: 5967324332456254607
+      Demon move_9: 6928431088775543683
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
