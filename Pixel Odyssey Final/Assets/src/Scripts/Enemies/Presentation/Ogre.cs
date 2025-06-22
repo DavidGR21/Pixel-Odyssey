@@ -43,41 +43,59 @@ public class Ogre : Enemy, IMeleeEnemy
 
     public override void UpdateBehavior()
     {
-        if (attackCooldownTimer > 0)
-            attackCooldownTimer -= Time.deltaTime;
-        if (hurtCooldownTimer > 0)
-            hurtCooldownTimer -= Time.deltaTime;
+        if (isHurtActive)
+        {
+            Debug.Log($"{gameObject.name}: Está herido, no ejecuta behaviors.");
+            return;
+        }
+        if (target == null)
+        {
+            Debug.Log($"{gameObject.name}: Sin target asignado.");
+            return;
+        }
 
-        if (isStunned)
+        float distanceToPlayerX = Mathf.Abs(transform.position.x - target.transform.position.x);
+        float distanceToPlayerY = Mathf.Abs(transform.position.y - target.transform.position.y);
+
+        Debug.Log($"{gameObject.name}: Distancia al jugador X={distanceToPlayerX}, Y={distanceToPlayerY}, visionRange={visionRange}, attackRange={attackRange}");
+
+        // 1. Si el jugador NO está en rango X o Y, patrulla
+        if (distanceToPlayerX > visionRange || distanceToPlayerY > 3f)
         {
-            SetBehavior(null);
+            if (!(currentBehavior is PatrolBehavior))
+            {
+                SetBehavior(new PatrolBehavior());
+                Debug.Log($"{gameObject.name}: Cambiando a Patrulla");
+            }
         }
-        else if (enemyAnimator.IsHurt())
+        // 2. Si está en rango X y Y, pero fuera de ataque, persigue
+        else if (distanceToPlayerX > attackRange)
         {
-            SetBehavior(null);
+            if (!(currentBehavior is ChaseBehavior))
+            {
+                SetBehavior(new ChaseBehavior());
+                Debug.Log($"{gameObject.name}: Cambiando a Persecución");
+            }
         }
-        else if (target == null)
+        // 3. Si está en rango X y Y, y dentro de ataque, ataca
+        else
         {
-            SetBehavior(null);
+            if (!(currentBehavior is AttackBehavior))
+            {
+                SetBehavior(new AttackBehavior());
+                Debug.Log($"{gameObject.name}: Cambiando a Ataque");
+            }
+        }
+
+        if (currentBehavior == null)
+        {
+            Debug.Log($"{gameObject.name}: Sin comportamiento asignado (condiciones no cumplidas)");
         }
         else
         {
-            float distanceToPlayer = Mathf.Abs(transform.position.x - target.transform.position.x);
-
-            if (isAttacking && distanceToPlayer > attackRange)
-                StopAttack();
-
-            if (distanceToPlayer > visionRange && !isAttacking)
-                SetBehavior(new PatrolBehavior());
-            else if (distanceToPlayer <= visionRange && distanceToPlayer > attackRange && !isAttacking)
-                SetBehavior(new ChaseBehavior());
-            else if (distanceToPlayer <= attackRange && !isAttacking && attackCooldownTimer <= 0 && hurtCooldownTimer <= 0)
-                SetBehavior(new AttackBehavior());
-            else
-                SetBehavior(null);
+            Debug.Log($"{gameObject.name}: Ejecutando comportamiento: {currentBehavior.GetType().Name}");
+            currentBehavior.Execute(this);
         }
-
-        base.UpdateBehavior();
     }
 
     public void Attack()
@@ -106,7 +124,20 @@ public class Ogre : Enemy, IMeleeEnemy
     public void EnableAttackCollider(bool enable)
     {
         if (hitCollider != null)
+        {
             hitCollider.GetComponent<BoxCollider2D>().enabled = enable;
+            Debug.Log($"{gameObject.name}: hitCollider {(enable ? "habilitado" : "deshabilitado")}");
+            if (enable)
+            {
+                // Resetea el flag de daño cada vez que se habilita el collider
+                var hitScript = hitCollider.GetComponent<HitEnemigo2D>();
+                if (hitScript != null)
+                {
+                    hitScript.ResetDamage();
+                    Debug.Log($"{gameObject.name}: ResetDamage llamado en HitEnemigo2D");
+                }
+            }
+        }
     }
 
     public void Final_Ani()

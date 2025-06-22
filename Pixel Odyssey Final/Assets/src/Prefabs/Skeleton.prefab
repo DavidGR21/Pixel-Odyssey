@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5273797279623188579
+--- !u!1 &1496396631805778459
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 622614951137109772}
-  - component: {fileID: 1833434378212470303}
-  - component: {fileID: 8621163929947502741}
+  - component: {fileID: 6567100276151244941}
+  - component: {fileID: 723260932826437028}
+  - component: {fileID: 5070727360174712541}
   m_Layer: 0
-  m_Name: Rango
+  m_Name: Hit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &622614951137109772
+--- !u!4 &6567100276151244941
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5273797279623188579}
+  m_GameObject: {fileID: 1496396631805778459}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.79, y: 0.15, z: -0.025771309}
-  m_LocalScale: {x: -3.9181623, y: 2.694635, z: 1}
+  m_LocalPosition: {x: 0.9, y: 0.050000004, z: 0}
+  m_LocalScale: {x: -1.6281446, y: 1.3216133, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6140578535260093475}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1833434378212470303
+--- !u!61 &723260932826437028
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5273797279623188579}
+  m_GameObject: {fileID: 1496396631805778459}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -79,18 +79,81 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8621163929947502741
+--- !u!114 &5070727360174712541
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5273797279623188579}
+  m_GameObject: {fileID: 1496396631805778459}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e990c3cb83e795f4280a6a04ae98c029, type: 3}
+  m_Script: {fileID: 11500000, guid: 69242b08e8a2d8f469f50d23b17ce2ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knockbackForce: 5
+--- !u!1 &1781121147965475727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7585278648712780602}
+  m_Layer: 0
+  m_Name: WallCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7585278648712780602
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781121147965475727}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.86, y: 0.66, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6140578535260093475}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2396261222180582132
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7514810289708694246}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7514810289708694246
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2396261222180582132}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.41, y: -0.89, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6140578535260093475}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5318791810628185415
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,11 +186,13 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5613606, y: 1.2120216, z: 1}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2045216458164119628}
-  - {fileID: 622614951137109772}
+  - {fileID: 6567100276151244941}
+  - {fileID: 3399988275951404004}
+  - {fileID: 7514810289708694246}
+  - {fileID: 7585278648712780602}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3215653019101908395
@@ -179,7 +244,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.09375, y: 1.1875}
+  m_Size: {x: 1.46875, y: 1.65625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -217,7 +282,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 233c93fd8bb48fc4388271f5ed0e5a77, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -241,17 +306,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.1158185, y: 0.0021595955}
+  m_Offset: {x: -0.0551973, y: 0.023646891}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.46875, y: 1.65625}
-    newSize: {x: 1.09375, y: 1.1875}
+    newSize: {x: 1.46875, y: 1.65625}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.2590292, y: 1.6785262}
+  m_Size: {x: 1.2074503, y: 1.7651752}
   m_EdgeRadius: 0
 --- !u!50 &7674721027732243211
 Rigidbody2D:
@@ -261,14 +326,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5318791810628185415}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
+  m_Mass: 300
+  m_LinearDamping: 3
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -279,7 +344,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &-3347570424681500983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,19 +358,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  speedWalk: 1
-  speedRun: 2
-  visionRange: 5
-  attackRange: 1.5
+  speedWalk: 4
+  speedRun: 7
+  visionRange: 14
+  attackRange: 2.8
   direccion: 0
   rutina: 0
   cronometro: 0
   target: {fileID: 0}
+  groundCheck: {fileID: 7514810289708694246}
+  wallCheck: {fileID: 7585278648712780602}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  checkRadius: 0.1
   damage: 10
-  health: 50
-  enemyName: 
-  hitCollider: {fileID: 8410608645369673588}
-  rangeCollider: {fileID: 5273797279623188579}
+  hitCollider: {fileID: 1496396631805778459}
+  rangeCollider: {fileID: 6237849740621136009}
 --- !u!114 &6303940569884491280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,7 +388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 234710875230024532}
---- !u!1 &8410608645369673588
+--- !u!1 &6237849740621136009
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -327,38 +396,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2045216458164119628}
-  - component: {fileID: 7658520168208539822}
-  - component: {fileID: 4602284164817597295}
+  - component: {fileID: 3399988275951404004}
+  - component: {fileID: 7495191714009819302}
+  - component: {fileID: 4828493130362152908}
   m_Layer: 0
-  m_Name: Hit
+  m_Name: Rango
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2045216458164119628
+--- !u!4 &3399988275951404004
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8410608645369673588}
+  m_GameObject: {fileID: 6237849740621136009}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.23, y: 0, z: 0}
-  m_LocalScale: {x: -2.458231, y: 1.9230169, z: 1}
+  m_LocalPosition: {x: 1.42, y: 0.10000001, z: -0.025771309}
+  m_LocalScale: {x: -3.0891533, y: 1.6651452, z: 0.91160995}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6140578535260093475}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &7658520168208539822
+--- !u!61 &7495191714009819302
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8410608645369673588}
+  m_GameObject: {fileID: 6237849740621136009}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -398,16 +467,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4602284164817597295
+--- !u!114 &4828493130362152908
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8410608645369673588}
+  m_GameObject: {fileID: 6237849740621136009}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69242b08e8a2d8f469f50d23b17ce2ed, type: 3}
+  m_Script: {fileID: 11500000, guid: e990c3cb83e795f4280a6a04ae98c029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackForce: 5

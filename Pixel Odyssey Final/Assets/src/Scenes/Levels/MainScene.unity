@@ -1792,7 +1792,6 @@ MonoBehaviour:
   currentHealth: 100
   maxShield: 50
   currentShield: 0
-  knockbackForce: 5
 --- !u!114 &1304805260
 MonoBehaviour:
   m_ObjectHideFlags: 0

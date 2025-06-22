@@ -1,15 +1,15 @@
 using UnityEngine;
 
-public class MushroomFactory
+public class MushroomFactory : EnemyFactory
 {
-    private GameObject mushroomPrefab;
+  [SerializeField] private GameObject mushroomPrefab;
 
     public MushroomFactory(GameObject prefab)
     {
         mushroomPrefab = prefab;
     }
 
-    public Enemy CreateEnemy(Vector3 position)
+    public override Enemy CreateEnemy(Vector3 position)
     {
         if (mushroomPrefab == null)
         {

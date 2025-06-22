@@ -1,15 +1,15 @@
 using UnityEngine;
 
-public class SkeletonFactory
+public class SkeletonFactory : EnemyFactory
 {
-    private GameObject skeletonPrefab;
+    [SerializeField] private GameObject skeletonPrefab;
 
     public SkeletonFactory(GameObject prefab)
     {
         skeletonPrefab = prefab;
     }
 
-    public Enemy CreateEnemy(Vector3 position)
+    public override Enemy CreateEnemy(Vector3 position)
     {
         if (skeletonPrefab == null)
         {

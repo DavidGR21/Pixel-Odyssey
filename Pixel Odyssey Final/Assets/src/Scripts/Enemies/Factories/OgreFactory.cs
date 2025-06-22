@@ -1,19 +1,20 @@
 using UnityEngine;
 
-public class OgreFactory
+public class OgreFactory : EnemyFactory
+
 {
-    private GameObject ogrePrefab;
+   [SerializeField]  private GameObject ogrePrefab;
 
     public OgreFactory(GameObject prefab)
     {
         ogrePrefab = prefab;
     }
 
-    public Enemy CreateEnemy(Vector3 position)
+    public override Enemy CreateEnemy(Vector3 position)
     {
         if (ogrePrefab == null)
         {
-            Debug.LogError("OgrePrefab no está asignado en OgreFactory.");
+            Debug.LogError("OgrePrefab no estï¿½ asignado en OgreFactory.");
             return null;
         }
 
