@@ -7,7 +7,8 @@ public class HealthPlayer : MonoBehaviour, IHealth
     [Header("Vida")]
     [SerializeField] public float maxHealth = 100f;
     [SerializeField] private float currentHealth;
-
+    public float CurrentHealth => currentHealth;
+    public float CurrentShield => currentShield;
     [Header("Escudo")]
     [SerializeField] public float maxShield = 50f;
     [SerializeField] private float currentShield;
@@ -114,7 +115,7 @@ public class HealthPlayer : MonoBehaviour, IHealth
     public void Heal(float amount)
     {
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
-        OnHealthChanged?.Invoke(currentHealth); 
+        OnHealthChanged?.Invoke(currentHealth);
     }
 
     public void HealShield(float amount)
