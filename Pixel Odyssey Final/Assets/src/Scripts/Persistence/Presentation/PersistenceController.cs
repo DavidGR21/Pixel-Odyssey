@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PersistenceController : MonoBehaviour
 {
@@ -38,16 +39,31 @@ public class PersistenceController : MonoBehaviour
     {
         return loadGame.Execute();
     }
-    public void SaveLevel(string spawnPoint)
+    public void SaveLevel(string spawnPointName)
     {
-        var player = GameObject.FindGameObjectWithTag("Player");
-        Vector3 pos = player.transform.position;
-        HealthPlayer healthPlayer = player.GetComponent<HealthPlayer>();
+        GameObject spawnPoint = GameObject.Find(spawnPointName);
+        Vector3 pos = Vector3.zero;
+
+        if (spawnPoint != null)
+        {
+            pos = spawnPoint.transform.position;
+        }
+        else
+        {
+            // Si no se encuentra el spawnPoint, usa la posición actual del jugador como fallback
+            var player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+                pos = player.transform.position;
+        }
+
+        var playerObj = GameObject.FindGameObjectWithTag("Player");
+        HealthPlayer healthPlayer = playerObj != null ? playerObj.GetComponent<HealthPlayer>() : null;
         float vidaActual = healthPlayer != null ? healthPlayer.CurrentHealth : 0f;
         float escudoActual = healthPlayer != null ? healthPlayer.CurrentShield : 0f;
+
         var data = new PlayerData
         {
-            LastSpawnPoint = spawnPoint,
+            CurrentScene = SceneManager.GetActiveScene().name,
             PositionX = pos.x,
             PositionY = pos.y,
             PositionZ = pos.z,
@@ -56,6 +72,36 @@ public class PersistenceController : MonoBehaviour
         };
         saveGame.Execute(data);
         Debug.Log("Ruta de guardado: " + Application.persistentDataPath);
-        Debug.Log("Progreso guardado automáticamente en el portal.");
+        Debug.Log("Progreso guardado automáticamente en el portal (posición del spawnPoint).");
+    }
+
+    public PlayerData GetProfileData(int profileId)
+    {
+        // Asume que tu LoadGame y repositorio ya soportan perfiles
+        return loadGame.Execute(profileId);
+    }
+
+    public string GetProfileName(int profileId)
+    {
+        var data = GetProfileData(profileId);
+        return data != null ? data.ProfileName : $"Perfil {profileId}";
+    }
+
+    public float GetProfileHealth(int profileId)
+    {
+        var data = GetProfileData(profileId);
+        return data != null ? data.Health : 0f;
+    }
+
+    public float GetProfileShield(int profileId)
+    {
+        var data = GetProfileData(profileId);
+        return data != null ? data.Shield : 0f;
+    }
+
+    public string GetProfileScene(int profileId)
+    {
+        var data = GetProfileData(profileId);
+        return data != null ? data.CurrentScene : "Sin partida";
     }
 }

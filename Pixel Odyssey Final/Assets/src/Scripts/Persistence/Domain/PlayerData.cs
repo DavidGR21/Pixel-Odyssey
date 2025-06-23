@@ -1,9 +1,10 @@
 public class PlayerData
 {
-    public int Level;
+    public int ProfileId;
+    public string ProfileName;
     public float Health;
     public float Shield;
-    public string LastSpawnPoint;
+    public string CurrentScene;
     public float PositionX;
     public float PositionY;
     public float PositionZ;
