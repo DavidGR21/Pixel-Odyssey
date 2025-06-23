@@ -1,6 +1,7 @@
-using UnityEngine;
-using UnityEditor.Animations;
 using System.Collections;
+using UnityEditor.Animations;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public abstract class Enemy : MonoBehaviour
 {
@@ -170,28 +171,41 @@ public abstract class Enemy : MonoBehaviour
         if (animator != null)
         {
             animator.SetTrigger("dead");
-            Debug.Log($"[Enemy {gameObject.name}] Dead trigger set, Animator enabled: {animator.enabled}");
-        }
-        else
-        {
-            Debug.LogError($"[Enemy {gameObject.name}] No Animator component found in Die()");
-            return;
         }
 
         Collider2D collider = GetComponent<Collider2D>();
         if (collider != null)
         {
             collider.enabled = false;
-            Debug.Log($"[Enemy {gameObject.name}] Collider disabled");
         }
+
         if (rb != null)
         {
             rb.bodyType = RigidbodyType2D.Static;
-            Debug.Log($"[Enemy {gameObject.name}] Rigidbody set to Static");
         }
 
-        StartCoroutine(DestroyAfterDeathAnimation());
+        // Si es jefe, ir a créditos
+        if (this is BossEnemy)
+        {
+            Debug.Log("[Enemy] Boss muerto. Cargando créditos...");
+            StartCoroutine(LoadCreditsScene());
+        }
+        else
+        {
+            StartCoroutine(DestroyAfterDeathAnimation());
+        }
     }
+
+    private IEnumerator LoadCreditsScene()
+    {
+        float deathAnimationDuration = 1.5f;
+        yield return new WaitForSeconds(deathAnimationDuration);
+        SceneManager.LoadScene("Credits");
+
+        yield return new WaitForSeconds(10f);
+        SceneManager.LoadScene("MainMenu");
+    }
+
 
     private IEnumerator DestroyAfterDeathAnimation()
     {
