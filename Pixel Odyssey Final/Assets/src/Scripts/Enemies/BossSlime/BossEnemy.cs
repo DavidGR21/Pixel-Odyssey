@@ -40,7 +40,10 @@ public class BossEnemy : Enemy
     public void TriggerDisableHitboxFlame() => flameAttack.DisableHitbox();
     public void TriggerEnableHitboxJump() => jumpAttack.EnableHitbox();
     public void TriggerDisableHitboxJump() => jumpAttack.DisableHitbox();
-
+    public override IEnemyAnimator GetAnimator()
+    {
+        return null;
+    }
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
