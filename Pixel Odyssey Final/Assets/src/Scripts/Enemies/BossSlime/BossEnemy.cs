@@ -187,11 +187,6 @@ public class BossEnemy : Enemy
         moveSpeed = 3.5f; // O el valor original que usas
     }
 
-    public override IEnemyAnimator GetAnimator()
-    {
-        throw new System.NotImplementedException();
-    }
-
     public Transform PlayerTransform => playerTransform;
 
 
