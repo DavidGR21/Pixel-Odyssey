@@ -278,7 +278,6 @@ MonoBehaviour:
   currentHealth: 100
   maxShield: 50
   currentShield: 0
-  knockbackForce: 10
 --- !u!95 &138753675
 Animator:
   serializedVersion: 7
@@ -933,7 +932,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd4a16ecd739b0147b00d39f3036cd5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 150
+  maxHealth: 40
+  speedWalk: 0
+  speedRun: 0
+  visionRange: 0
+  attackRange: 0
+  direccion: 0
+  rutina: 0
+  cronometro: 0
+  target: {fileID: 0}
   animator: {fileID: 347009006}
   transformDuration: 3
   hasTransformed: 0
@@ -1228,7 +1235,7 @@ Transform:
   m_GameObject: {fileID: 728566847}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 56.275257, y: 12.048565, z: -10}
+  m_LocalPosition: {x: 56.299236, y: 12.048565, z: -10}
   m_LocalScale: {x: 0.8, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1955,7 +1962,7 @@ Transform:
   m_GameObject: {fileID: 1415322634}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 56.275257, y: 12.048565, z: -10}
+  m_LocalPosition: {x: 56.299236, y: 12.048565, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class BossEnemy : Enemy
 {
@@ -184,6 +185,11 @@ public class BossEnemy : Enemy
     public void ResumeMovement()
     {
         moveSpeed = 3.5f; // O el valor original que usas
+    }
+
+    public override IEnemyAnimator GetAnimator()
+    {
+        throw new System.NotImplementedException();
     }
 
     public Transform PlayerTransform => playerTransform;
