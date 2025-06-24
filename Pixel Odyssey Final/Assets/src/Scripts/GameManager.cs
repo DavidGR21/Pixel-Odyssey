@@ -5,7 +5,6 @@ using System.Collections;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-    [SerializeField] private AudioClip startSound;
 
     private void Awake()
     {
@@ -80,11 +79,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator PlayAndLoadWithBootstrap(string bootstrapScene, string targetScene)
     {
-        if (startSound != null)
-        {
-            //AudioManager.Instance.PlaySound(startSound);
-            //yield return new WaitForSeconds(startSound.length);
-        }
+
         Debug.Log("Iniciando carga de escena...");
         Debug.Log("Escena objetivo: " + targetScene);
         Debug.Log(bootstrapScene == targetScene);
