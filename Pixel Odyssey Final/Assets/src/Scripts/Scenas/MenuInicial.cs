@@ -6,18 +6,29 @@ public class MenuInicial : MonoBehaviour
 {
     [SerializeField] private AudioClip startSound;
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+        StartCoroutine(PlayIntroAndLoadMain());
+    }
+
+    private IEnumerator PlayIntroAndLoadMain()
+    {
+        if (startSound != null)
+        {
+            AudioManager.Instance.PlayUISound(startSound);
+            yield return new WaitForSeconds(startSound.length);
+        }
+
+        SceneManager.LoadScene("MainScene");
+    }
+
     public void PlayGame()
     {
         Debug.Log("Cargando escena de selección de perfil...");
-        SceneManager.LoadScene("Profiles", LoadSceneMode.Single); // Cambia "Profiles" por el nombre exacto de tu escena de perfiles
+        SceneManager.LoadScene("Profiles", LoadSceneMode.Single); // Cambia si tu escena tiene otro nombre
     }
-    private void Awake()
-    {
-        AudioManager.Instance.PlayUISound(startSound);
-        yield return new WaitForSeconds(startSound.length); // espera hasta que se reproduzca el sonido para cambiar de escena
-        SceneManager.LoadScene("MainScene");
-        DontDestroyOnLoad(gameObject);
-    }
+
     public void Salir()
     {
         Debug.Log("Salir");
