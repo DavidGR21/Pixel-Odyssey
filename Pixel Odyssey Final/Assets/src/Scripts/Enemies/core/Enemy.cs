@@ -213,7 +213,7 @@ public abstract class Enemy : MonoBehaviour
 
     private IEnumerator LoadCreditsScene()
     {
-        float deathAnimationDuration = 1.5f;
+        float deathAnimationDuration = 0.5f;
         yield return new WaitForSeconds(deathAnimationDuration);
         SceneManager.LoadScene("Credits");
 
