@@ -1,4 +1,4 @@
-    using UnityEngine;
+﻿    using UnityEngine;
 
     public class atackPlayer : MonoBehaviour
     {
@@ -35,25 +35,25 @@
             }
         }
 
-        private void Attack()
-        {
-            canMove = false;
+    private void Attack()
+    {
+        canMove = false;
 
-            bool isGrounded = movementScript != null && movementScript.inFloor;
-            ControllerAttack.position = isGrounded ? groundAttackPoint.position : airAttackPoint.position;
+        bool isGrounded = movementScript != null && movementScript.inFloor;
+        ControllerAttack.position = isGrounded ? groundAttackPoint.position : airAttackPoint.position;
 
-            if (isGrounded)
-            {
-                animator.SetTrigger("Attack");
-            }
-            else
-            {
-                animator.SetTrigger("AirAttack");
-            }
-        }
+        if (isGrounded)
+            animator.SetTrigger("Attack");
+        else
+            animator.SetTrigger("AirAttack");
 
-        // Llamado por la animaci�n en el momento del impacto
-        public void DoDamage()
+        // ▶️ Reproducir sonido de ataque
+        movementScript?.audioHandler?.PlayAttackSound();
+    }
+
+
+    // Llamado por la animación en el momento del impacto
+    public void DoDamage()
         {
             Collider2D[] objects = Physics2D.OverlapCircleAll(ControllerAttack.position, radioAttack);
             foreach (Collider2D obj in objects)
@@ -65,7 +65,7 @@
                     {
                         Vector2 knockbackDir = obj.transform.position - transform.position;
                         enemyScript.TakeDamage(damageAttack, knockbackDir, 20f);
-                        Debug.Log($"Jugador infligi� {damageAttack} de da�o al enemigo.");
+                        Debug.Log($"Jugador infligió {damageAttack} de daño al enemigo.");
                     }
                 }
             }

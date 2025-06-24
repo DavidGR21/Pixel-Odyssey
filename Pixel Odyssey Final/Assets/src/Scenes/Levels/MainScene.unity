@@ -732,7 +732,7 @@ Transform:
   m_GameObject: {fileID: 307834921}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.5384, y: -1.45, z: 0}
+  m_LocalPosition: {x: -17.92, y: -1.79, z: 0}
   m_LocalScale: {x: 5.049314, y: 2.6503, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1441,6 +1441,52 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1304805264}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &660760413
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 660760415}
+  - component: {fileID: 660760414}
+  m_Layer: 0
+  m_Name: MusicController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &660760414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660760413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0107ff71c61cb4846bb900ad74eaa42c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneMusic: {fileID: 8300000, guid: 99c5db92f27b50e46a35a9c471a2051a, type: 3}
+  loop: 1
+--- !u!4 &660760415
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660760413}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.376737, y: 3.7741737, z: -0.06814783}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &681142210
 GameObject:
@@ -2282,9 +2328,9 @@ MonoBehaviour:
   timeIntoDash: 0.5
   stepClip: {fileID: 8300000, guid: a3e521e6ce8073d48b9d063ea27a575d, type: 3}
   jumpClip: {fileID: 8300000, guid: c7d2cabb877a2cf4d937a120746799be, type: 3}
-  damageClip: {fileID: 8300000, guid: c7d2cabb877a2cf4d937a120746799be, type: 3}
-  attackClip: {fileID: 8300000, guid: c7d2cabb877a2cf4d937a120746799be, type: 3}
-  dashClip: {fileID: 8300000, guid: c7d2cabb877a2cf4d937a120746799be, type: 3}
+  damageClip: {fileID: 8300000, guid: 7521ee7c6bab682408d082ede8e7b279, type: 3}
+  attackClip: {fileID: 8300000, guid: 457e5bdb027779445a53ac0ca62646c1, type: 3}
+  dashClip: {fileID: 8300000, guid: 326aadbf9f0100a42afd668658c377ea, type: 3}
   rb2d: {fileID: 0}
   animator: {fileID: 0}
   attackScript: {fileID: 0}
@@ -7128,6 +7174,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1719020194}
+  - {fileID: 660760415}
   - {fileID: 242201003}
   - {fileID: 2111399833}
   - {fileID: 431789904}

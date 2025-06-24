@@ -34,6 +34,10 @@ public class BossEnemy : Enemy
 
     [Header("Atacke Jump del Jefe")]
     [SerializeField] private BossAttackJump jumpAttack;
+
+    [Header("Musica Batalla Final del Juego")]
+    [SerializeField] private AudioClip sceneMusic;
+
     public void TriggerEnableHitbox() => meleeAttack.EnableHitbox();
     public void TriggerDisableHitbox() => meleeAttack.DisableHitbox();
 
@@ -115,6 +119,8 @@ public class BossEnemy : Enemy
         Debug.Log("[Boss] Recibió su primer golpe. Iniciando transformación...");
 
         isTransforming = true;
+
+        AudioManager.Instance.PlayMusic(sceneMusic, true);
 
         // Bloquear jugador
         if (playerScript != null)
