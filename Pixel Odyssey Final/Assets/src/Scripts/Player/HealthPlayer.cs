@@ -6,11 +6,12 @@ public class HealthPlayer : MonoBehaviour, IHealth
 {
     [Header("Vida")]
     [SerializeField] public float maxHealth = 100f;
-    [SerializeField] private float currentHealth;
-
+    [SerializeField] public float currentHealth;
+    public float CurrentHealth => currentHealth;
+    public float CurrentShield => currentShield;
     [Header("Escudo")]
     [SerializeField] public float maxShield = 50f;
-    [SerializeField] private float currentShield;
+    [SerializeField] public float currentShield;
 
     public event Action OnDeath;  // Evento de muerte
     public event Action<float> OnHealthChanged; // Evento de cambio de vida
@@ -34,7 +35,14 @@ public class HealthPlayer : MonoBehaviour, IHealth
             Debug.LogError($"[HealthPlayer {gameObject.name}] No Rigidbody2D component found");
         }
     }
-
+    // En HealthPlayer.cs
+    public void RestoreHealthAndShield(float health, float shield)
+    {
+        currentHealth = health;
+        currentShield = shield;
+        OnHealthChanged?.Invoke(currentHealth);
+        OnShieldChanged?.Invoke(currentShield);
+    }
     public void TakeDamage(float amount, Vector2 knockbackDirection, float knockbackForce = 5f)
     {
         if (currentHealth <= 0) return;
@@ -124,7 +132,7 @@ public class HealthPlayer : MonoBehaviour, IHealth
     public void Heal(float amount)
     {
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
-        OnHealthChanged?.Invoke(currentHealth); 
+        OnHealthChanged?.Invoke(currentHealth);
     }
 
     public void HealShield(float amount)

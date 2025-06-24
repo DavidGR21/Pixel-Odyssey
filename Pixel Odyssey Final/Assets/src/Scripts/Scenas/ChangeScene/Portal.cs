@@ -18,6 +18,15 @@ public class Portal : MonoBehaviour
             isTransitioning = true;
             PlayerSpawnManager.nextSpawnPoint = spawnPointName;
 
+            // GUARDADO AUTOMÁTICO AL PASAR POR EL PORTAL
+            var persistence = FindObjectOfType<PersistenceController>();
+            if (persistence != null)
+            {
+                // Puedes guardar el nivel actual usando sceneToLoad o el nombre que prefieras
+                // Ejemplo: guarda el nombre de la escena y la posición del spawn
+                persistence.SaveLevel(spawnPointName);
+            }
+
             // Lanza la animación de salida
             transitionAnimator = GameObject.Find("SceneTransition")?.GetComponent<Animator>();
             if (transitionAnimator != null)

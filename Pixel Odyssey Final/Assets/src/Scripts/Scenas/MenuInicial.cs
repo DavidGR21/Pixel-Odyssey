@@ -4,21 +4,17 @@ using System.Collections;
 
 public class MenuInicial : MonoBehaviour
 {
-
     [SerializeField] private AudioClip startSound;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     public void PlayGame()
     {
-        StartCoroutine(PlayAndLoad());
+        Debug.Log("Cargando escena de selección de perfil...");
+        SceneManager.LoadScene("Profiles", LoadSceneMode.Single); // Cambia "Profiles" por el nombre exacto de tu escena de perfiles
     }
-
-    private IEnumerator PlayAndLoad() // metodo para esperar antes de cambair dxe escena 
+    private void Awake()
     {
-        AudioManager.Instance.PlaySound(startSound);
-        yield return new WaitForSeconds(startSound.length); // espera hasta que se reproduzca el sonido para cambiar de escena
-        SceneManager.LoadScene("MainScene");
+        DontDestroyOnLoad(gameObject);
     }
-
     public void Salir()
     {
         Debug.Log("Salir");
