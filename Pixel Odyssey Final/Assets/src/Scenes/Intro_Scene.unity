@@ -518,7 +518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96ed551cba954bf46b159c917c63f391, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duracionLogo: 3
+  duracionLogo: 5
   sonidoInicio: {fileID: 1527720946}
 --- !u!82 &1527720946
 AudioSource:

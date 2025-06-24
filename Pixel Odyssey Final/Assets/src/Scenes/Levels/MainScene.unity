@@ -2280,6 +2280,11 @@ MonoBehaviour:
   dashSpeed: 7
   dashTime: 0.3
   timeIntoDash: 0.5
+  stepClip: {fileID: 8300000, guid: a3e521e6ce8073d48b9d063ea27a575d, type: 3}
+  jumpClip: {fileID: 8300000, guid: c7d2cabb877a2cf4d937a120746799be, type: 3}
+  damageClip: {fileID: 8300000, guid: c7d2cabb877a2cf4d937a120746799be, type: 3}
+  attackClip: {fileID: 8300000, guid: c7d2cabb877a2cf4d937a120746799be, type: 3}
+  dashClip: {fileID: 8300000, guid: c7d2cabb877a2cf4d937a120746799be, type: 3}
   rb2d: {fileID: 0}
   animator: {fileID: 0}
   attackScript: {fileID: 0}
@@ -6908,7 +6913,7 @@ RectTransform:
   m_GameObject: {fileID: 2026600820}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3.5, y: 3.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1652972713}
@@ -6923,7 +6928,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -359, y: 187}
+  m_AnchoredPosition: {x: -542, y: 455}
   m_SizeDelta: {x: 400, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2026600822

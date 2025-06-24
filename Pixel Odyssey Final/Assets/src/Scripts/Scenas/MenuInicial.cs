@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
@@ -14,7 +14,7 @@ public class MenuInicial : MonoBehaviour
 
     private IEnumerator PlayAndLoad() // metodo para esperar antes de cambair dxe escena 
     {
-        AudioManager.Instance.PlaySound(startSound);
+        AudioManager.Instance.PlayUISound(startSound);
         yield return new WaitForSeconds(startSound.length); // espera hasta que se reproduzca el sonido para cambiar de escena
         SceneManager.LoadScene("MainScene");
     }
