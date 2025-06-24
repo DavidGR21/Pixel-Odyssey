@@ -4,6 +4,7 @@ public class PlayerData
     public string ProfileName;
     public float Health;
     public float Shield;
+    public string SpawnPointName;
     public string CurrentScene;
     public float PositionX;
     public float PositionY;

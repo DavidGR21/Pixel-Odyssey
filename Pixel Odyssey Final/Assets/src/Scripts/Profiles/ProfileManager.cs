@@ -15,12 +15,16 @@ public class ProfileManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            LoadAllProfiles();
         }
         else
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        LoadAllProfiles();
     }
 
     public void SetActiveProfile(int id)
@@ -45,10 +49,23 @@ public class ProfileManager : MonoBehaviour
     {
         Profiles.Clear();
         var persistence = FindObjectOfType<PersistenceController>();
+        if (persistence == null)
+        {
+            Debug.LogError("[ProfileManager] PersistenceController no encontrado en LoadAllProfiles");
+            return;
+        }
         for (int i = 1; i <= MaxProfiles; i++)
         {
-            var data = persistence != null ? persistence.GetProfileData(i) : null;
+            var data = persistence.GetProfileData(i);
             Profiles.Add(data);
+        }
+    }
+    public void UpdateAllProfileSlots()
+    {
+        var slots = FindObjectsOfType<ProfileSlotUI>();
+        foreach (var slot in slots)
+        {
+            slot.UpdateProfileInfo();
         }
     }
 }

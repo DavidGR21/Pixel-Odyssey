@@ -13,9 +13,11 @@ public class LoadGame
         return repository.Load(profileId);
     }
 
-    // Método antiguo (sin perfil)
-    public PlayerData Execute()
-    {
-        return repository.Load();
-    }
+    /*
+        // Método antiguo (sin perfil)
+        public PlayerData Execute()
+        {
+            return repository.Load();
+        }
+    */
 }

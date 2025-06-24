@@ -8,25 +8,14 @@ public class MenuInicial : MonoBehaviour
 
     public void PlayGame()
     {
-        var persistence = FindObjectOfType<PersistenceController>();
-        string bootstrapScene = "MainScene"; // Tu escena base con objetos persistentes
-        string sceneToLoad = bootstrapScene; // Por defecto
-
-        if (persistence != null)
-        {
-            var data = persistence.LoadGameData();
-            if (data != null && !string.IsNullOrEmpty(data.CurrentScene))
-            {
-                sceneToLoad = data.CurrentScene;
-            }
-        }
-        Debug.Log("Escena a cargar: " + sceneToLoad);
-        StartCoroutine(PlayAndLoadWithBootstrap(bootstrapScene, sceneToLoad));
+        Debug.Log("Cargando escena de selección de perfil...");
+        SceneManager.LoadScene("Profiles", LoadSceneMode.Single); // Cambia "Profiles" por el nombre exacto de tu escena de perfiles
     }
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
     }
+    /*
     private IEnumerator PlayAndLoadWithBootstrap(string bootstrapScene, string targetScene)
     {
         AudioManager.Instance.PlaySound(startSound);
@@ -72,6 +61,7 @@ public class MenuInicial : MonoBehaviour
             {
                 Debug.Log("Datos del juego cargados: " + data.CurrentScene);
                 GameObject player = GameObject.FindGameObjectWithTag("Player");
+                Debug.Log(player != null ? "Jugador encontrado." : "Jugador no encontrado.");
                 if (player != null)
                 {
                     player.transform.position = new Vector3(data.PositionX, data.PositionY, data.PositionZ);
@@ -100,6 +90,7 @@ public class MenuInicial : MonoBehaviour
 
         Destroy(gameObject);
     }
+    */
     public void Salir()
     {
         Debug.Log("Salir");
