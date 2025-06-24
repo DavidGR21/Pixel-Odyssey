@@ -5,7 +5,7 @@ using System.Collections;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-
+    public GameObject loadingScreen; // Asigna el objeto LoadingScreen desde el inspector
     private void Awake()
     {
 
@@ -13,6 +13,11 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            if (loadingScreen != null)
+            {
+                Debug.Log("[GameManager] loadingScreen encontrado en: " + loadingScreen.scene.name + " - " + loadingScreen.name);
+                DontDestroyOnLoad(loadingScreen);
+            }
         }
         else
         {
@@ -79,7 +84,10 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator PlayAndLoadWithBootstrap(string bootstrapScene, string targetScene)
     {
-
+        if (loadingScreen != null)
+        {
+            loadingScreen.SetActive(true);
+        }
         Debug.Log("Iniciando carga de escena...");
         Debug.Log("Escena objetivo: " + targetScene);
         Debug.Log(bootstrapScene == targetScene);
@@ -88,6 +96,10 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("La escena guardada es la bootstrap, cargando solo una vez.");
             SceneManager.LoadScene(bootstrapScene, LoadSceneMode.Single);
+            if (loadingScreen != null)
+            {
+                loadingScreen.SetActive(false);
+            }
             yield break;
         }
         Debug.Log(bootstrapScene + " " + LoadSceneMode.Single);
@@ -154,5 +166,6 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogWarning("[GameManager] No se encontraron datos del perfil después de cargar la escena.");
         }
+
     }
 }
