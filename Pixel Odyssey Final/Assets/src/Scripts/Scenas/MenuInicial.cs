@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
@@ -13,6 +13,9 @@ public class MenuInicial : MonoBehaviour
     }
     private void Awake()
     {
+        AudioManager.Instance.PlayUISound(startSound);
+        yield return new WaitForSeconds(startSound.length); // espera hasta que se reproduzca el sonido para cambiar de escena
+        SceneManager.LoadScene("MainScene");
         DontDestroyOnLoad(gameObject);
     }
     public void Salir()

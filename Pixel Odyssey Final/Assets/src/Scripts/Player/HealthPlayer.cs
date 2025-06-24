@@ -78,6 +78,8 @@ public class HealthPlayer : MonoBehaviour, IHealth
         {
             if (animator != null)
                 animator.SetTrigger("Hurt");
+                var movement = GetComponent<MovementPlayer>();
+                movement?.audioHandler?.PlayDamageSound();
 
             if (rb != null)
             {

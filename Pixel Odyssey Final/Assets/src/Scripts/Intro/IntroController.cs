@@ -8,7 +8,7 @@ public class IntroController : MonoBehaviour
 
     void Start()
     {
-        Invoke("ReproducirSonido", duracionLogo - 2.3f);
+        Invoke("ReproducirSonido", duracionLogo - 5f);
         Invoke("CargarPantallaCarga", duracionLogo);
     }
 
