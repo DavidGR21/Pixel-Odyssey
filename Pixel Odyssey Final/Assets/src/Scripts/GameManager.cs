@@ -159,6 +159,8 @@ public class GameManager : MonoBehaviour
             if (healthPlayer != null)
             {
                 healthPlayer.RestoreHealthAndShield(data.Health, data.Shield);
+                healthPlayer.Revive(data.Health, data.Shield);
+
                 Debug.Log("[GameManager] Salud y escudo restaurados: " + data.Health + " / " + data.Shield);
             }
             else
