@@ -2518,7 +2518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43abf289f1114a343a9b34df5233dd2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSound: {fileID: 8300000, guid: e20bbb23d3f59d14a8f7304ee89e749a, type: 3}
+  loadingScreen: {fileID: 0}
 --- !u!1 &1411419188
 GameObject:
   m_ObjectHideFlags: 0

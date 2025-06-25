@@ -5,7 +5,6 @@ using System.Collections;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-
     private void Awake()
     {
 
@@ -13,6 +12,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
         }
         else
         {
@@ -34,6 +34,25 @@ public class GameManager : MonoBehaviour
             path = t.name + "/" + path;
         }
         return path;
+    }
+    public void RestoreLevelFromPersistence()
+    {
+        var persistence = FindObjectOfType<PersistenceController>();
+        if (persistence == null)
+        {
+            Debug.LogError("[GameManager] PersistenceController no encontrado en RestoreLevelFromPersistence");
+            return;
+        }
+
+        PlayerData data = persistence.LoadGameData();
+        if (data == null || string.IsNullOrEmpty(data.CurrentScene))
+        {
+            Debug.LogWarning("[GameManager] No hay datos guardados para restaurar.");
+            return;
+        }
+
+        Debug.Log("[GameManager] Restaurando nivel: " + data.CurrentScene);
+        StartCoroutine(PlayAndLoadWithBootstrap("MainScene", data.CurrentScene));
     }
     public void PlayGame()
     {
@@ -88,6 +107,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("La escena guardada es la bootstrap, cargando solo una vez.");
             SceneManager.LoadScene(bootstrapScene, LoadSceneMode.Single);
+
             yield break;
         }
         Debug.Log(bootstrapScene + " " + LoadSceneMode.Single);
@@ -154,5 +174,6 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogWarning("[GameManager] No se encontraron datos del perfil después de cargar la escena.");
         }
+
     }
 }
