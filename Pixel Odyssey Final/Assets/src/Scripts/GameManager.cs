@@ -5,7 +5,6 @@ using System.Collections;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-    public GameObject loadingScreen; // Asigna el objeto LoadingScreen desde el inspector
     private void Awake()
     {
 
@@ -13,11 +12,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            if (loadingScreen != null)
-            {
-                Debug.Log("[GameManager] loadingScreen encontrado en: " + loadingScreen.scene.name + " - " + loadingScreen.name);
-                DontDestroyOnLoad(loadingScreen);
-            }
+
         }
         else
         {
@@ -39,6 +34,25 @@ public class GameManager : MonoBehaviour
             path = t.name + "/" + path;
         }
         return path;
+    }
+    public void RestoreLevelFromPersistence()
+    {
+        var persistence = FindObjectOfType<PersistenceController>();
+        if (persistence == null)
+        {
+            Debug.LogError("[GameManager] PersistenceController no encontrado en RestoreLevelFromPersistence");
+            return;
+        }
+
+        PlayerData data = persistence.LoadGameData();
+        if (data == null || string.IsNullOrEmpty(data.CurrentScene))
+        {
+            Debug.LogWarning("[GameManager] No hay datos guardados para restaurar.");
+            return;
+        }
+
+        Debug.Log("[GameManager] Restaurando nivel: " + data.CurrentScene);
+        StartCoroutine(PlayAndLoadWithBootstrap("MainScene", data.CurrentScene));
     }
     public void PlayGame()
     {
@@ -84,10 +98,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator PlayAndLoadWithBootstrap(string bootstrapScene, string targetScene)
     {
-        if (loadingScreen != null)
-        {
-            loadingScreen.SetActive(true);
-        }
+
         Debug.Log("Iniciando carga de escena...");
         Debug.Log("Escena objetivo: " + targetScene);
         Debug.Log(bootstrapScene == targetScene);
@@ -96,10 +107,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("La escena guardada es la bootstrap, cargando solo una vez.");
             SceneManager.LoadScene(bootstrapScene, LoadSceneMode.Single);
-            if (loadingScreen != null)
-            {
-                loadingScreen.SetActive(false);
-            }
+
             yield break;
         }
         Debug.Log(bootstrapScene + " " + LoadSceneMode.Single);

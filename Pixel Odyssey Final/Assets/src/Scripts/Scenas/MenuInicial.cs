@@ -20,7 +20,7 @@ public class MenuInicial : MonoBehaviour
             yield return new WaitForSeconds(startSound.length);
         }
 
-        SceneManager.LoadScene("MainScene");
+     //  SceneManager.LoadScene("MainScene");
     }
 
     public void PlayGame()
