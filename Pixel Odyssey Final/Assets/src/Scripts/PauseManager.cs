@@ -113,4 +113,4 @@ public class PauseManager : MonoBehaviour
         CleanPersistentObjects(); // Ahora sí limpia los objetos persistentes
         Destroy(gameObject); // Destruye el PauseManager
     }
-}1
+}
