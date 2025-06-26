@@ -2469,7 +2469,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1268709957}
-  - component: {fileID: 1268709956}
   - component: {fileID: 1268709958}
   m_Layer: 0
   m_Name: GameManager
@@ -2478,19 +2477,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1268709956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1268709955}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f27ccb4a4a4e2044b1dad4de62708fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startSound: {fileID: 8300000, guid: e20bbb23d3f59d14a8f7304ee89e749a, type: 3}
 --- !u!4 &1268709957
 Transform:
   m_ObjectHideFlags: 0
@@ -2518,7 +2504,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43abf289f1114a343a9b34df5233dd2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadingScreen: {fileID: 0}
 --- !u!1 &1411419188
 GameObject:
   m_ObjectHideFlags: 0

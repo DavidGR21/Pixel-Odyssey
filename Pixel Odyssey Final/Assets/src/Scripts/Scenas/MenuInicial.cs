@@ -6,9 +6,16 @@ public class MenuInicial : MonoBehaviour
 {
     [SerializeField] private AudioClip startSound;
 
+    public static MenuInicial instance { get; private set; }
+
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
         StartCoroutine(PlayIntroAndLoadMain());
     }
 

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class PauseManager : MonoBehaviour
 {
@@ -72,12 +73,44 @@ public class PauseManager : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+    public void CleanPersistentObjects()
+    {
+        // Lista de nombres de objetos persistentes a destruir
+        string[] persistentNames = {
+        "Main Camera",
+        "CameraManager",
+        "Player",
+        "Canvas",
+        "CM vcam1"
+
+    };
+
+        foreach (string name in persistentNames)
+        {
+            GameObject obj = GameObject.Find(name);
+            if (obj != null)
+            {
+                Destroy(obj);
+            }
+        }
+    }
     public void ExitToMenu()
     {
         if (tittle != null)
             tittle.SetActive(false);
         Time.timeScale = 1f;
         isGameOver = false;
-        SceneManager.LoadScene("MainMenu");
+        if (pauseMenu != null)
+            pauseMenu.SetActive(false);
+
+        StartCoroutine(ExitToMenuRoutine());
     }
-}
+
+    private IEnumerator ExitToMenuRoutine()
+    {
+        SceneManager.LoadScene("MainMenu");
+        yield return null; // Espera un frame para que la nueva cámara esté activa
+        CleanPersistentObjects(); // Ahora sí limpia los objetos persistentes
+        Destroy(gameObject); // Destruye el PauseManager
+    }
+}1
