@@ -199,8 +199,7 @@ public class GameManager : MonoBehaviour
         if (player != null && data != null)
         {
             player.transform.position = new Vector3(data.PositionX, data.PositionY, data.PositionZ);
-            // ...restaurar salud, escudo, etc...
-            // ...cualquier otra lógica de restauración...
+          
         }
 
         // Espera un frame extra para asegurar que todo se ha actualizado visualmente

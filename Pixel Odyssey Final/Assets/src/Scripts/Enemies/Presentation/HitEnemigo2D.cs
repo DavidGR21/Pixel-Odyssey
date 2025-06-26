@@ -47,5 +47,25 @@ public class HitEnemigo2D : MonoBehaviour
     public void ResetDamage()
     {
         hasDealtDamage = false;
+
+        // Buscar todos los colliders dentro del área del BoxCollider2D
+        var box = GetComponent<BoxCollider2D>();
+        if (box != null)
+        {
+            Collider2D[] colliders = Physics2D.OverlapBoxAll(
+                box.bounds.center,
+                box.bounds.size,
+                0f
+            );
+            foreach (var col in colliders)
+            {
+                if (col.CompareTag("Player"))
+                {
+                    TryDealDamage(col);
+                    Debug.Log("[HitEnemigo2D] Daño aplicado inmediatamente en ResetDamage porque el jugador ya estaba dentro.");
+                    break; // Solo dañar una vez
+                }
+            }
+        }
     }
 }

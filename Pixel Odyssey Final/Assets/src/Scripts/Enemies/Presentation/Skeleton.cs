@@ -42,7 +42,7 @@ public class Skeleton : Enemy, IMeleeEnemy, IShieldEnemy
     public override void Initialize()
     {
         base.Initialize();
-        
+
         target = GameObject.FindWithTag("Player");
         if (rangeCollider == null)
             rangeCollider = transform.Find("Range")?.gameObject;
@@ -63,8 +63,10 @@ public class Skeleton : Enemy, IMeleeEnemy, IShieldEnemy
         // Seguridad: desactiva el hitCollider si no está atacando
         if (hitCollider != null && hitCollider.GetComponent<BoxCollider2D>().enabled && !isAttacking)
         {
+            Debug.Log($"{gameObject.name}: Desactivando hitCollider porque isAttacking={isAttacking}");
             EnableAttackCollider(false);
         }
+
     }
 
     public override void UpdateBehavior()
@@ -164,17 +166,25 @@ public class Skeleton : Enemy, IMeleeEnemy, IShieldEnemy
         if (hitCollider != null)
         {
             hitCollider.GetComponent<BoxCollider2D>().enabled = enable;
-            Debug.Log($"{gameObject.name}: hitCollider {(enable ? "habilitado" : "deshabilitado")}");
+            Debug.Log($"{gameObject.name}: hitCollider {(enable ? "habilitado" : "deshabilitado")} en frame {Time.frameCount}");
             if (enable)
             {
-                // Resetea el flag de daño cada vez que se habilita el collider
+                // Llama a ResetDamage SOLO en HitEnemigo2D
                 var hitScript = hitCollider.GetComponent<HitEnemigo2D>();
                 if (hitScript != null)
                 {
                     hitScript.ResetDamage();
-                    Debug.Log($"{gameObject.name}: ResetDamage llamado en HitEnemigo2D");
+                    Debug.Log($"{gameObject.name}: ResetDamage llamado en HitEnemigo2D en frame {Time.frameCount}");
+                }
+                else
+                {
+                    Debug.LogWarning($"{gameObject.name}: No se encontró HitEnemigo2D en el hitCollider");
                 }
             }
+        }
+        else
+        {
+            Debug.LogWarning($"{gameObject.name}: hitCollider es null al intentar {(enable ? "habilitar" : "deshabilitar")}");
         }
     }
 
@@ -191,11 +201,21 @@ public class Skeleton : Enemy, IMeleeEnemy, IShieldEnemy
         isStunned = false;
     }
 
-    public void ColliderWeaponTrue() => EnableAttackCollider(true);
-    public void ColliderWeaponFalse() => EnableAttackCollider(false);
+    // Estos métodos deben ser llamados desde los eventos de animación
+    public void ColliderWeaponTrue()
+    {
+        Debug.Log($"{gameObject.name}: ColliderWeaponTrue llamado en frame {Time.frameCount}");
+        EnableAttackCollider(true);
+    }
+    public void ColliderWeaponFalse()
+    {
+        Debug.Log($"{gameObject.name}: ColliderWeaponFalse llamado en frame {Time.frameCount}");
+        EnableAttackCollider(false);
+    }
 
     public override void TakeDamage(float damage, Vector2 knockbackDirection, float knockbackForce = 5f)
     {
+        Debug.Log($"{gameObject.name}: TakeDamage llamado con daño={damage}, isAttacking={isAttacking}, currentHealth={currentHealth}");
         if (isAttacking)
             StopAttack();
 
@@ -203,6 +223,7 @@ public class Skeleton : Enemy, IMeleeEnemy, IShieldEnemy
         // Bloqueo de daño por escudo
         if (TakeShieldedDamage(damage, out adjustedDamage))
         {
+            Debug.Log($"{gameObject.name}: Daño bloqueado por escudo.");
             if (!hasBlockedFirstHit)
             {
                 hasBlockedFirstHit = true;
@@ -217,6 +238,7 @@ public class Skeleton : Enemy, IMeleeEnemy, IShieldEnemy
             return;
         }
 
+        Debug.Log($"{gameObject.name}: Daño real recibido: {adjustedDamage}");
         base.TakeDamage(adjustedDamage, knockbackDirection, knockbackForce);
         if (currentHealth > 0)
             hurtCooldownTimer = hurtCooldown;
@@ -258,8 +280,11 @@ public class Skeleton : Enemy, IMeleeEnemy, IShieldEnemy
         {
             adjustedDamage = 0f;
             return true;
+
         }
+
         adjustedDamage = damage;
         return false;
     }
 }
+
