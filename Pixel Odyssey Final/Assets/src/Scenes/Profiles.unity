@@ -2504,6 +2504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43abf289f1114a343a9b34df5233dd2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadingScreenPrefab: {fileID: 7856982779997615977, guid: 99abc719f177a774e8ac963d4276800f, type: 3}
 --- !u!1 &1411419188
 GameObject:
   m_ObjectHideFlags: 0
