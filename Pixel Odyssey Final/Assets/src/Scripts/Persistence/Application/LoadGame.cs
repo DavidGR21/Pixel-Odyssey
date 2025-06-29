@@ -1,23 +1,16 @@
 public class LoadGame
 {
-    private readonly IGameRepository repository;
+    private readonly IUnitOfWork unitOfWork;
 
-    public LoadGame(IGameRepository repo)
+    public LoadGame(IUnitOfWork uow)
     {
-        repository = repo;
+        unitOfWork = uow;
     }
 
-    // Nuevo método para perfiles
     public PlayerData Execute(int profileId)
     {
-        return repository.Load(profileId);
+        var data = unitOfWork.GameRepository.Load(profileId);
+        // Si necesitas, puedes llamar a unitOfWork.Commit() aquí, pero para lecturas normalmente no es necesario.
+        return data;
     }
-
-    /*
-        // Método antiguo (sin perfil)
-        public PlayerData Execute()
-        {
-            return repository.Load();
-        }
-    */
 }

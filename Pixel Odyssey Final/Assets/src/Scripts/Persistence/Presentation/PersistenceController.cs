@@ -16,9 +16,9 @@ public class PersistenceController : MonoBehaviour
             return;
         }
         DontDestroyOnLoad(gameObject);
-        var repo = RepositoryFactory.Create();
-        saveGame = new SaveGame(repo);
-        loadGame = new LoadGame(repo);
+        var unitOfWork = new UnitOfWork();
+        saveGame = new SaveGame(unitOfWork);
+        loadGame = new LoadGame(unitOfWork);
     }
 
     // Guarda el estado actual del perfil activo (puedes llamar esto para un guardado rápido)
