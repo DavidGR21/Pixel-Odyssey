@@ -7,7 +7,7 @@ public class PatrolBehavior : IEnemyBehavior
         if (enemy is IMeleeEnemy)
         {
             var animator = enemy.GetAnimator();
-            enemy.cronometro += Time.deltaTime;
+            enemy.chronometer += Time.deltaTime;
             animator.PlayRun(false);
 
             // --- Detección de suelo y pared con debug ---
@@ -30,30 +30,30 @@ public class PatrolBehavior : IEnemyBehavior
             {
                 Debug.Log($"[{enemy.name}] ¡Girando! Motivo: {(isWallAhead ? "Pared detectada" : "No hay suelo adelante")}");
                 // Cambia de dirección si no hay suelo o hay una pared
-                enemy.direccion = enemy.direccion == 0 ? 1 : 0;
-                enemy.transform.rotation = Quaternion.Euler(0, enemy.direccion == 0 ? 0 : 180, 0);
-                enemy.cronometro = 0;
+                enemy.direction = enemy.direction == 0 ? 1 : 0;
+                enemy.transform.rotation = Quaternion.Euler(0, enemy.direction == 0 ? 0 : 180, 0);
+                enemy.chronometer = 0;
                 animator.PlayWalk(false);
                 return;
             }
             // --- FIN debug ---
 
-            if (enemy.cronometro >= 4)
+            if (enemy.chronometer >= 4)
             {
-                enemy.rutina = Random.Range(0, 2);
-                enemy.cronometro = 0;
+                enemy.rutine = Random.Range(0, 2);
+                enemy.chronometer = 0;
             }
-            switch (enemy.rutina)
+            switch (enemy.rutine)
             {
                 case 0:
                     animator.PlayWalk(false);
                     break;
                 case 1:
-                    enemy.direccion = Random.Range(0, 2);
-                    enemy.rutina++;
+                    enemy.direction = Random.Range(0, 2);
+                    enemy.rutine++;
                     break;
                 case 2:
-                    enemy.transform.rotation = Quaternion.Euler(0, enemy.direccion == 0 ? 0 : 180, 0);
+                    enemy.transform.rotation = Quaternion.Euler(0, enemy.direction == 0 ? 0 : 180, 0);
                     enemy.transform.Translate(Vector3.right * enemy.speedWalk * Time.deltaTime);
                     animator.PlayWalk(true);
                     break;

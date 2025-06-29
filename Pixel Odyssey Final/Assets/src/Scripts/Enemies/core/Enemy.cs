@@ -16,9 +16,9 @@ public abstract class Enemy : MonoBehaviour
     public float speedRun;
     public float visionRange;
     public float attackRange;
-    public int direccion;
-    public int rutina;
-    public float cronometro;
+    public int direction;
+    public int rutine;
+    public float chronometer;
     public GameObject target;
 
     // Nuevos campos para detección de suelo y paredes
