@@ -372,7 +372,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   checkRadius: 0.1
-  damage: 10
+  damage: 20
   hitCollider: {fileID: 1496396631805778459}
   rangeCollider: {fileID: 6237849740621136009}
 --- !u!114 &6303940569884491280
@@ -398,7 +398,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3399988275951404004}
   - component: {fileID: 7495191714009819302}
-  - component: {fileID: 4828493130362152908}
+  - component: {fileID: 1718245814012151105}
   m_Layer: 0
   m_Name: Rango
   m_TagString: Untagged
@@ -467,7 +467,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4828493130362152908
+--- !u!114 &1718245814012151105
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -476,6 +476,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6237849740621136009}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e990c3cb83e795f4280a6a04ae98c029, type: 3}
+  m_Script: {fileID: 11500000, guid: 90a929b6bdaa18542b4f0113f9b2753b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
