@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6567100276151244941}
   - component: {fileID: 723260932826437028}
-  - component: {fileID: 5070727360174712541}
+  - component: {fileID: 6510355665449442739}
   m_Layer: 0
   m_Name: Hit
   m_TagString: Untagged
@@ -79,7 +79,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5070727360174712541
+--- !u!114 &6510355665449442739
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,7 +88,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1496396631805778459}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69242b08e8a2d8f469f50d23b17ce2ed, type: 3}
+  m_Script: {fileID: 11500000, guid: ae81e1633bfeb1647a2a48846f1b689d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackForce: 5
@@ -309,8 +309,8 @@ BoxCollider2D:
   m_Offset: {x: -0.0551973, y: 0.023646891}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.46875, y: 1.65625}
+    pivot: {x: 0.5161913, y: 0.5102538}
+    oldSize: {x: 4.6875, y: 4.6875}
     newSize: {x: 1.46875, y: 1.65625}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -362,9 +362,9 @@ MonoBehaviour:
   speedRun: 7
   visionRange: 14
   attackRange: 2.8
-  direccion: 0
-  rutina: 0
-  cronometro: 0
+  direction: 0
+  rutine: 0
+  chronometer: 0
   target: {fileID: 0}
   groundCheck: {fileID: 7514810289708694246}
   wallCheck: {fileID: 7585278648712780602}

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class RangoEnemigo2D : MonoBehaviour
+public class RangeEnemy : MonoBehaviour
 {
     private IMeleeEnemy meleeEnemy;
     private IEnemyAnimator enemyAnimator;
