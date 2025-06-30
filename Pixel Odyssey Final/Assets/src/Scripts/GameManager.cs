@@ -51,8 +51,10 @@ public class GameManager : MonoBehaviour
             return;
         }
 
+        bool spawnPoint = !string.IsNullOrEmpty(data.SpawnPointName);
+
         Debug.Log("[GameManager] Restaurando nivel: " + data.CurrentScene);
-        StartCoroutine(PlayAndLoadWithBootstrap("MainScene", data.CurrentScene));
+        StartCoroutine(PlayAndLoadWithBootstrap("MainScene", data.CurrentScene, spawnPoint));
     }
     public void PlayGame()
     {
@@ -66,11 +68,12 @@ public class GameManager : MonoBehaviour
 
         string bootstrapScene = "MainScene";
         string sceneToLoad = bootstrapScene;
-
+        bool spawnPoint = false;
         // Intenta cargar los datos del perfil
         PlayerData data = persistence.LoadGameData();
         if (data != null && !string.IsNullOrEmpty(data.CurrentScene))
         {
+            spawnPoint = !string.IsNullOrEmpty(data.SpawnPointName);
             sceneToLoad = data.CurrentScene;
         }
         else
@@ -93,10 +96,10 @@ public class GameManager : MonoBehaviour
         }
 
         Debug.Log("Escena a cargar: " + sceneToLoad);
-        StartCoroutine(PlayAndLoadWithBootstrap(bootstrapScene, sceneToLoad));
+        StartCoroutine(PlayAndLoadWithBootstrap(bootstrapScene, sceneToLoad, spawnPoint));
     }
 
-    private IEnumerator PlayAndLoadWithBootstrap(string bootstrapScene, string targetScene)
+    private IEnumerator PlayAndLoadWithBootstrap(string bootstrapScene, string targetScene, bool spawnPoint)
     {
         // 1. Instancia la pantalla de carga y hazla persistente
         GameObject loadingScreen = null;
@@ -116,7 +119,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("[GameManager] Escena objetivo: " + targetScene);
         Debug.Log("[GameManager] ¿Bootstrap == targetScene?: " + (bootstrapScene == targetScene));
 
-        if (bootstrapScene == targetScene)
+        if (bootstrapScene == targetScene && (spawnPoint == false))
         {
             Debug.Log("[GameManager] Cargando solo bootstrapScene.");
             SceneManager.LoadScene(bootstrapScene, LoadSceneMode.Single);
@@ -199,7 +202,7 @@ public class GameManager : MonoBehaviour
         if (player != null && data != null)
         {
             player.transform.position = new Vector3(data.PositionX, data.PositionY, data.PositionZ);
-          
+
         }
 
         // Espera un frame extra para asegurar que todo se ha actualizado visualmente

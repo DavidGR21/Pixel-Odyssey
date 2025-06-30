@@ -341,7 +341,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   checkRadius: 0.1
-  damage: 3
+  damage: 10
   hitCollider: {fileID: 2359944738711451619}
   rangeCollider: {fileID: 7534955376171226549}
 --- !u!114 &-4351656190821003548

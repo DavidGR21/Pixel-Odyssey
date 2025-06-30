@@ -1197,7 +1197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
       propertyPath: spawnPoints.Array.size
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
       propertyPath: factories.Array.data[0].factory
@@ -1245,11 +1245,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
       propertyPath: spawnPoints.Array.data[5].enemyType
-      value: Ogre
+      value: Goblin
       objectReference: {fileID: 0}
     - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
       propertyPath: spawnPoints.Array.data[6].enemyType
-      value: Ogre
+      value: Goblin
+      objectReference: {fileID: 0}
+    - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
+      propertyPath: spawnPoints.Array.data[7].enemyType
+      value: Goblin
+      objectReference: {fileID: 0}
+    - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
+      propertyPath: spawnPoints.Array.data[8].enemyType
+      value: Skeleton
       objectReference: {fileID: 0}
     - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
       propertyPath: spawnPoints.Array.data[0].position.x
@@ -1309,11 +1317,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
       propertyPath: spawnPoints.Array.data[6].position.x
-      value: 145.8
+      value: 94.2
       objectReference: {fileID: 0}
     - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
       propertyPath: spawnPoints.Array.data[6].position.y
-      value: 22.8
+      value: 16.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
+      propertyPath: spawnPoints.Array.data[7].position.x
+      value: 91.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
+      propertyPath: spawnPoints.Array.data[7].position.y
+      value: 1.9
+      objectReference: {fileID: 0}
+    - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
+      propertyPath: spawnPoints.Array.data[8].position.x
+      value: 161.39
+      objectReference: {fileID: 0}
+    - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
+      propertyPath: spawnPoints.Array.data[8].position.y
+      value: 22.54
       objectReference: {fileID: 0}
     - target: {fileID: 412346231793011291, guid: 7a3806726e06bb141898226959b3078a, type: 3}
       propertyPath: m_LocalPosition.x
