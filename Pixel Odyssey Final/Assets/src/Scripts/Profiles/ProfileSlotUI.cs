@@ -33,10 +33,19 @@ public class ProfileSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         {
             var data = persistence.GetProfileData(profileId);
             Debug.Log($"[ProfileSlotUI] Datos cargados para perfil {profileId}: {(data != null ? JsonUtility.ToJson(data) : "null")}");
-            nameText.text = persistence.GetProfileName(profileId);
-            healthText.text = "Salud:" + persistence.GetProfileHealth(profileId);
-            sceneText.text = persistence.GetProfileScene(profileId);
-            hasData = persistence.GetProfileScene(profileId) != "Sin partida";
+            hasData = data != null;
+            if (hasData)
+            {
+                nameText.text = persistence.GetProfileName(profileId);
+                healthText.text = "Salud:" + persistence.GetProfileHealth(profileId);
+                sceneText.text = persistence.GetProfileScene(profileId);
+            }
+            else
+            {
+                nameText.text = $"Perfil {profileId}";
+                healthText.text = "-";
+                sceneText.text = "-";
+            }
         }
         else
         {
