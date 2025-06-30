@@ -130,7 +130,7 @@ public class Ogre : Enemy, IMeleeEnemy
             if (enable)
             {
                 // Resetea el flag de daño cada vez que se habilita el collider
-                var hitScript = hitCollider.GetComponent<HitEnemigo2D>();
+                var hitScript = hitCollider.GetComponent<HitEnemy>();
                 if (hitScript != null)
                 {
                     hitScript.ResetDamage();

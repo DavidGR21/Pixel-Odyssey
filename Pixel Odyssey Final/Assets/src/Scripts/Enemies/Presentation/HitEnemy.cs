@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class HitEnemigo2D : MonoBehaviour
+public class HitEnemy : MonoBehaviour
 {
     private IMeleeEnemy meleeEnemy;
     [SerializeField] private float knockbackForce = 5f;

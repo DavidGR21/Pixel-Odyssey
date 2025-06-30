@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 622614951137109772}
   - component: {fileID: 1833434378212470303}
-  - component: {fileID: 8621163929947502741}
+  - component: {fileID: 8760297215416237010}
   m_Layer: 0
   m_Name: Rango
   m_TagString: Untagged
@@ -79,7 +79,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8621163929947502741
+--- !u!114 &8760297215416237010
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,7 +88,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5273797279623188579}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e990c3cb83e795f4280a6a04ae98c029, type: 3}
+  m_Script: {fileID: 11500000, guid: 90a929b6bdaa18542b4f0113f9b2753b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5318791810628185415
@@ -246,8 +246,8 @@ BoxCollider2D:
   m_Offset: {x: -0.0032373667, y: -0.0031877756}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.09375, y: 1.1875}
+    pivot: {x: 0.5079462, y: 0.4324568}
+    oldSize: {x: 4.6875, y: 4.6875}
     newSize: {x: 1.09375, y: 1.1875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -299,9 +299,9 @@ MonoBehaviour:
   speedRun: 10
   visionRange: 14
   attackRange: 2.8
-  direccion: 0
-  rutina: 0
-  cronometro: 0
+  direction: 0
+  rutine: 0
+  chronometer: 0
   target: {fileID: 0}
   groundCheck: {fileID: 1420955813695629130}
   wallCheck: {fileID: 7641122987352795987}
@@ -397,7 +397,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2045216458164119628}
   - component: {fileID: 7658520168208539822}
-  - component: {fileID: 4602284164817597295}
+  - component: {fileID: 5457345718135137576}
   m_Layer: 0
   m_Name: Hit
   m_TagString: Untagged
@@ -466,7 +466,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4602284164817597295
+--- !u!114 &5457345718135137576
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -475,7 +475,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8410608645369673588}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69242b08e8a2d8f469f50d23b17ce2ed, type: 3}
+  m_Script: {fileID: 11500000, guid: ae81e1633bfeb1647a2a48846f1b689d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackForce: 5

@@ -170,7 +170,7 @@ public class Skeleton : Enemy, IMeleeEnemy, IShieldEnemy
             if (enable)
             {
                 // Llama a ResetDamage SOLO en HitEnemigo2D
-                var hitScript = hitCollider.GetComponent<HitEnemigo2D>();
+                var hitScript = hitCollider.GetComponent<HitEnemy>();
                 if (hitScript != null)
                 {
                     hitScript.ResetDamage();

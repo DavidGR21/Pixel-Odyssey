@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2017193918161338885}
   - component: {fileID: 8565129673615673497}
-  - component: {fileID: 868350461897469514}
+  - component: {fileID: 5330621259801143193}
   m_Layer: 0
   m_Name: Hit
   m_TagString: Untagged
@@ -110,7 +110,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &868350461897469514
+--- !u!114 &5330621259801143193
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2359944738711451619}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69242b08e8a2d8f469f50d23b17ce2ed, type: 3}
+  m_Script: {fileID: 11500000, guid: ae81e1633bfeb1647a2a48846f1b689d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackForce: 5
@@ -278,8 +278,8 @@ BoxCollider2D:
   m_Offset: {x: 0.009312078, y: 0.010848403}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.78125, y: 1.21875}
+    pivot: {x: 0.5061464, y: 0.436584}
+    oldSize: {x: 4.6875, y: 4.6875}
     newSize: {x: 1.09375, y: 1.1875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -331,9 +331,9 @@ MonoBehaviour:
   speedRun: 9
   visionRange: 12
   attackRange: 2.8
-  direccion: 0
-  rutina: 0
-  cronometro: 0
+  direction: 0
+  rutine: 0
+  chronometer: 0
   target: {fileID: 0}
   groundCheck: {fileID: 761641638347438978}
   wallCheck: {fileID: 661386517872757060}
@@ -398,7 +398,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5148526772199491784}
   - component: {fileID: 6426822479859001552}
-  - component: {fileID: 8952748003255322599}
+  - component: {fileID: 1375896535781835273}
   m_Layer: 0
   m_Name: Rango
   m_TagString: Untagged
@@ -467,7 +467,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8952748003255322599
+--- !u!114 &1375896535781835273
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -476,6 +476,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7534955376171226549}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e990c3cb83e795f4280a6a04ae98c029, type: 3}
+  m_Script: {fileID: 11500000, guid: 90a929b6bdaa18542b4f0113f9b2753b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
