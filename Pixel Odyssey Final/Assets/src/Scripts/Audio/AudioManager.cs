@@ -12,8 +12,8 @@ public class AudioManager : MonoBehaviour
 
     private IPlayerAudio musicPlayer;
     private IPlayerAudio playerSFXPlayer;
-    private IPlayerAudio enemySFXPlayer;
-    private IPlayerAudio ambiencePlayer;
+    //private IPlayerAudio enemySFXPlayer;
+    //private IPlayerAudio ambiencePlayer;
     private IPlayerAudio uiPlayer;
 
     private void Awake()

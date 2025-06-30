@@ -3,6 +3,9 @@ using System;
 using System.Collections; // Added to include IEnumerator
 
 public class HealthPlayer : MonoBehaviour, IHealth
+
+// Este patrón permite que otros objetos se suscriban a cambios en el estado del jugador (vida, escudo, muerte).
+// Así, por ejemplo, una barra de vida en la UI puede actualizarse automáticamente cuando cambia currentHealth.
 {
     [Header("Vida")]
     [SerializeField] public float maxHealth = 100f;

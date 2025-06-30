@@ -35,7 +35,6 @@ public class PauseManager : MonoBehaviour
             resumeButton.SetActive(false);
         Time.timeScale = 0f;
         isGameOver = true;
-
     }
 
     private void Update()

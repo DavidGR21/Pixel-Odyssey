@@ -62,7 +62,6 @@ public class TutorialObjAttack : MonoBehaviour
                 tutorialText.color = Color.white;
             }
 
-            Debug.Log("Tutorial mostrado.");
         }
     }
 
@@ -74,7 +73,6 @@ public class TutorialObjAttack : MonoBehaviour
             tutorialPanel.SetActive(false);
             isShowing = false;
 
-            Debug.Log("Tutorial finalizado.");
         }
     }
 }

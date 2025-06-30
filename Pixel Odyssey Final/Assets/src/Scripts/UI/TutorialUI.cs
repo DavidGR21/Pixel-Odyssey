@@ -47,7 +47,6 @@ public class TutorialUI : MonoBehaviour
                 tutorialText.color = Color.white;
             }
 
-            Debug.Log("Tutorial mostrado.");
         }
     }
     public void HideTutorial()
@@ -56,7 +55,6 @@ public class TutorialUI : MonoBehaviour
         {
             tutorialPanel.SetActive(false);
             isShowing = false;
-            Debug.Log("Tutorial finalizado.");
         }
     }
 }
