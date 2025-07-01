@@ -366,12 +366,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99afe206df7edeb4fb9a9a668338b2fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedWalk: 8
+  speedWalk: 4
   speedRun: 10
-  visionRange: 6
-  attackRange: 2
-  direction: 1
-  rutine: 1
+  visionRange: 14
+  attackRange: 2.8
+  direction: 0
+  rutine: 0
   chronometer: 0
   target: {fileID: 0}
   groundCheck: {fileID: 1420955813695629130}

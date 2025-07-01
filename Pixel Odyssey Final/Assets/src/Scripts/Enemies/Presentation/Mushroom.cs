@@ -12,7 +12,6 @@ public class Mushroom : Enemy, IMeleeEnemy
     private IEnemyAnimator enemyAnimator;
     private bool isAttacking;
     private float attackCooldownTimer = 0.0f;
-    private bool isStunned = false;
     public bool IsAttacking => isAttacking;
     public int Damage => damage;
     public IEnemyAnimator GetAnimator() => enemyAnimator;
@@ -41,20 +40,24 @@ public class Mushroom : Enemy, IMeleeEnemy
         attackCooldownTimer = 0.0f;
     }
 
-    public void UpdateBehavior()
+
+    public override void UpdateBehavior()
     {
         if (health.IsHurtActive || isStunned)
         {
+            Debug.Log($"{gameObject.name} is hurt or stunned, skipping behavior update.");
             return;
         }
 
         if (Target == null)
         {
+            Debug.LogWarning($"{gameObject.name}: Target is null, cannot update behavior.");
             return;
         }
 
         float distanceToPlayerX = Mathf.Abs(transform.position.x - Target.transform.position.x);
         float distanceToPlayerY = Mathf.Abs(transform.position.y - Target.transform.position.y);
+        Debug.Log($"{gameObject.name}: Distance to player X={distanceToPlayerX}, Y={distanceToPlayerY}, VisionRange={VisionRange}, AttackRange={AttackRange}");
 
         // 1. If the player is not in X or Y range, patrol
         if (distanceToPlayerX > VisionRange || distanceToPlayerY > 3f)
@@ -83,9 +86,14 @@ public class Mushroom : Enemy, IMeleeEnemy
 
         if (behaviorController.GetCurrentBehavior() == null)
         {
-            Debug.Log($"{gameObject.name}: No behavior assigned (conditions not met)");
+            Debug.LogWarning($"{gameObject.name}: No behavior assigned (conditions not met)");
+        }
+        else
+        {
+            behaviorController.UpdateBehavior();
         }
     }
+
 
     // IMeleeEnemy methods
     public void Attack()
