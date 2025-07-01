@@ -1,7 +1,11 @@
 using UnityEngine;
 using System;
 using System.Collections; // Added to include IEnumerator
-
+/// <summary>
+/// Clase encargada de gestionar la salud y el escudo del jugador.
+/// Implementa la interfaz IHealth para definir el comportamiento de salud del jugador.
+/// Permite al jugador recibir daño, curarse, restaurar escudo y manejar eventos de muerte y cambio de salud.
+/// </summary>
 public class HealthPlayer : MonoBehaviour, IHealth
 
 // Este patrón permite que otros objetos se suscriban a cambios en el estado del jugador (vida, escudo, muerte).

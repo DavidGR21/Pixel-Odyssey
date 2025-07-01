@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
-
+/// <summary>
+/// Clase encargada de configurar la escena de créditos.
+/// </summary>
 public class CreditsSceneSetup : MonoBehaviour
 {
     void Start()
@@ -9,11 +11,7 @@ public class CreditsSceneSetup : MonoBehaviour
         if (hud != null)
         {
             hud.SetActive(false);
-            Debug.Log("HUDPlayer desactivado en la escena de créditos.");
         }
-        else
-        {
-            Debug.LogWarning("HUDPlayer no encontrado en la escena de créditos.");
-        }
+     
     }
 }

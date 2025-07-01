@@ -1,6 +1,9 @@
 ﻿// BossAttackMelee.cs
 using UnityEngine;
-
+/// <summary>
+/// Clase que representa el ataque cuerpo a cuerpo del jefe Slime.
+/// Este ataque se ejecuta cuando el jugador está dentro de un rango específico y en el suelo
+/// </summary>
 public class BossAttackMelee : BossAttackBase
 {
     [Header("Condiciones del Ataque")]

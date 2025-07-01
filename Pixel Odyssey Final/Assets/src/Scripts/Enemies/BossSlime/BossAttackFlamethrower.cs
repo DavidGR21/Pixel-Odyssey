@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using Assets.src.Scripts.Enemies.BossSlime;
-
+/// <summary>
+/// Clase que representa el ataque de lanzallamas del jefe Slime.
+/// </summary>
 public class BossAttackFlamethrower : BossAttackBase
 {
     [Header("Condiciones del Ataque")]

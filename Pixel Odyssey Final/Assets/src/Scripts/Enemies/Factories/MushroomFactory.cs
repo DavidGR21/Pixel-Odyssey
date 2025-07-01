@@ -1,5 +1,9 @@
 using UnityEngine;
-
+/// <summary>
+/// Clase que implementa el patrón Factory para crear instancias de Mushroom.
+/// Esta clase hereda de EnemyFactory y se encarga de instanciar Mushrooms en una posición específica.
+/// Utiliza inyección de dependencias para asignar el animador del enemigo.
+/// </summary>
 public class MushroomFactory : EnemyFactory
 {
   [SerializeField] private GameObject mushroomPrefab;

@@ -1,6 +1,11 @@
 ﻿using Assets.src.Scripts.Player.States;
 using UnityEngine;
-
+/// <summary>
+/// Clase que representa el estado de movimiento normal del jugador.
+/// Implementa la interfaz IPlayerMovementState para definir el comportamiento del jugador durante el movimiento normal.
+/// Este estado permite al jugador moverse horizontalmente, saltar y realizar un dash.
+/// También gestiona los sonidos de pasos y salto, y la animación del jugador.
+/// </summary>
 public class NormalMovementState : IPlayerMovementState
 {
     public void EnterState(PlayerMovementContext context) { }

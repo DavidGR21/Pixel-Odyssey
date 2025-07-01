@@ -776,7 +776,7 @@ GameObject:
   m_Component:
   - component: {fileID: 407096594}
   m_Layer: 0
-  m_Name: Level1Return
+  m_Name: Nivel 1F
   m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1042,7 +1042,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: Tutorial
-  spawnPointName: LevelTutorial1
+  spawnPointName: Tutorial F
 --- !u!61 &719370159
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1193,11 +1193,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
       propertyPath: factories.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
       propertyPath: spawnPoints.Array.size
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
       propertyPath: factories.Array.data[0].factory
@@ -1253,7 +1253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
       propertyPath: spawnPoints.Array.data[7].enemyType
-      value: Goblin
+      value: Ogre
       objectReference: {fileID: 0}
     - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
       propertyPath: spawnPoints.Array.data[8].enemyType
@@ -1625,7 +1625,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1393450480}
   m_Layer: 0
-  m_Name: Level1
+  m_Name: Nivel 1
   m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1677,7 +1677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: Level2
-  spawnPointName: Level2
+  spawnPointName: Nivel 2
 --- !u!61 &1473551028
 BoxCollider2D:
   m_ObjectHideFlags: 0

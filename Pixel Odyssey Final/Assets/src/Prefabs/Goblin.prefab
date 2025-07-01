@@ -104,8 +104,13 @@ GameObject:
   - component: {fileID: 234710875230024532}
   - component: {fileID: 708216939640263945}
   - component: {fileID: 7674721027732243211}
-  - component: {fileID: 7634319349199755413}
   - component: {fileID: 4904513621195694383}
+  - component: {fileID: -1443725931430540419}
+  - component: {fileID: -427637129587736810}
+  - component: {fileID: -4083839171765284921}
+  - component: {fileID: 7634319349199755413}
+  - component: {fileID: 6836615824927804179}
+  - component: {fileID: 5732483547592028742}
   m_Layer: 0
   m_Name: Goblin
   m_TagString: Enemy
@@ -282,6 +287,55 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &4904513621195694383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5318791810628185415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b22a9d6770a22fb4facd313b69e0418d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 234710875230024532}
+--- !u!114 &-1443725931430540419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5318791810628185415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eb7cdabe270c5f49b56b0f5754b05ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-427637129587736810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5318791810628185415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b62d871bd26b04499d795f05eb8031, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-4083839171765284921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5318791810628185415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fefcbdf6527f8f7439c66f4137834028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7634319349199755413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,6 +349,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  damage: 10
+  hitCollider: {fileID: 8410608645369673588}
+  rangeCollider: {fileID: 5273797279623188579}
+  attackCooldown: 2
+  stunDuration: 0.5
+--- !u!114 &6836615824927804179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5318791810628185415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99afe206df7edeb4fb9a9a668338b2fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   speedWalk: 4
   speedRun: 10
   visionRange: 14
@@ -309,10 +380,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   checkRadius: 0.1
-  damage: 10
-  hitCollider: {fileID: 8410608645369673588}
-  rangeCollider: {fileID: 5273797279623188579}
---- !u!114 &4904513621195694383
+--- !u!114 &5732483547592028742
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -321,10 +389,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5318791810628185415}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b22a9d6770a22fb4facd313b69e0418d, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ca28694b4809e847b1476a81a6d4864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 234710875230024532}
 --- !u!1 &5884256821230296323
 GameObject:
   m_ObjectHideFlags: 0

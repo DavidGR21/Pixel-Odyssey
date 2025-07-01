@@ -2,7 +2,11 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-
+/// <summary>
+/// Clase encargada de gestionar la interfaz de usuario de un slot de perfil.
+/// Muestra la información del perfil, como nombre, salud y escena actual.
+/// Permite manejar eventos de hover para mostrar esquinas activas.
+/// </summary>
 public class ProfileSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public int profileId;
@@ -10,8 +14,6 @@ public class ProfileSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public TMP_Text healthText;
     public TMP_Text sceneText;
     public Image infoImage;
-
-    // Arrastra aquí las imágenes de las esquinas en el inspector
     public GameObject cornerTopLeft;
     public GameObject cornerTopRight;
     public GameObject cornerBottomLeft;
@@ -19,20 +21,17 @@ public class ProfileSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     private void Start()
     {
-        Debug.Log($"[ProfileSlotUI] Start() para perfil {profileId}");
         UpdateProfileInfo();
         SetCornersActive(false);
     }
 
     public void UpdateProfileInfo()
     {
-        Debug.Log($"[ProfileSlotUI] UpdateProfileInfo() para perfil {profileId}");
         var persistence = FindObjectOfType<PersistenceController>();
         bool hasData = false;
         if (persistence != null)
         {
             var data = persistence.GetProfileData(profileId);
-            Debug.Log($"[ProfileSlotUI] Datos cargados para perfil {profileId}: {(data != null ? JsonUtility.ToJson(data) : "null")}");
             hasData = data != null;
             if (hasData)
             {
@@ -49,7 +48,6 @@ public class ProfileSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         }
         else
         {
-            Debug.LogWarning($"[ProfileSlotUI] No se encontró PersistenceController en la escena para perfil {profileId}");
             nameText.text = $"Perfil {profileId}";
             healthText.text = "-";
             sceneText.text = "Escena: -";
@@ -57,7 +55,6 @@ public class ProfileSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         if (infoImage != null)
         {
             infoImage.gameObject.SetActive(hasData);
-            Debug.Log($"[ProfileSlotUI] infoImage {(hasData ? "activada" : "desactivada")} para perfil {profileId}");
         }
     }
 
@@ -65,13 +62,11 @@ public class ProfileSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public void OnPointerEnter(PointerEventData eventData)
     {
         SetCornersActive(true);
-        Debug.Log($"[ProfileSlotUI] Hover ON en perfil {profileId}");
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         SetCornersActive(false);
-        Debug.Log($"[ProfileSlotUI] Hover OFF en perfil {profileId}");
     }
 
     private void SetCornersActive(bool active)

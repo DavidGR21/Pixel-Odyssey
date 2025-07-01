@@ -1,6 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+/// <summary>
+/// Controlador de persistencia que maneja el guardado y carga de datos del jugador.
+/// Utiliza el patrón Unit of Work para encapsular las operaciones de guardado y carga.
+/// Este controlador se asegura de que solo haya una instancia en toda la aplicación (singleton).
+/// </summary>
 public class PersistenceController : MonoBehaviour
 {
     private SaveGame saveGame;
@@ -8,10 +12,8 @@ public class PersistenceController : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log("[PersistenceController] Awake en: " + gameObject.scene.name + " - " + gameObject.name);
         if (FindObjectsOfType<PersistenceController>().Length > 1)
         {
-            Debug.LogWarning("[PersistenceController] Duplicado, se destruye: " + gameObject.name);
             Destroy(gameObject);
             return;
         }
@@ -69,7 +71,6 @@ public class PersistenceController : MonoBehaviour
         float escudoActual = healthPlayer != null ? healthPlayer.CurrentShield : 0f;
 
         int profileId = ProfileManager.Instance != null ? ProfileManager.Instance.ActiveProfileId : 1;
-        Debug.Log("Act " + spawnPointName + " sc " + SceneManager.GetActiveScene().name);
         var data = new PlayerData
         {
             ProfileId = profileId,
@@ -83,11 +84,9 @@ public class PersistenceController : MonoBehaviour
             Shield = escudoActual
         };
         saveGame.Execute(data);
-        Debug.Log("Ruta de guardado: " + Application.persistentDataPath);
-        Debug.Log("Progreso guardado automáticamente en el portal (posición del spawnPoint).");
     }
 
-    // Guarda cualquier PlayerData personalizado (por ejemplo, al iniciar una partida nueva)
+    // Guarda cualquier PlayerData personalizado
     public void SaveGameData(PlayerData data)
     {
         if (data.ProfileId == 0)
@@ -102,13 +101,13 @@ public class PersistenceController : MonoBehaviour
     {
         return loadGame.Execute(profileId);
     }
-
+// Obtiene el nombre del perfil, o un nombre por defecto si no hay datos
     public string GetProfileName(int profileId)
     {
         var data = GetProfileData(profileId);
         return data != null ? data.ProfileName : $"Perfil {profileId}";
     }
-
+// Obtiene la escena actual del perfil, o un mensaje por defecto si no hay datos
     public string GetProfileHealth(int profileId)
     {
         var data = GetProfileData(profileId);
@@ -123,7 +122,6 @@ public class PersistenceController : MonoBehaviour
         var data = GetProfileData(profileId);
         return data != null ? data.Shield : 0f;
     }
-    //aqui se devuelve el nombre de la escena del spawnPoint porque es la escena donde aparece el jugador
 
     public string GetProfileScene(int profileId)
     {

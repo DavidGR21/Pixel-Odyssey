@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
-
+/// <summary>
+///     Clase encargada de gestionar el panel del tutorial.
+/// </summary>
 public class TutorialUI : MonoBehaviour
 {
     public static TutorialUI Instance { get; private set; }

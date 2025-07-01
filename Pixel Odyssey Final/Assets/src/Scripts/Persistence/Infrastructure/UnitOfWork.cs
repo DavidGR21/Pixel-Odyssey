@@ -1,3 +1,9 @@
+/// <summary>
+/// Clase que implementa un patrón Unit of Work para manejar transacciones y acceso a repositorios.
+/// Esta clase es parte de la infraestructura y se encarga de proporcionar una instancia del repositorio de juegos.
+/// Permite realizar operaciones de commit y rollback, encapsulando la lógica de persistencia.
+/// Puede ser extendida para manejar múltiples repositorios si es necesario.
+/// </summary>
 public class UnitOfWork : IUnitOfWork
 {
     private readonly FileGameRepository _gameRepository;
@@ -12,14 +18,11 @@ public class UnitOfWork : IUnitOfWork
 
     public void Commit()
     {
-        // Aquí podrías hacer flush, guardar logs, etc.
         _committed = true;
-        // Si tuvieras varios repositorios, aquí guardarías todos juntos
     }
 
     public void Rollback()
     {
-        // Si tuvieras operaciones en memoria, aquí las desharías
         _committed = false;
     }
 }

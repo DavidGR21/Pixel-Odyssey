@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
-
+/// <summary>
+/// Clase que implementa el patrón Factory para crear instancias de Goblin.
+/// Esta clase hereda de EnemyFactory y se encarga de instanciar Goblins en una posición específica.
+/// Utiliza inyección de dependencias para asignar el animador del enemigo.
+/// </summary>
 public class GoblinFactory : EnemyFactory
 {
    [SerializeField] private GameObject goblinPrefab;

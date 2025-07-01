@@ -1,5 +1,10 @@
 ﻿using UnityEngine;
-
+/// <summary>
+/// Clase encargada de manejar los sonidos del jugador.
+/// Implementa la interfaz IPlayerAudioHandler para reproducir sonidos de pasos, salto, daño, ataque y dash.
+/// Esta clase debe ser utilizada por cualquier clase que implemente un jugador en el juego.
+/// Permite la reproducción y detención de sonidos específicos relacionados con las acciones del jugador.
+/// </summary>
 public class PlayerAudioHandler
 {
     private AudioClip stepClip;

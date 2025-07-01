@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
-
+/// <summary>
+/// Clase encargada de gestionar el tutorial de objetos interactivos.
+/// </summary>
 public class TutorialObjTrigger : MonoBehaviour
 {
     public static TutorialObjTrigger Instance { get; private set; }

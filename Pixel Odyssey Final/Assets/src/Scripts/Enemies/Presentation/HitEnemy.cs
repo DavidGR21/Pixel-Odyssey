@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
-
+/// <summary>
+/// Clase encargada de manejar el daño al jugador cuando entra en contacto con el collider del enemigo.
+/// Esta clase debe ser asignada a un GameObject que tenga un componente IMeleeEnemy.
+/// Utiliza un BoxCollider2D para detectar colisiones con el jugador y aplicar daño.
+/// </summary>
 public class HitEnemy : MonoBehaviour
 {
     private IMeleeEnemy meleeEnemy;

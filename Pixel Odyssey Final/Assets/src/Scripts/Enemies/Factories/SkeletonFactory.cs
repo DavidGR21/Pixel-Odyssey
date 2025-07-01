@@ -1,5 +1,9 @@
 using UnityEngine;
-
+/// <summary>
+/// Clase que implementa el patrón Factory para crear instancias de Skeleton.
+/// Esta clase hereda de EnemyFactory y se encarga de instanciar Skeletons en una posición específica.
+/// Utiliza inyección de dependencias para asignar los animadores del enemigo.
+/// </summary>
 public class SkeletonFactory : EnemyFactory
 {
     [SerializeField] private GameObject skeletonPrefab;
@@ -13,7 +17,7 @@ public class SkeletonFactory : EnemyFactory
     {
         if (skeletonPrefab == null)
         {
-            Debug.LogError("skeletonPrefab no esta asignado en skeletonPrefab.");
+            Debug.LogError("skeletonPrefab no está asignado en SkeletonFactory.");
             return null;
         }
 

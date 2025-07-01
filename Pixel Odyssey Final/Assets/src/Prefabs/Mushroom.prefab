@@ -138,6 +138,11 @@ GameObject:
   - component: {fileID: 7674721027732243211}
   - component: {fileID: 7346118119004250541}
   - component: {fileID: -4351656190821003548}
+  - component: {fileID: 2854204848874057756}
+  - component: {fileID: 5280116274457141254}
+  - component: {fileID: 3072961475897255086}
+  - component: {fileID: 8089222724014383499}
+  - component: {fileID: 6124564062467659503}
   m_Layer: 0
   m_Name: Mushroom
   m_TagString: Enemy
@@ -327,23 +332,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  speedWalk: 4
-  speedRun: 9
-  visionRange: 12
-  attackRange: 2.8
-  direction: 0
-  rutine: 0
-  chronometer: 0
-  target: {fileID: 0}
-  groundCheck: {fileID: 761641638347438978}
-  wallCheck: {fileID: 661386517872757060}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  checkRadius: 0.1
-  damage: 10
+  damage: 15
   hitCollider: {fileID: 2359944738711451619}
   rangeCollider: {fileID: 7534955376171226549}
+  attackCooldown: 2
+  stunDuration: 0.5
 --- !u!114 &-4351656190821003548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,6 +350,80 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 234710875230024532}
+--- !u!114 &2854204848874057756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5318791810628185415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca28694b4809e847b1476a81a6d4864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5280116274457141254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5318791810628185415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99afe206df7edeb4fb9a9a668338b2fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedWalk: 6
+  speedRun: 10
+  visionRange: 14
+  attackRange: 2.8
+  direction: 0
+  rutine: 0
+  chronometer: 0
+  target: {fileID: 0}
+  groundCheck: {fileID: 761641638347438978}
+  wallCheck: {fileID: 661386517872757060}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  checkRadius: 0.1
+--- !u!114 &3072961475897255086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5318791810628185415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eb7cdabe270c5f49b56b0f5754b05ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8089222724014383499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5318791810628185415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b62d871bd26b04499d795f05eb8031, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6124564062467659503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5318791810628185415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fefcbdf6527f8f7439c66f4137834028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5563118111009284140
 GameObject:
   m_ObjectHideFlags: 0

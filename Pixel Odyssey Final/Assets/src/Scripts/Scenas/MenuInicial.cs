@@ -1,7 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
-
+/// <summary>
+/// Clase encargada de gestionar el menú inicial del juego.
+/// Permite reproducir un sonido de inicio y cargar la escena de selección de perfil.
+/// También proporciona métodos para iniciar el juego y salir de la aplicación.
+/// </summary>
 public class MenuInicial : MonoBehaviour
 {
     [SerializeField] private AudioClip startSound;

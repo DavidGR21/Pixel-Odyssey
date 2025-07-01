@@ -2,7 +2,11 @@
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+/// <summary>
+/// Clase encargada de gestionar los portales entre escenas.
+/// Permite al jugador entrar en un portal para cambiar de escena y manejar la transición visual.
+/// También guarda el estado del juego automáticamente al pasar por el portal.
+/// </summary>
 public class Portal : MonoBehaviour
 {
     [SerializeField] public string sceneToLoad;
