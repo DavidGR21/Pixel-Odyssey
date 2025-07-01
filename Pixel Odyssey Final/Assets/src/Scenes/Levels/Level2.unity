@@ -686,7 +686,7 @@ GameObject:
   m_Component:
   - component: {fileID: 279705552}
   m_Layer: 0
-  m_Name: Level2Return
+  m_Name: Nivel 2F
   m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1179,7 +1179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: Level1
-  spawnPointName: Level1Return
+  spawnPointName: Nivel 1F
 --- !u!61 &730259376
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1389,7 +1389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: Final
-  spawnPointName: LevelF
+  spawnPointName: Final
 --- !u!61 &1017895161
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1547,7 +1547,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1156876952}
   m_Layer: 0
-  m_Name: Level2
+  m_Name: Nivel 2
   m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

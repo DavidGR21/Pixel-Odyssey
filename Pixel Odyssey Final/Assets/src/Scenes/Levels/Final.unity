@@ -449,9 +449,9 @@ MonoBehaviour:
   speedRun: 0
   visionRange: 0
   attackRange: 0
-  direccion: 0
-  rutina: 0
-  cronometro: 0
+  direction: 0
+  rutine: 0
+  chronometer: 0
   target: {fileID: 0}
   groundCheck: {fileID: 0}
   wallCheck: {fileID: 0}
@@ -831,7 +831,7 @@ GameObject:
   m_Component:
   - component: {fileID: 938747754}
   m_Layer: 0
-  m_Name: LevelF
+  m_Name: Final
   m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1354,7 +1354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: Level2
-  spawnPointName: Level2Return
+  spawnPointName: Nivel 2F
 --- !u!61 &1633349221
 BoxCollider2D:
   m_ObjectHideFlags: 0

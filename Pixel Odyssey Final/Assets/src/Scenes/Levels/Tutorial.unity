@@ -190,7 +190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 62913432}
   m_Layer: 0
-  m_Name: LevelTutorial
+  m_Name: Tutorial
   m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -467,7 +467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: MainScene
-  spawnPointName: Level0
+  spawnPointName: Inicio
 --- !u!61 &303106039
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16837,7 +16837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: Level1
-  spawnPointName: Level1
+  spawnPointName: Nivel 1
 --- !u!61 &1425342785
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17207,7 +17207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1648223233}
   m_Layer: 0
-  m_Name: LevelTutorial1
+  m_Name: Tutorial F
   m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
