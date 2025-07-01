@@ -2,7 +2,11 @@ using UnityEngine;
 using UnityEditor.Animations;
 using System;
 using System.Collections;
-
+/// <summary>
+///  Clase encargada de controlar las animaciones de los enemigos.
+/// Esta clase utiliza un Animator para reproducir animaciones de caminar, correr, atacar, recibir daño y morir.
+/// También permite la inyección de un IEnemyAnimator personalizado para manejar animaciones específicas.
+/// </summary>
 public class EnemyAnimatorController : MonoBehaviour
 {
     private Animator animator;

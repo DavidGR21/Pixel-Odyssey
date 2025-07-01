@@ -5,9 +5,9 @@ using UnityEngine;
 /// </summary>
 public interface IMeleeEnemy
 {
-    void Attack(); // Inicia el ataque melee
-    void StopAttack(); // Detiene el ataque melee
-    bool IsAttacking { get; } // Estado del ataque
+    void Attack();
+    void StopAttack();
+    bool IsAttacking { get; }
     float AttackRange { get; }
     int Damage { get; }
     void EnableAttackCollider(bool enable);

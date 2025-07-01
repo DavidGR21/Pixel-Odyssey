@@ -13,7 +13,6 @@ public interface IEnemyAnimator
     void PlayDie();
     bool IsHurt();
     void PlayDeath();
-    void ResetHurt(Action onComplete); // <-- Agrega esta línea
-
+    void ResetHurt(Action onComplete); 
 
 }

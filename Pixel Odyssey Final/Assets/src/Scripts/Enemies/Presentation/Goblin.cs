@@ -1,6 +1,10 @@
 using UnityEngine;
 using System.Collections;
-
+/// <summary>
+/// Clase que representa un enemigo tipo Goblin.
+/// Hereda de la clase Enemy y implementa la interfaz IMeleeEnemy.
+/// Controla el comportamiento de ataque, patrullaje y persecución del Goblin.
+/// </summary>
 public class Goblin : Enemy, IMeleeEnemy
 {
     [SerializeField] private int damage;
@@ -45,21 +49,18 @@ public class Goblin : Enemy, IMeleeEnemy
     {
         if (health.IsHurtActive || isStunned)
         {
-            Debug.Log($"{gameObject.name} is hurt or stunned, skipping behavior update.");
-            return;
+                    return;
         }
 
         if (Target == null)
         {
-            Debug.LogWarning($"{gameObject.name}: Target is null, cannot update behavior.");
             return;
         }
 
         float distanceToPlayerX = Mathf.Abs(transform.position.x - Target.transform.position.x);
         float distanceToPlayerY = Mathf.Abs(transform.position.y - Target.transform.position.y);
-        Debug.Log($"{gameObject.name}: Distance to player X={distanceToPlayerX}, Y={distanceToPlayerY}, VisionRange={VisionRange}, AttackRange={AttackRange}");
 
-        // 1. If the player is not in X or Y range, patrol
+        //si el jugador está en modo de invulnerabilidad, no se actualiza el comportamiento
         if (distanceToPlayerX > VisionRange || distanceToPlayerY > 3f)
         {
             if (!(behaviorController.GetCurrentBehavior() is PatrolBehavior))
@@ -67,7 +68,7 @@ public class Goblin : Enemy, IMeleeEnemy
                 SetBehavior(new PatrolBehavior());
             }
         }
-        // 2. If in X and Y range but out of attack range, chase
+        //si el jugador está en rango X pero no en Y, se persigue
         else if (distanceToPlayerX > AttackRange)
         {
             if (!(behaviorController.GetCurrentBehavior() is ChaseBehavior))
@@ -75,7 +76,7 @@ public class Goblin : Enemy, IMeleeEnemy
                 SetBehavior(new ChaseBehavior());
             }
         }
-        // 3. If in X and Y range and within attack range, attack
+        //si el jugador está en rango X e Y, se ataca
         else
         {
             if (!(behaviorController.GetCurrentBehavior() is AttackBehavior))
@@ -84,18 +85,15 @@ public class Goblin : Enemy, IMeleeEnemy
             }
         }
 
-        if (behaviorController.GetCurrentBehavior() == null)
-        {
-            Debug.LogWarning($"{gameObject.name}: No behavior assigned (conditions not met)");
-        }
-        else
+        if (behaviorController.GetCurrentBehavior() != null)
         {
             behaviorController.UpdateBehavior();
         }
+       
     }
 
 
-    // IMeleeEnemy methods
+    // metodos requeridos por la interfaz IMeleeEnemy
     public void Attack()
     {
         if (enemyAnimator == null)

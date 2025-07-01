@@ -1,5 +1,10 @@
 using UnityEngine;
-
+/// <summary>
+/// Clase encargada de manejar la salud de los enemigos.
+/// Esta clase permite inicializar la salud máxima, recibir daño, aplicar retroceso y manejar la muerte del enemigo.
+/// También gestiona el estado de "herido" para activar animaciones de daño.
+/// Debe ser utilizada por cualquier clase que implemente un enemigo en el juego.
+/// </summary>
 public class EnemyHealth : MonoBehaviour
 {
     private float currentHealth;

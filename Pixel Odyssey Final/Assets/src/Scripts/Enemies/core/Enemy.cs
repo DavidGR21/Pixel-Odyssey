@@ -1,14 +1,22 @@
 using UnityEngine;
-
+/// <summary>
+/// Clase base para todos los enemigos del juego.
+/// Esta clase define las propiedades y comportamientos comunes de los enemigos,
+/// incluyendo salud, física, control de comportamiento, animaciones y gestión de escena.
+/// Debe ser extendida por clases específicas de enemigos para implementar comportamientos particulares.
+/// </summary>
 public abstract class Enemy : MonoBehaviour
 {
     [SerializeField] protected float maxHealth = 100f;
+
+    //se separan los componentes para cumplir con el principio de responsabilidad única
+    //y facilitar la inyección de dependencias
+    
     protected EnemyHealth health;
     protected EnemyPhysics physics;
     protected EnemyBehaviorController behaviorController;
     protected EnemyAnimatorController animatorController;
     protected EnemySceneManager sceneManager;
-    // En Enemy.cs
     public Rigidbody2D Rb => physics.rb;
     protected bool isStunned = false;
     public bool IsStunned => isStunned;
@@ -16,7 +24,6 @@ public abstract class Enemy : MonoBehaviour
     public float VisionRange => behaviorController.visionRange;
     public float SpeedRun => behaviorController.speedRun;
     public GameObject Target => behaviorController.target;
-    // Agrega esto en Enemy.cs
     public EnemyBehaviorController BehaviorController => behaviorController;
     public EnemyAnimatorController AnimatorController => animatorController;
     public virtual void InjectAnimator(IEnemyAnimator animator)
@@ -37,7 +44,7 @@ public abstract class Enemy : MonoBehaviour
             Debug.LogError("Required components missing on " + gameObject.name);
             return;
         }
-
+        // Se inicializan los componentes
         health.Initialize(maxHealth);
         physics.Initialize();
         behaviorController.Initialize(this);

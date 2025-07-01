@@ -1,6 +1,11 @@
 using UnityEngine;
 using System.Collections;
-
+/// <summary>
+/// Clase encargada de manejar la física de los enemigos.
+/// Esta clase utiliza un Rigidbody2D para aplicar fuerzas de retroceso y detener el movimiento después de un golpe.
+/// También permite desactivar la física y los colisionadores del enemigo cuando es necesario.
+/// Debe ser utilizada por cualquier clase que implemente un enemigo en el juego.
+/// </summary>
 public class EnemyPhysics : MonoBehaviour
 {
     private Rigidbody2D _rb;
@@ -29,6 +34,7 @@ public class EnemyPhysics : MonoBehaviour
     {
         if (_rb != null)
         {
+            StopAllCoroutines();
             _rb.bodyType = RigidbodyType2D.Static;
         }
 

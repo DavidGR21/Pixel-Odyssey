@@ -1193,11 +1193,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
       propertyPath: factories.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
       propertyPath: spawnPoints.Array.size
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
       propertyPath: factories.Array.data[0].factory
@@ -1253,7 +1253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
       propertyPath: spawnPoints.Array.data[7].enemyType
-      value: Goblin
+      value: Ogre
       objectReference: {fileID: 0}
     - target: {fileID: -2291830108708779618, guid: 7a3806726e06bb141898226959b3078a, type: 3}
       propertyPath: spawnPoints.Array.data[8].enemyType

@@ -1,5 +1,10 @@
 using UnityEngine;
-
+/// <summary>
+/// Clase encargada de controlar el comportamiento de los enemigos.
+/// Esta clase utiliza un IEnemyBehavior para definir el comportamiento actual del enemigo.
+/// Permite establecer y actualizar el comportamiento, así como acceder a propiedades comunes como velocidad, rango de visión y ataque.
+/// Debe ser extendida por clases específicas de enemigos para implementar comportamientos particulares.
+/// </summary>
 public class EnemyBehaviorController : MonoBehaviour
 {
     private IEnemyBehavior currentBehavior;
