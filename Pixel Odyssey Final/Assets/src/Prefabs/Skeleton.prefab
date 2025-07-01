@@ -408,19 +408,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99afe206df7edeb4fb9a9a668338b2fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedWalk: 0
-  speedRun: 0
-  visionRange: 0
-  attackRange: 0
+  speedWalk: 4
+  speedRun: 7
+  visionRange: 14
+  attackRange: 2.8
   direction: 0
   rutine: 0
   chronometer: 0
   target: {fileID: 0}
-  groundCheck: {fileID: 0}
-  wallCheck: {fileID: 0}
+  groundCheck: {fileID: 7514810289708694246}
+  wallCheck: {fileID: 7585278648712780602}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   checkRadius: 0.1
 --- !u!114 &754462199294658641
 MonoBehaviour:

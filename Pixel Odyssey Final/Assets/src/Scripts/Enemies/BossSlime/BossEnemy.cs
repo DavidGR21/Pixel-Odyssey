@@ -49,12 +49,14 @@ public class BossEnemy : Enemy
     public void TriggerDisableHitboxFlame() => flameAttack.DisableHitbox();
     public void TriggerEnableHitboxJump() => jumpAttack.EnableHitbox();
     public void TriggerDisableHitboxJump() => jumpAttack.DisableHitbox();
-    public  IEnemyAnimator GetAnimator()
+    public IEnemyAnimator GetAnimator()
     {
         return null;
     }
     private void Start()
     {
+        Initialize();
+
         health.CurrentHealth = 200f; // No tiene salud hasta transformarse
 
         if (animator == null)
@@ -92,7 +94,7 @@ public class BossEnemy : Enemy
     }
 
 
-    public  void UpdateBehavior()
+    public void UpdateBehavior()
     {
         if (!hasTransformed || isTransforming) return;
         if (playerTransform == null) return;

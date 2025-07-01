@@ -51,7 +51,7 @@ public class Skeleton : Enemy, IMeleeEnemy, IShieldEnemy
         hasBlockedFirstHit = false;
     }
 
-    private void Update()
+    protected override void Update()
     {
         base.Update();
         // Seguridad: desactiva el hitCollider si no está atacando
@@ -61,7 +61,7 @@ public class Skeleton : Enemy, IMeleeEnemy, IShieldEnemy
         }
     }
 
-    public void UpdateBehavior()
+    public override void UpdateBehavior()
     {
         // Actualiza timers
         if (attackCooldownTimer > 0)
@@ -73,7 +73,7 @@ public class Skeleton : Enemy, IMeleeEnemy, IShieldEnemy
 
         // Bloquea behaviors si está herido o escudo activo
         bool isHurt = enemyAnimator != null && enemyAnimator.IsHurt();
-        if (isHurt || isShieldActive)
+        if (health.IsHurtActive || isShieldActive)
         {
             if (BehaviorController.GetCurrentBehavior() != null)
                 SetBehavior(null);

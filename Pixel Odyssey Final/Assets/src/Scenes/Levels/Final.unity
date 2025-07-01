@@ -257,6 +257,11 @@ GameObject:
   - component: {fileID: 347009006}
   - component: {fileID: 347009007}
   - component: {fileID: 347009008}
+  - component: {fileID: 347009009}
+  - component: {fileID: 347009013}
+  - component: {fileID: 347009012}
+  - component: {fileID: 347009011}
+  - component: {fileID: 347009010}
   m_Layer: 0
   m_Name: Jefe
   m_TagString: Enemy
@@ -445,20 +450,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 40
-  speedWalk: 0
-  speedRun: 0
-  visionRange: 0
-  attackRange: 0
-  direction: 0
-  rutine: 0
-  chronometer: 0
-  target: {fileID: 0}
-  groundCheck: {fileID: 0}
-  wallCheck: {fileID: 0}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  checkRadius: 0.1
   animator: {fileID: 347009006}
   transformDuration: 3
   hasTransformed: 0
@@ -478,6 +469,80 @@ MonoBehaviour:
   flameAttack: {fileID: 1974178510}
   jumpAttack: {fileID: 1767540616}
   sceneMusic: {fileID: 8300000, guid: 491030a532bfbbd4bac73467546a64d2, type: 3}
+--- !u!114 &347009009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347009001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eb7cdabe270c5f49b56b0f5754b05ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &347009010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347009001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fefcbdf6527f8f7439c66f4137834028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &347009011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347009001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b62d871bd26b04499d795f05eb8031, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &347009012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347009001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99afe206df7edeb4fb9a9a668338b2fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedWalk: 0
+  speedRun: 0
+  visionRange: 0
+  attackRange: 0
+  direction: 0
+  rutine: 0
+  chronometer: 0
+  target: {fileID: 0}
+  groundCheck: {fileID: 0}
+  wallCheck: {fileID: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  checkRadius: 0.1
+--- !u!114 &347009013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347009001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca28694b4809e847b1476a81a6d4864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &359290364
 GameObject:
   m_ObjectHideFlags: 0
