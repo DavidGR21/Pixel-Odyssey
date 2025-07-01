@@ -1,3 +1,4 @@
+using System;
 /// <summary>
 /// Interfaz encargada de manejar las animaciones de los enemigos.
 /// Define los métodos necesarios para reproducir las animaciones de caminar, correr, atacar, recibir daño y morir.
@@ -11,4 +12,8 @@ public interface IEnemyAnimator
     void PlayHurt(bool value);
     void PlayDie();
     bool IsHurt();
+    void PlayDeath();
+    void ResetHurt(Action onComplete); // <-- Agrega esta línea
+
+
 }

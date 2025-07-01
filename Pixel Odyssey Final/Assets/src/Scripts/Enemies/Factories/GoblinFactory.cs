@@ -17,6 +17,7 @@ public class GoblinFactory : EnemyFactory
     {
         if (goblinPrefab == null)
         {
+            Debug.LogError("goblinPrefab no está asignado en GoblinFactory.");
             return null;
         }
 

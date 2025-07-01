@@ -11,19 +11,19 @@ public class PatrolBehavior : IEnemyBehavior
         if (enemy is IMeleeEnemy)
         {
 
-            var animator = enemy.GetAnimator();
-            enemy.chronometer += Time.deltaTime;
+            var animator = enemy.AnimatorController;
+            enemy.BehaviorController.chronometer += Time.deltaTime;
             animator.PlayRun(false);
 
             // --- Detección de suelo y pared 
             bool isGroundAhead = true;
             bool isWallAhead = false;
             //se comprueba que el enemigo tenga los checks asignados
-            if (enemy.groundCheck != null && enemy.wallCheck != null)
+            if (enemy.BehaviorController.groundCheck != null && enemy.BehaviorController.wallCheck != null)
             {
                 // Se comprueba si hay suelo y pared delante del enemigo
-                isGroundAhead = Physics2D.OverlapCircle(enemy.groundCheck.position, enemy.checkRadius, enemy.groundLayer);
-                isWallAhead = Physics2D.OverlapCircle(enemy.wallCheck.position, enemy.checkRadius, enemy.groundLayer);
+                isGroundAhead = Physics2D.OverlapCircle(enemy.BehaviorController.groundCheck.position, enemy.BehaviorController.checkRadius, enemy.BehaviorController.groundLayer);
+                isWallAhead = Physics2D.OverlapCircle(enemy.BehaviorController.wallCheck.position, enemy.BehaviorController.checkRadius, enemy.BehaviorController.groundLayer);
 
             }
 
@@ -32,21 +32,21 @@ public class PatrolBehavior : IEnemyBehavior
             if (!isGroundAhead || isWallAhead)
             {
                 // Cambia de dirección si no hay suelo o hay una pared
-                enemy.direction = enemy.direction == 0 ? 1 : 0;
-                enemy.transform.rotation = Quaternion.Euler(0, enemy.direction == 0 ? 0 : 180, 0);
-                enemy.chronometer = 0;
+                enemy.BehaviorController.direction = enemy.BehaviorController.direction == 0 ? 1 : 0;
+                enemy.transform.rotation = Quaternion.Euler(0, enemy.BehaviorController.direction == 0 ? 0 : 180, 0);
+                enemy.BehaviorController.chronometer = 0;
                 animator.PlayWalk(false);
                 return;
             }
 
-            if (enemy.chronometer >= 4)
+            if (enemy.BehaviorController.chronometer >= 4)
             {
                 // Cambia de rutinas cada 4 segundos
-                enemy.rutine = Random.Range(0, 2);
-                enemy.chronometer = 0;
+                enemy.BehaviorController.rutine = Random.Range(0, 2);
+                enemy.BehaviorController.chronometer = 0;
             }
             // Rutinas de movimiento
-            switch (enemy.rutine)
+            switch (enemy.BehaviorController.rutine)
             {
                 // Rutina 0: Espera
                 case 0:
@@ -54,13 +54,13 @@ public class PatrolBehavior : IEnemyBehavior
                     break;
                 case 1:
                     // Rutina 1: Cambio de dirección
-                    enemy.direction = Random.Range(0, 2);
-                    enemy.rutine++;
+                    enemy.BehaviorController.direction = Random.Range(0, 2);
+                    enemy.BehaviorController.rutine++;
                     break;
                 case 2:
                     // Rutina 2: Movimiento
-                    enemy.transform.rotation = Quaternion.Euler(0, enemy.direction == 0 ? 0 : 180, 0);
-                    enemy.transform.Translate(Vector3.right * enemy.speedWalk * Time.deltaTime);
+                    enemy.transform.rotation = Quaternion.Euler(0, enemy.BehaviorController.direction == 0 ? 0 : 180, 0);
+                    enemy.transform.Translate(Vector3.right * enemy.BehaviorController.speedWalk * Time.deltaTime);
                     animator.PlayWalk(true);
                     break;
             }

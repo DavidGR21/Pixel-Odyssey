@@ -1,4 +1,6 @@
 using UnityEngine;
+using System;
+
 /// <summary>
 /// Clase adaptadora para manejar las animaciones de enemigos.
 /// Implementa la interfaz IEnemyAnimator y IShieldEnemyAnimator para reproducir animaciones de caminar, correr, atacar, recibir daño, morir y escudo.
@@ -22,5 +24,10 @@ public class EnemyAnimatorAdapter : MonoBehaviour, IEnemyAnimator, IShieldEnemyA
     public bool IsHurt() => animator.GetBool("hurt");
     public Animator Animator => animator;
     public void PlayShield(bool value) => animator.SetBool("shield", value);
-
+    public void PlayDeath() => animator.SetTrigger("die");
+    public void ResetHurt(Action onComplete)
+    {
+        animator.SetBool("hurt", false);
+        onComplete?.Invoke();
+    }
 }

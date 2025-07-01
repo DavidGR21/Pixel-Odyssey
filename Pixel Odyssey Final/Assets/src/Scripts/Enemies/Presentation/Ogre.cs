@@ -3,75 +3,72 @@ using System.Collections;
 
 public class Ogre : Enemy, IMeleeEnemy
 {
-    public int damage;
-
-    public GameObject hitCollider;
-    public GameObject rangeCollider;
+    [SerializeField] private int damage;
+    [SerializeField] private GameObject hitCollider;
+    [SerializeField] private GameObject rangeCollider;
+    [SerializeField] private float attackCooldown = 2.0f;
+    [SerializeField] private float hurtCooldown = 1.0f;
+    [SerializeField] private float stunDuration = 0.5f;
 
     private IEnemyAnimator enemyAnimator;
     private bool isAttacking;
-    private float attackCooldown = 2.0f;
     private float attackCooldownTimer = 0.0f;
-    private float hurtCooldown = 1.0f;
     private float hurtCooldownTimer = 0.0f;
     private bool isStunned = false;
-    private float stunDuration = 0.5f;
 
-    public float AttackRange => attackRange;
     public int Damage => damage;
     public bool IsAttacking => isAttacking;
 
-    public override IEnemyAnimator GetAnimator() => enemyAnimator;
+    public IEnemyAnimator GetAnimator() => enemyAnimator;
 
     public override void Initialize()
     {
         base.Initialize();
-        enemyAnimator = GetComponent<IEnemyAnimator>();
-        if (enemyAnimator == null)
-            enemyAnimator = GetComponent<EnemyAnimatorAdapter>();
-        target = GameObject.FindWithTag("Player");
+        enemyAnimator = AnimatorController.GetAnimator() ?? GetComponent<EnemyAnimatorAdapter>();
+
         if (rangeCollider == null)
             rangeCollider = transform.Find("Range")?.gameObject;
         if (hitCollider == null)
             hitCollider = transform.Find("Hit")?.gameObject;
         if (hitCollider != null)
             hitCollider.GetComponent<BoxCollider2D>().enabled = false;
+
         isAttacking = false;
         attackCooldownTimer = 0.0f;
         hurtCooldownTimer = 0.0f;
     }
 
-    public override void UpdateBehavior()
+    public void UpdateBehavior()
     {
-        if (isHurtActive)
+        if (health.IsHurtActive || isStunned)
         {
-            Debug.Log($"{gameObject.name}: Está herido, no ejecuta behaviors.");
+            Debug.Log($"{gameObject.name}: Está herido o aturdido, no ejecuta behaviors.");
             return;
         }
-        if (target == null)
+        if (Target == null)
         {
             Debug.Log($"{gameObject.name}: Sin target asignado.");
             return;
         }
 
-        float distanceToPlayerX = Mathf.Abs(transform.position.x - target.transform.position.x);
-        float distanceToPlayerY = Mathf.Abs(transform.position.y - target.transform.position.y);
+        float distanceToPlayerX = Mathf.Abs(transform.position.x - Target.transform.position.x);
+        float distanceToPlayerY = Mathf.Abs(transform.position.y - Target.transform.position.y);
 
-        Debug.Log($"{gameObject.name}: Distancia al jugador X={distanceToPlayerX}, Y={distanceToPlayerY}, visionRange={visionRange}, attackRange={attackRange}");
+        Debug.Log($"{gameObject.name}: Distancia al jugador X={distanceToPlayerX}, Y={distanceToPlayerY}, visionRange={VisionRange}, attackRange={AttackRange}");
 
         // 1. Si el jugador NO está en rango X o Y, patrulla
-        if (distanceToPlayerX > visionRange || distanceToPlayerY > 3f)
+        if (distanceToPlayerX > VisionRange || distanceToPlayerY > 3f)
         {
-            if (!(currentBehavior is PatrolBehavior))
+            if (!(BehaviorController.GetCurrentBehavior() is PatrolBehavior))
             {
                 SetBehavior(new PatrolBehavior());
                 Debug.Log($"{gameObject.name}: Cambiando a Patrulla");
             }
         }
         // 2. Si está en rango X y Y, pero fuera de ataque, persigue
-        else if (distanceToPlayerX > attackRange)
+        else if (distanceToPlayerX > AttackRange)
         {
-            if (!(currentBehavior is ChaseBehavior))
+            if (!(BehaviorController.GetCurrentBehavior() is ChaseBehavior))
             {
                 SetBehavior(new ChaseBehavior());
                 Debug.Log($"{gameObject.name}: Cambiando a Persecución");
@@ -80,21 +77,21 @@ public class Ogre : Enemy, IMeleeEnemy
         // 3. Si está en rango X y Y, y dentro de ataque, ataca
         else
         {
-            if (!(currentBehavior is AttackBehavior))
+            if (!(BehaviorController.GetCurrentBehavior() is AttackBehavior))
             {
                 SetBehavior(new AttackBehavior());
                 Debug.Log($"{gameObject.name}: Cambiando a Ataque");
             }
         }
 
-        if (currentBehavior == null)
+        if (BehaviorController.GetCurrentBehavior() == null)
         {
             Debug.Log($"{gameObject.name}: Sin comportamiento asignado (condiciones no cumplidas)");
         }
         else
         {
-            Debug.Log($"{gameObject.name}: Ejecutando comportamiento: {currentBehavior.GetType().Name}");
-            currentBehavior.Execute(this);
+            Debug.Log($"{gameObject.name}: Ejecutando comportamiento: {BehaviorController.GetCurrentBehavior().GetType().Name}");
+            BehaviorController.GetCurrentBehavior().Execute(this);
         }
     }
 
@@ -129,7 +126,6 @@ public class Ogre : Enemy, IMeleeEnemy
             Debug.Log($"{gameObject.name}: hitCollider {(enable ? "habilitado" : "deshabilitado")}");
             if (enable)
             {
-                // Resetea el flag de daño cada vez que se habilita el collider
                 var hitScript = hitCollider.GetComponent<HitEnemy>();
                 if (hitScript != null)
                 {
@@ -162,7 +158,7 @@ public class Ogre : Enemy, IMeleeEnemy
             StopAttack();
 
         base.TakeDamage(damage, knockbackDirection, knockbackForce);
-        if (currentHealth > 0)
+        if (health.CurrentHealth > 0)
             hurtCooldownTimer = hurtCooldown;
     }
 }

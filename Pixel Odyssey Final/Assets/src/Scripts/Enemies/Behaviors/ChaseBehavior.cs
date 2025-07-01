@@ -13,13 +13,13 @@ public class ChaseBehavior : IEnemyBehavior
     {
         if (enemy is IMeleeEnemy)
         {
-            var animator = enemy.GetAnimator();
-            if (enemy.target == null) return;
-            enemy.transform.rotation = Quaternion.Euler(0, enemy.transform.position.x < enemy.target.transform.position.x ? 0 : 180, 0);
+            var animator = enemy.AnimatorController;
+            if (enemy.BehaviorController.target == null) return;
+            enemy.transform.rotation = Quaternion.Euler(0, enemy.transform.position.x < enemy.BehaviorController.target.transform.position.x ? 0 : 180, 0);
             animator.PlayWalk(false);
             animator.PlayRun(true);
             animator.PlayAttack(false);
-            enemy.transform.Translate(Vector3.right * enemy.speedRun * Time.deltaTime);
+            enemy.transform.Translate(Vector3.right * enemy.BehaviorController.speedRun * Time.deltaTime);
         }
     }
 }

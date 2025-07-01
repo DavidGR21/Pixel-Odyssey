@@ -1,40 +1,29 @@
 using UnityEngine;
 using System.Collections;
-/// <summary>
-/// Clase que representa un enemigo tipo Goblin.
-/// Hereda de Enemy y implementa IMeleeEnemy para manejar el comportamiento de ataque melee.
-/// Utiliza un animador para reproducir las animaciones correspondientes y tiene lógica para patrullar, perseguir y atacar al jugador.
-/// </summary>
+
 public class Goblin : Enemy, IMeleeEnemy
 {
-    public int damage;
-    public GameObject hitCollider;
-    public GameObject rangeCollider;
+    [SerializeField] private int damage;
+    [SerializeField] private GameObject hitCollider;
+    [SerializeField] private GameObject rangeCollider;
+    [SerializeField] private float attackCooldown = 2.0f;
+    [SerializeField] private float stunDuration = 0.5f;
 
     private IEnemyAnimator enemyAnimator;
     private bool isAttacking;
-    private float attackCooldown = 2.0f;
     private float attackCooldownTimer = 0.0f;
-    private float hurtCooldown = 1.0f;
-    private float hurtCooldownTimer = 0.0f;
-    private bool isStunned = false;
-    private float stunDuration = 0.5f;
-
-    public float AttackRange => attackRange;
-    public int Damage => damage;
     public bool IsAttacking => isAttacking;
-
-    public override IEnemyAnimator GetAnimator() => enemyAnimator;
-
+    public int Damage => damage;
+    public IEnemyAnimator GetAnimator() => enemyAnimator;
     public override void Initialize()
     {
         base.Initialize();
-        enemyAnimator = GetComponent<IEnemyAnimator>();
+        enemyAnimator = animatorController.GetAnimator() ?? GetComponent<EnemyAnimatorAdapter>();
         if (enemyAnimator == null)
         {
-            enemyAnimator = GetComponent<EnemyAnimatorAdapter>();
+            Debug.LogError("IEnemyAnimator not found on " + gameObject.name);
         }
-        target = GameObject.FindWithTag("Player");
+
         if (rangeCollider == null)
         {
             rangeCollider = transform.Find("Range")?.gameObject;
@@ -49,70 +38,73 @@ public class Goblin : Enemy, IMeleeEnemy
         }
         isAttacking = false;
         attackCooldownTimer = 0.0f;
-        hurtCooldownTimer = 0.0f;
     }
+
 
     public override void UpdateBehavior()
     {
-        // Bloquea behaviors si está herido (usa el flag de la clase base Enemy)
-        if (isHurtActive)
+        if (health.IsHurtActive || isStunned)
         {
+            Debug.Log($"{gameObject.name} is hurt or stunned, skipping behavior update.");
             return;
         }
 
-        if (target == null)
+        if (Target == null)
         {
+            Debug.LogWarning($"{gameObject.name}: Target is null, cannot update behavior.");
             return;
         }
 
-        float distanceToPlayerX = Mathf.Abs(transform.position.x - target.transform.position.x);
-        float distanceToPlayerY = Mathf.Abs(transform.position.y - target.transform.position.y);
+        float distanceToPlayerX = Mathf.Abs(transform.position.x - Target.transform.position.x);
+        float distanceToPlayerY = Mathf.Abs(transform.position.y - Target.transform.position.y);
+        Debug.Log($"{gameObject.name}: Distance to player X={distanceToPlayerX}, Y={distanceToPlayerY}, VisionRange={VisionRange}, AttackRange={AttackRange}");
 
-        // 1. Si el jugador NO está en rango X o Y, patrulla
-        if (distanceToPlayerX > visionRange || distanceToPlayerY > 3f)
+        // 1. If the player is not in X or Y range, patrol
+        if (distanceToPlayerX > VisionRange || distanceToPlayerY > 3f)
         {
-            if (!(currentBehavior is PatrolBehavior))
+            if (!(behaviorController.GetCurrentBehavior() is PatrolBehavior))
             {
                 SetBehavior(new PatrolBehavior());
             }
         }
-        // 2. Si está en rango X y Y, pero fuera de ataque, persigue
-        else if (distanceToPlayerX > attackRange)
+        // 2. If in X and Y range but out of attack range, chase
+        else if (distanceToPlayerX > AttackRange)
         {
-            if (!(currentBehavior is ChaseBehavior))
+            if (!(behaviorController.GetCurrentBehavior() is ChaseBehavior))
             {
                 SetBehavior(new ChaseBehavior());
             }
         }
-        // 3. Si está en rango X y Y, y dentro de ataque, ataca
+        // 3. If in X and Y range and within attack range, attack
         else
         {
-            if (!(currentBehavior is AttackBehavior))
+            if (!(behaviorController.GetCurrentBehavior() is AttackBehavior))
             {
                 SetBehavior(new AttackBehavior());
             }
         }
 
-        if (currentBehavior == null)
+        if (behaviorController.GetCurrentBehavior() == null)
         {
-            Debug.Log($"{gameObject.name}: Sin comportamiento asignado (condiciones no cumplidas)");
+            Debug.LogWarning($"{gameObject.name}: No behavior assigned (conditions not met)");
         }
         else
         {
-            currentBehavior.Execute(this);
+            behaviorController.UpdateBehavior();
         }
     }
 
-    // Métodos requeridos por IMeleeEnemy
+
+    // IMeleeEnemy methods
     public void Attack()
     {
         if (enemyAnimator == null)
         {
             return;
         }
-        enemyAnimator.PlayWalk(false);
-        enemyAnimator.PlayRun(false);
-        enemyAnimator.PlayAttack(true);
+        animatorController.PlayWalk(false);
+        animatorController.PlayRun(false);
+        animatorController.PlayAttack(true);
         isAttacking = true;
         if (rangeCollider != null)
         {
@@ -127,7 +119,7 @@ public class Goblin : Enemy, IMeleeEnemy
         {
             return;
         }
-        enemyAnimator.PlayAttack(false);
+        animatorController.PlayAttack(false);
         isAttacking = false;
         if (rangeCollider != null)
         {
@@ -146,7 +138,6 @@ public class Goblin : Enemy, IMeleeEnemy
             hitCollider.GetComponent<BoxCollider2D>().enabled = enable;
             if (enable)
             {
-                // Resetea el flag de daño cada vez que se habilita el collider
                 var hitScript = hitCollider.GetComponent<HitEnemy>();
                 if (hitScript != null)
                 {
@@ -187,9 +178,14 @@ public class Goblin : Enemy, IMeleeEnemy
         }
 
         base.TakeDamage(damage, knockbackDirection, knockbackForce);
-        if (currentHealth > 0)
+    }
+
+    protected override void Update()
+    {
+        base.Update();
+        if (attackCooldownTimer > 0)
         {
-            hurtCooldownTimer = hurtCooldown;
+            attackCooldownTimer -= Time.deltaTime;
         }
     }
 }

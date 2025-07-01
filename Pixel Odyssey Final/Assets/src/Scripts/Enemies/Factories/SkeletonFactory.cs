@@ -17,7 +17,7 @@ public class SkeletonFactory : EnemyFactory
     {
         if (skeletonPrefab == null)
         {
-            Debug.LogError("skeletonPrefab no esta asignado en skeletonPrefab.");
+            Debug.LogError("skeletonPrefab no está asignado en SkeletonFactory.");
             return null;
         }
 

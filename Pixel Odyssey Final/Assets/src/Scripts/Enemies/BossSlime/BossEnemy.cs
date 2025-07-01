@@ -49,14 +49,13 @@ public class BossEnemy : Enemy
     public void TriggerDisableHitboxFlame() => flameAttack.DisableHitbox();
     public void TriggerEnableHitboxJump() => jumpAttack.EnableHitbox();
     public void TriggerDisableHitboxJump() => jumpAttack.DisableHitbox();
-    public override IEnemyAnimator GetAnimator()
+    public  IEnemyAnimator GetAnimator()
     {
         return null;
     }
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        currentHealth = 200f; // No tiene salud hasta transformarse
+        health.CurrentHealth = 200f; // No tiene salud hasta transformarse
 
         if (animator == null)
             animator = GetComponent<Animator>();
@@ -93,7 +92,7 @@ public class BossEnemy : Enemy
     }
 
 
-    public override void UpdateBehavior()
+    public  void UpdateBehavior()
     {
         if (!hasTransformed || isTransforming) return;
         if (playerTransform == null) return;
@@ -147,7 +146,7 @@ public class BossEnemy : Enemy
 
         yield return new WaitForSeconds(transformDuration);
 
-        currentHealth = maxHealth;
+        health.CurrentHealth = maxHealth;
         hasTransformed = true;
         if (boxCollider != null)
         {
