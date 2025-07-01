@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Clase encargada de gestionar el movimiento de paralaje en el fondo.
+/// Utiliza la posición de la cámara principal para desplazar los fondos en diferentes velocidades,
+/// creando un efecto de profundidad y movimiento en el escenario.
+/// </summary>
 public class ParallaxMovement : MonoBehaviour
 {
     Transform cam; //Main Camera
     Vector3 camStartPos;
-    float distance; //jarak antara start camera posisi dan current posisi
+    float distance; 
 
     GameObject[] backgrounds;
     Material[] mat;
@@ -17,7 +21,6 @@ public class ParallaxMovement : MonoBehaviour
     [Range(0.01f, 1f)]
     public float parallaxSpeed;
 
-    // Start is called before the first frame update
     void Start()
     {
         cam = Camera.main.transform;
@@ -39,7 +42,7 @@ public class ParallaxMovement : MonoBehaviour
 
     void BackSpeedCalculate(int backCount)
     {
-        for (int i = 0; i < backCount; i++) //find the farthest background
+        for (int i = 0; i < backCount; i++) 
         {
             if ((backgrounds[i].transform.position.z - cam.position.z) > farthestBack)
             {
@@ -47,7 +50,7 @@ public class ParallaxMovement : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < backCount; i++) //set the speed of bacground
+        for (int i = 0; i < backCount; i++) 
         {
             backSpeed[i] = 1 - (backgrounds[i].transform.position.z - cam.position.z) / farthestBack;
         }

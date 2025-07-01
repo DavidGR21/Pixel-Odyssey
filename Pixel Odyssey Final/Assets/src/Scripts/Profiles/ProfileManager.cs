@@ -1,6 +1,11 @@
 using UnityEngine;
 using System.Collections.Generic;
-
+/// <summary>
+/// Clase encargada de gestionar los perfiles del jugador.
+/// Permite crear, cargar, eliminar y seleccionar perfiles.
+/// Utiliza un sistema de persistencia para guardar los datos de los perfiles en archivos JSON.
+/// También actualiza la interfaz de usuario con la información de los perfiles disponibles.
+/// </summary>
 public class ProfileManager : MonoBehaviour
 {
     public static ProfileManager Instance { get; private set; }

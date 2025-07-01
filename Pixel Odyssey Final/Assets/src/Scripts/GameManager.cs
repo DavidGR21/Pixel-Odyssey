@@ -1,7 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
-
+/// <summary>
+/// Clase encargada de gestionar el estado del juego y la carga de escenas.
+/// Permite iniciar el juego, restaurar el estado desde la persistencia y manejar la pantalla de carga.
+/// Utiliza un patrón singleton para asegurar que solo haya una instancia de GameManager en la escena.
+/// </summary>
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }

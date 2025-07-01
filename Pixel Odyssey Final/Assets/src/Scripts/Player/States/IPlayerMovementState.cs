@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace Assets.src.Scripts.Player.States
 {
+/// <summary>
+/// Interfaz que define el comportamiento de los estados de movimiento del jugador.
+/// Esta interfaz debe ser implementada por cualquier clase que represente un estado de movimiento del jugador.
+/// Define los métodos para entrar, actualizar, realizar actualizaciones físicas y salir del estado.
+/// </summary>
     public interface IPlayerMovementState
     {
         void EnterState(PlayerMovementContext context);

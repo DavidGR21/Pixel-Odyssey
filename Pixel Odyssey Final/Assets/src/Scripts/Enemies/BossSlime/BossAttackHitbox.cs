@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
-
+/// <summary>
+/// Clase que representa el hitbox de ataque del jefe Slime.
+/// </summary>
 public class BossAttackHitbox : MonoBehaviour
 {
     [SerializeField] private float damage = 20f;

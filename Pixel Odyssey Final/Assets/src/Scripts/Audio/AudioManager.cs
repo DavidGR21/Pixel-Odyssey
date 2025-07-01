@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// AudioManager es una clase singleton que gestiona la reproducción de audio en el juego.
+/// Permite reproducir música de fondo, efectos de sonido del jugador y sonidos de la interfaz
+/// </summary>
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance { get; private set; }
@@ -39,7 +42,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    // M�sica
+    // M�sica
     public void PlayMusic(AudioClip clip, bool loop = true)
     {
         if (clip == null) return;

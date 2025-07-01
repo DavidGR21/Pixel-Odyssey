@@ -1,5 +1,9 @@
 using UnityEngine;
-
+/// <summary>
+/// Clase adaptadora para manejar las animaciones de enemigos.
+/// Implementa la interfaz IEnemyAnimator y IShieldEnemyAnimator para reproducir animaciones de caminar, correr, atacar, recibir daño, morir y escudo.
+/// Esta clase debe ser asignada a un GameObject que tenga un componente Animator.
+/// </summary>
 public class EnemyAnimatorAdapter : MonoBehaviour, IEnemyAnimator, IShieldEnemyAnimator
 {
     [SerializeField] private Animator animator;

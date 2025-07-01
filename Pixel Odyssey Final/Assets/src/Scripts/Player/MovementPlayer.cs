@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class MovementPlayer : MonoBehaviour
 {
-    // Uso del Patrón State:
-    // Se implementa el patrón State mediante la clase PlayerMovementContext y sus estados asociados (por ejemplo, NormalMovementState).
-    // Este patrón permite cambiar dinámicamente el comportamiento del jugador dependiendo de su estado actual (normal, saltando, dash, etc.)
-    // sin usar múltiples condicionales en una sola clase. Esto facilita la extensibilidad, el mantenimiento y el orden del código.
+    // Uso del Patrï¿½n State:
+    // Se implementa el patrï¿½n State mediante la clase PlayerMovementContext y sus estados asociados (por ejemplo, NormalMovementState).
+    // Este patrï¿½n permite cambiar dinï¿½micamente el comportamiento del jugador dependiendo de su estado actual (normal, saltando, dash, etc.)
+    // sin usar mï¿½ltiples condicionales en una sola clase. Esto facilita la extensibilidad, el mantenimiento y el orden del cï¿½digo.
     
     [Header("Movement Settings")]
     [SerializeField] public float velocityOfMovement = 10f;

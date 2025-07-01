@@ -1,5 +1,12 @@
 using UnityEngine;
-
+/// <summary>
+/// Representa el comportamiento de persecución para un enemigo que implementa <see cref="IMeleeEnemy"/>.
+/// Cuando se ejecuta, el enemigo girará para mirar a su objetivo, reproducirá la animación de correr
+/// y se moverá hacia el objetivo a velocidad de carrera.
+/// </summary>
+/// <param name="enemy">
+/// Instancia de <see cref="Enemy"/> que ejecuta el comportamiento de persecución. Debe implementar <see cref="IMeleeEnemy"/>.
+/// </param>
 public class ChaseBehavior : IEnemyBehavior
 {
     public void Execute(Enemy enemy)

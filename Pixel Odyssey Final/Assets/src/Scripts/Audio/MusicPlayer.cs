@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
-
+/// <summary>
+/// Clase encargada de gestionar la reproducción de música en el juego.
+/// Permite reproducir, detener y ajustar el volumen de la música de fondo.
+/// </summary>
 public class MusicPlayer : IPlayerAudio
 {
     private AudioSource audioSource;

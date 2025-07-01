@@ -1,7 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
-
+/// <summary>
+/// Clase que representa al jefe enemigo en el juego.
+/// Hereda de la clase Enemy y maneja la transformación del jefe, su comportamiento de combate,
+/// ataques especiales y la interacción con el jugador.
+/// </summary>
 public class BossEnemy : Enemy
 {
     [Header("Transformación del Jefe")]

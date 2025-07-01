@@ -63,7 +63,6 @@ public class Skeleton : Enemy, IMeleeEnemy, IShieldEnemy
         // Seguridad: desactiva el hitCollider si no está atacando
         if (hitCollider != null && hitCollider.GetComponent<BoxCollider2D>().enabled && !isAttacking)
         {
-            Debug.Log($"{gameObject.name}: Desactivando hitCollider porque isAttacking={isAttacking}");
             EnableAttackCollider(false);
         }
 
@@ -104,7 +103,6 @@ public class Skeleton : Enemy, IMeleeEnemy, IShieldEnemy
             if (!(currentBehavior is PatrolBehavior))
             {
                 SetBehavior(new PatrolBehavior());
-                Debug.Log($"{gameObject.name}: Cambiando a Patrulla");
             }
         }
         // 2. Si está en rango X y Y, pero fuera de ataque, persigue
@@ -113,7 +111,6 @@ public class Skeleton : Enemy, IMeleeEnemy, IShieldEnemy
             if (!(currentBehavior is ChaseBehavior))
             {
                 SetBehavior(new ChaseBehavior());
-                Debug.Log($"{gameObject.name}: Cambiando a Persecución");
             }
         }
         // 3. Si está en rango X y Y, y dentro de ataque, ataca
@@ -122,19 +119,14 @@ public class Skeleton : Enemy, IMeleeEnemy, IShieldEnemy
             if (!(currentBehavior is AttackBehavior))
             {
                 SetBehavior(new AttackBehavior());
-                Debug.Log($"{gameObject.name}: Cambiando a Ataque");
             }
         }
 
-        if (currentBehavior == null)
+        if (currentBehavior != null)
         {
-            Debug.Log($"{gameObject.name}: Sin comportamiento asignado (condiciones no cumplidas)");
-        }
-        else
-        {
-            Debug.Log($"{gameObject.name}: Ejecutando comportamiento: {currentBehavior.GetType().Name}");
             currentBehavior.Execute(this);
         }
+
     }
 
     // Métodos requeridos por IMeleeEnemy
@@ -166,7 +158,6 @@ public class Skeleton : Enemy, IMeleeEnemy, IShieldEnemy
         if (hitCollider != null)
         {
             hitCollider.GetComponent<BoxCollider2D>().enabled = enable;
-            Debug.Log($"{gameObject.name}: hitCollider {(enable ? "habilitado" : "deshabilitado")} en frame {Time.frameCount}");
             if (enable)
             {
                 // Llama a ResetDamage SOLO en HitEnemigo2D
@@ -174,18 +165,11 @@ public class Skeleton : Enemy, IMeleeEnemy, IShieldEnemy
                 if (hitScript != null)
                 {
                     hitScript.ResetDamage();
-                    Debug.Log($"{gameObject.name}: ResetDamage llamado en HitEnemigo2D en frame {Time.frameCount}");
                 }
-                else
-                {
-                    Debug.LogWarning($"{gameObject.name}: No se encontró HitEnemigo2D en el hitCollider");
-                }
+
             }
         }
-        else
-        {
-            Debug.LogWarning($"{gameObject.name}: hitCollider es null al intentar {(enable ? "habilitar" : "deshabilitar")}");
-        }
+
     }
 
     public void Final_Ani()
@@ -204,18 +188,15 @@ public class Skeleton : Enemy, IMeleeEnemy, IShieldEnemy
     // Estos métodos deben ser llamados desde los eventos de animación
     public void ColliderWeaponTrue()
     {
-        Debug.Log($"{gameObject.name}: ColliderWeaponTrue llamado en frame {Time.frameCount}");
         EnableAttackCollider(true);
     }
     public void ColliderWeaponFalse()
     {
-        Debug.Log($"{gameObject.name}: ColliderWeaponFalse llamado en frame {Time.frameCount}");
         EnableAttackCollider(false);
     }
 
     public override void TakeDamage(float damage, Vector2 knockbackDirection, float knockbackForce = 5f)
     {
-        Debug.Log($"{gameObject.name}: TakeDamage llamado con daño={damage}, isAttacking={isAttacking}, currentHealth={currentHealth}");
         if (isAttacking)
             StopAttack();
 
@@ -223,7 +204,6 @@ public class Skeleton : Enemy, IMeleeEnemy, IShieldEnemy
         // Bloqueo de daño por escudo
         if (TakeShieldedDamage(damage, out adjustedDamage))
         {
-            Debug.Log($"{gameObject.name}: Daño bloqueado por escudo.");
             if (!hasBlockedFirstHit)
             {
                 hasBlockedFirstHit = true;
@@ -238,7 +218,6 @@ public class Skeleton : Enemy, IMeleeEnemy, IShieldEnemy
             return;
         }
 
-        Debug.Log($"{gameObject.name}: Daño real recibido: {adjustedDamage}");
         base.TakeDamage(adjustedDamage, knockbackDirection, knockbackForce);
         if (currentHealth > 0)
             hurtCooldownTimer = hurtCooldown;

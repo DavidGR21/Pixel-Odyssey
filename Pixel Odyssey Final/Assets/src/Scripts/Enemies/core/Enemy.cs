@@ -2,7 +2,9 @@ using System.Collections;
 using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+/// <summary>
+/// Clase base para todos los enemigos del juego.
+/// </summary>
 public abstract class Enemy : MonoBehaviour
 {
     [SerializeField] protected float maxHealth = 100f;
@@ -21,7 +23,7 @@ public abstract class Enemy : MonoBehaviour
     public float chronometer;
     public GameObject target;
 
-    // Nuevos campos para detección de suelo y paredes
+    // campos para detección de suelo y paredes
     public Transform groundCheck;
     public Transform wallCheck;
     public LayerMask groundLayer;
@@ -29,6 +31,7 @@ public abstract class Enemy : MonoBehaviour
 
     protected IEnemyAnimator enemyAnimator;
 
+    // Se inyecta el animador del enemigo
     public virtual void InjectAnimator(IEnemyAnimator animator)
     {
         this.enemyAnimator = animator;
@@ -42,14 +45,19 @@ public abstract class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         if (rb == null)
         {
-            Debug.LogWarning($"[Enemy {gameObject.name}] No Rigidbody2D component found");
+            Debug.LogError("Rigidbody2D not found on " + gameObject.name);
         }
     }
-
+    // Método para establecer el comportamiento del enemigo
+    /// <summary>
+    /// Establece el comportamiento actual del enemigo.
+    /// </summary>
+    /// <param name="behavior">El comportamiento a establecer.</param>
     public void SetBehavior(IEnemyBehavior behavior)
     {
         currentBehavior = behavior;
     }
+
     protected virtual void Update()
     {
         UpdateBehavior();
@@ -59,54 +67,42 @@ public abstract class Enemy : MonoBehaviour
     {
         if (isHurtActive)
         {
-            Debug.Log($"[Enemy {gameObject.name}] Está herido, no ejecuta behaviors.");
             return;
         }
         currentBehavior?.Execute(this);
     }
 
+    /// <summary>
+    /// Aplica daño al enemigo y maneja la lógica de retroceso.
+    /// </summary>      
     public virtual void TakeDamage(float damage, Vector2 knockbackDirection, float knockbackForce = 5f)
     {
-        Debug.Log($"[Enemy {gameObject.name}] TakeDamage called: damage={damage}, currentHealth={currentHealth} -> {currentHealth - damage} at frame {Time.frameCount}");
-
         // Verificar si el enemigo tiene escudo y bloquear daño si aplica
         float adjustedDamage = damage;
         if (this is IShieldEnemy shieldEnemy)
         {
             if (shieldEnemy.TakeShieldedDamage(damage, out adjustedDamage))
             {
-                Debug.Log($"[Enemy {gameObject.name}] Damage blocked by shield: {damage} reduced to {adjustedDamage}");
                 return; // Salir si el daño está bloqueado
             }
         }
 
         // Aplicar daño ajustado
         currentHealth -= adjustedDamage;
-        Debug.Log($"[Enemy {gameObject.name}] Damage applied: new health={currentHealth}");
-
         Animator animator = GetComponent<Animator>();
         if (animator != null && !isHurtActive && adjustedDamage > 0) // Activar hurt solo si hay daño real
         {
             isHurtActive = true;
             animator.SetBool("hurt", true);
-            Debug.Log($"[Enemy {gameObject.name}] Hurt animation triggered at frame {Time.frameCount}");
             StartCoroutine(ResetHurtAnimation(animator));
         }
-        else if (isHurtActive)
-        {
-            Debug.LogWarning($"[Enemy {gameObject.name}] Hurt animation already active, skipping reactivation at frame {Time.frameCount}");
-        }
-        else if (animator == null)
-        {
-            Debug.LogError($"[Enemy {gameObject.name}] No Animator component found in TakeDamage()");
-        }
+
 
         if (rb != null)
         {
             rb.linearVelocity = Vector2.zero;
             rb.AddForce(knockbackDirection.normalized * knockbackForce, ForceMode2D.Impulse);
             StartCoroutine(StopMovementAfterKnockback());
-            Debug.Log($"[Enemy {gameObject.name}] Knockback applied: force={knockbackForce}, direction={knockbackDirection}");
         }
 
         if (currentHealth <= 0)
@@ -114,29 +110,30 @@ public abstract class Enemy : MonoBehaviour
             Die();
         }
     }
-
+    /// <summary>
+    /// Detiene el movimiento del enemigo después de recibir un retroceso.
+    /// </summary>
     private IEnumerator StopMovementAfterKnockback()
     {
         yield return new WaitForSeconds(0.2f);
         if (rb != null)
         {
             rb.linearVelocity = Vector2.zero;
-            Debug.Log($"[Enemy {gameObject.name}] Movement stopped after knockback");
         }
     }
-
+    /// <summary>
+    /// Obtiene la duración de la animación de daño.
+    /// </summary>
     private float GetHurtAnimationDuration(Animator animator)
     {
         if (animator == null)
         {
-            Debug.LogError($"[Enemy {gameObject.name}] Animator is null, cannot get hurt animation duration");
             return 0.3f; // Valor por defecto si no se puede obtener
         }
 
         AnimatorController animatorController = animator.runtimeAnimatorController as AnimatorController;
         if (animatorController == null)
         {
-            Debug.LogError($"[Enemy {gameObject.name}] AnimatorController not found, using default duration");
             return 0.3f;
         }
 
@@ -150,38 +147,39 @@ public abstract class Enemy : MonoBehaviour
                     if (clip != null)
                     {
                         float duration = clip.length / (state.state.speed != 0 ? state.state.speed : 1);
-                        Debug.Log($"[Enemy {gameObject.name}] Hurt an  imation duration: {duration} seconds (clip length: {clip.length}, speed: {state.state.speed})");
                         return duration;
                     }
                     else
                     {
-                        Debug.LogWarning($"[Enemy {gameObject.name}] No AnimationClip found for Hurt state, using default duration");
                         return 0.3f;
                     }
                 }
             }
         }
 
-        Debug.LogWarning($"[Enemy {gameObject.name}] Hurt state not found in AnimatorController, using default duration");
         return 0.3f;
     }
 
+    /// <summary>
+    /// Reinicia la animación de daño después de un tiempo.
+    /// </summary>
     private IEnumerator ResetHurtAnimation(Animator animator)
     {
         float hurtAnimationDuration = GetHurtAnimationDuration(animator);
-        Debug.Log($"[Enemy {gameObject.name}] Waiting to reset hurt animation ({hurtAnimationDuration} seconds)");
         yield return new WaitForSeconds(hurtAnimationDuration);
         if (animator != null && currentHealth > 0)
         {
             animator.SetBool("hurt", false);
             isHurtActive = false;
-            Debug.Log($"[Enemy {gameObject.name}] Hurt animation completed, hurt set to false at frame {Time.frameCount}");
         }
     }
-
+    /// <summary>
+    /// Maneja la muerte del enemigo.
+    /// Desactiva el collider, cambia el Rigidbody a estático y reproduce la animación de muerte.
+    /// Si es un jefe, carga la escena de créditos después de un tiempo.
+    /// </summary>
     protected virtual void Die()
     {
-        Debug.Log($"[Enemy {gameObject.name}] Die called, triggering Dead animation");
         Animator animator = GetComponent<Animator>();
         if (animator != null)
         {
@@ -202,7 +200,6 @@ public abstract class Enemy : MonoBehaviour
         // Si es jefe, ir a créditos
         if (this is BossEnemy)
         {
-            Debug.Log("[Enemy] Boss muerto. Cargando créditos...");
             StartCoroutine(LoadCreditsScene());
         }
         else
@@ -221,13 +218,13 @@ public abstract class Enemy : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-
+/// <summary>
+/// Metodo para destruir el objeto después de la animación de muerte.
+/// </summary>
     private IEnumerator DestroyAfterDeathAnimation()
     {
         float deathAnimationDuration = 1.2f;
-        Debug.Log($"[Enemy {gameObject.name}] Waiting for death animation to complete ({deathAnimationDuration} seconds)");
         yield return new WaitForSeconds(deathAnimationDuration);
-        Debug.Log($"[Enemy {gameObject.name}] Death animation completed, destroying GameObject");
         Destroy(gameObject);
     }
 }

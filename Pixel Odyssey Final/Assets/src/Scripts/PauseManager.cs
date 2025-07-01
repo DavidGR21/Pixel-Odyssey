@@ -1,7 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
-
+/// <summary>
+/// Clase encargada de gestionar el estado de pausa del juego.
+/// Permite mostrar un menú de pausa, reiniciar el nivel, restaurar el último punto de control y salir al menú principal.
+/// Utiliza un patrón singleton para asegurar que solo haya una instancia de PauseManager en la escena.
+/// </summary>
 public class PauseManager : MonoBehaviour
 {
     public static PauseManager Instance { get; private set; }

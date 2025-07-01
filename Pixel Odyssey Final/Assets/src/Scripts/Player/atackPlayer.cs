@@ -1,5 +1,9 @@
 ﻿    using UnityEngine;
-
+/// <summary>
+/// Clase encargada de gestionar el ataque del jugador.
+/// Permite al jugador realizar ataques tanto en el suelo como en el aire, infligiendo daño a los enemigos dentro de un radio específico.
+/// Utiliza un Animator para controlar las animaciones de ataque y un sistema de temporización para gestionar el tiempo entre ataques.
+/// </summary>
     public class atackPlayer : MonoBehaviour
     {
         [SerializeField] private Transform ControllerAttack;

@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
-
+/// <summary>
+/// Clase encargada de gestionar la cámara del juego como un singleton.
+/// </summary>
 public class CamaraManagerSingleton : MonoBehaviour
 {
     private static CamaraManagerSingleton instance;

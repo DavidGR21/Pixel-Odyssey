@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
-
+/// <summary>
+/// Clase encargada de gestionar la reproducción de sonidos del jugador.
+/// Implementa la interfaz IPlayerAudio para permitir la reproducción, detención y ajuste de volumen de los sonidos.
+/// Esta clase debe ser añadida a un GameObject con un componente AudioSource para funcionar correctamente.
+/// </summary>
 public class SoundPlayer : IPlayerAudio
 {
     private AudioSource audioSource;

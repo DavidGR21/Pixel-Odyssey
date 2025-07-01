@@ -1,7 +1,9 @@
 ﻿using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+/// <summary>
+/// Clase encargada de actualizar el CinemachineConfiner2D cuando se carga una nueva escena.
+/// </summary>
 public class CameraConfinerUpdater : MonoBehaviour
 {
     private CinemachineConfiner2D confiner;

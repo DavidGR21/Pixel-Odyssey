@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
-
+/// <summary>
+/// Clase encargada de gestionar el tutorial de ataque.
+/// </summary>
 public class TutorialObjAttack : MonoBehaviour
 {
     public static TutorialObjAttack Instance { get; private set; }
