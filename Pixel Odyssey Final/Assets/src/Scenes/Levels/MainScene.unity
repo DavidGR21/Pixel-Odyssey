@@ -160,11 +160,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 134810344}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd05933eabe9e4e4481763953beb930d, type: 3}
+  m_Script: {fileID: 11500000, guid: 6354abf31bd273244b6b8fd3d90d53d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tutorialPanel: {fileID: 1327169042}
-  tutorialText: {fileID: 0}
+  tutorialText: {fileID: 1620713407}
 --- !u!1 &150460981
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,7 +747,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 307834921}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cadb4dc76366c749a70d476cc023cad, type: 3}
+  m_Script: {fileID: 11500000, guid: d8af4514e49708b4885dcdd9e571269c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &322561607

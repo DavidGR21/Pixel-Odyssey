@@ -128,8 +128,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 15809986}
-  - component: {fileID: 15809987}
   - component: {fileID: 15809988}
+  - component: {fileID: 15809987}
   m_Layer: 0
   m_Name: TutorialAttack
   m_TagString: Untagged
@@ -161,11 +161,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 15809985}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd05933eabe9e4e4481763953beb930d, type: 3}
+  m_Script: {fileID: 11500000, guid: 6354abf31bd273244b6b8fd3d90d53d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tutorialPanel: {fileID: 2038887590}
-  tutorialText: {fileID: 1889312011}
+  tutorialPanel: {fileID: 1517883089}
+  tutorialText: {fileID: 1654703755}
 --- !u!114 &15809988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,11 +175,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 15809985}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd05933eabe9e4e4481763953beb930d, type: 3}
+  m_Script: {fileID: 11500000, guid: 6354abf31bd273244b6b8fd3d90d53d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tutorialPanel: {fileID: 1517883089}
-  tutorialText: {fileID: 1654703755}
+  tutorialPanel: {fileID: 2038887590}
+  tutorialText: {fileID: 1889312011}
 --- !u!1 &62913431
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,7 +355,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 82019380}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e9c14b0f841076448dde63ef4faaa6f, type: 3}
+  m_Script: {fileID: 11500000, guid: 123731b12facea04a90a210e065bdbef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tutorialPanel: {fileID: 1517883089}
@@ -16485,7 +16485,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1122593145}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b741b6dc3cf75a4aaf053e01f45cbe4, type: 3}
+  m_Script: {fileID: 11500000, guid: d7c33ad19bf515e4a954bbfbcbc4c755, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tutorialPanel: {fileID: 2038887590}
@@ -16670,7 +16670,7 @@ GameObject:
   - component: {fileID: 1357935614}
   - component: {fileID: 1357935613}
   - component: {fileID: 1357935612}
-  - component: {fileID: 1357935611}
+  - component: {fileID: 1357935615}
   m_Layer: 0
   m_Name: TutorialEnd
   m_TagString: Untagged
@@ -16678,18 +16678,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1357935611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1357935610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc41523b1a5a01547b38582803a76610, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1357935612
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16806,6 +16794,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1357935615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357935610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9ca67d3f01e9e34388b7bdacbe0a64e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1425342783
 GameObject:
   m_ObjectHideFlags: 0
