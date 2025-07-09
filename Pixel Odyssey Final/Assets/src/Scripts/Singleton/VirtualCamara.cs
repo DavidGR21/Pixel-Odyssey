@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
-
+/// <summary>
+/// Clase encargada de gestionar la cámara virtual del juego como un singleton.
+/// </summary>
 public class VirtualCamara : MonoBehaviour
 {
     private static VirtualCamara instance;
@@ -8,13 +10,11 @@ public class VirtualCamara : MonoBehaviour
     {
         if (instance == null)
         {
-            // Este es el primer objeto, se mantiene
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
         {
-            // Ya existe una instancia, se destruye este objeto nuevo
             Destroy(gameObject);
         }
     }

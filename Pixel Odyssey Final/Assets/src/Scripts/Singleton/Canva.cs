@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
-
+/// <summary>
+/// Clase encargada de gestionar el canvas del juego como un singleton.
+/// </summary>
 public class Canva : MonoBehaviour
 {
     private static Canva instance;

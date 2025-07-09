@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-
+/// <summary>
+/// Clase encargada de gestionar la barra de escudo del jugador.
+/// Muestra el escudo actual del jugador en una barra de imagen rellenable.
+/// Se suscribe al evento de cambio de escudo del script HealthPlayer para actualizar la barra de escudo.
+/// </summary>
 public class ShieldBar : MonoBehaviour
 {
     [SerializeField] private Image shieldImage; // Componente de imagen (rellenable)

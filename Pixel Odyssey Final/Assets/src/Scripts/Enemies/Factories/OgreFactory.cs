@@ -1,5 +1,9 @@
 using UnityEngine;
-
+/// <summary>
+/// Clase que implementa el patrón Factory para crear instancias de Ogre.
+/// Esta clase hereda de EnemyFactory y se encarga de instanciar Ogres en una posición específica.
+/// Utiliza inyección de dependencias para asignar el animador del enemigo.
+/// </summary>
 public class OgreFactory : EnemyFactory
 
 {
@@ -14,7 +18,7 @@ public class OgreFactory : EnemyFactory
     {
         if (ogrePrefab == null)
         {
-            Debug.LogError("OgrePrefab no est� asignado en OgreFactory.");
+            Debug.LogError("OgrePrefab no esta asignado en OgreFactory.");
             return null;
         }
 

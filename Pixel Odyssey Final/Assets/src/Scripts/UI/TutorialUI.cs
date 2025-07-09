@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
-
+/// <summary>
+///     Clase encargada de gestionar el panel del tutorial.
+/// </summary>
 public class TutorialUI : MonoBehaviour
 {
     public static TutorialUI Instance { get; private set; }
@@ -47,7 +49,6 @@ public class TutorialUI : MonoBehaviour
                 tutorialText.color = Color.white;
             }
 
-            Debug.Log("Tutorial mostrado.");
         }
     }
     public void HideTutorial()
@@ -56,7 +57,6 @@ public class TutorialUI : MonoBehaviour
         {
             tutorialPanel.SetActive(false);
             isShowing = false;
-            Debug.Log("Tutorial finalizado.");
         }
     }
 }

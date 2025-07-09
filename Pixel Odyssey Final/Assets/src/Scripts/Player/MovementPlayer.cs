@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class MovementPlayer : MonoBehaviour
 {
-    // Uso del Patrón State:
-    // Se implementa el patrón State mediante la clase PlayerMovementContext y sus estados asociados (por ejemplo, NormalMovementState).
-    // Este patrón permite cambiar dinámicamente el comportamiento del jugador dependiendo de su estado actual (normal, saltando, dash, etc.)
-    // sin usar múltiples condicionales en una sola clase. Esto facilita la extensibilidad, el mantenimiento y el orden del código.
+    // Uso del Patrï¿½n State:
+    // Se implementa el patrï¿½n State mediante la clase PlayerMovementContext y sus estados asociados (por ejemplo, NormalMovementState).
+    // Este patrï¿½n permite cambiar dinï¿½micamente el comportamiento del jugador dependiendo de su estado actual (normal, saltando, dash, etc.)
+    // sin usar mï¿½ltiples condicionales en una sola clase. Esto facilita la extensibilidad, el mantenimiento y el orden del cï¿½digo.
     
     [Header("Movement Settings")]
     [SerializeField] public float velocityOfMovement = 10f;
@@ -23,6 +23,16 @@ public class MovementPlayer : MonoBehaviour
     [SerializeField] public float dashSpeed;
     [SerializeField] public float dashTime;
     [SerializeField] public float timeIntoDash;
+
+    [Header("Sound Settings")]
+    [SerializeField] private AudioClip stepClip;
+    [SerializeField] private AudioClip jumpClip;
+    [SerializeField] private AudioClip damageClip;
+    [SerializeField] private AudioClip attackClip;
+    [SerializeField] private AudioClip dashClip;
+
+    [HideInInspector] public PlayerAudioHandler audioHandler;
+
 
     // Component references
     [HideInInspector] public Rigidbody2D rb2d;
@@ -48,9 +58,13 @@ public class MovementPlayer : MonoBehaviour
         attackScript = GetComponent<atackPlayer>();
         initialGravity = rb2d.gravityScale;
 
+        // Inicializar el handler con los clips
+        audioHandler = new PlayerAudioHandler(stepClip, jumpClip, damageClip, attackClip, dashClip);
+
         movementContext = new PlayerMovementContext(this);
         movementContext.TransitionTo(new NormalMovementState());
     }
+
 
     private void Update() => movementContext.Update();
     private void FixedUpdate() => movementContext.FixedUpdate();
@@ -87,4 +101,5 @@ public class MovementPlayer : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(floorControler.position, boxDimension);
     }
+
 }

@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
-
+/// <summary>
+/// Clase encargada de gestionar el tutorial de ataque.
+/// </summary>
 public class TutorialObjAttack : MonoBehaviour
 {
     public static TutorialObjAttack Instance { get; private set; }
@@ -62,7 +64,6 @@ public class TutorialObjAttack : MonoBehaviour
                 tutorialText.color = Color.white;
             }
 
-            Debug.Log("Tutorial mostrado.");
         }
     }
 
@@ -74,7 +75,6 @@ public class TutorialObjAttack : MonoBehaviour
             tutorialPanel.SetActive(false);
             isShowing = false;
 
-            Debug.Log("Tutorial finalizado.");
         }
     }
 }

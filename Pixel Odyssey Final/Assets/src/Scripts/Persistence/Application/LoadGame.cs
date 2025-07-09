@@ -1,23 +1,20 @@
+/// <summary>
+/// Clase encargada de cargar los datos del juego desde el repositorio.
+/// Utiliza el patrón Unit of Work para interactuar con el repositorio de juegos.
+/// Esta clase es parte de la capa de aplicación y se encarga de la lógica de negocio relacionada con la carga del juego.
+
 public class LoadGame
 {
-    private readonly IGameRepository repository;
+    private readonly IUnitOfWork unitOfWork;
 
-    public LoadGame(IGameRepository repo)
+    public LoadGame(IUnitOfWork uow)
     {
-        repository = repo;
+        unitOfWork = uow;
     }
 
-    // Nuevo método para perfiles
     public PlayerData Execute(int profileId)
     {
-        return repository.Load(profileId);
+        var data = unitOfWork.GameRepository.Load(profileId);
+        return data;
     }
-
-    /*
-        // Método antiguo (sin perfil)
-        public PlayerData Execute()
-        {
-            return repository.Load();
-        }
-    */
 }

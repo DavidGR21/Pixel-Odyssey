@@ -111,6 +111,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -118,12 +131,12 @@ TextureImporter:
       name: Take Hit_0
       rect:
         serializedVersion: 2
-        x: 57
-        y: 48
-        width: 35
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 150
+        height: 150
+      alignment: 9
+      pivot: {x: 0.5079462, y: 0.4324568}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -140,12 +153,12 @@ TextureImporter:
       name: Take Hit_1
       rect:
         serializedVersion: 2
-        x: 207
-        y: 48
-        width: 35
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 150
+        y: 0
+        width: 150
+        height: 150
+      alignment: 9
+      pivot: {x: 0.5079462, y: 0.4324568}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -162,12 +175,12 @@ TextureImporter:
       name: Take Hit_2
       rect:
         serializedVersion: 2
-        x: 353
-        y: 65
-        width: 9
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 300
+        y: 0
+        width: 150
+        height: 150
+      alignment: 9
+      pivot: {x: 0.5079462, y: 0.4324568}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -184,12 +197,12 @@ TextureImporter:
       name: Take Hit_3
       rect:
         serializedVersion: 2
-        x: 357
-        y: 48
-        width: 40
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 450
+        y: 0
+        width: 150
+        height: 150
+      alignment: 9
+      pivot: {x: 0.5079462, y: 0.4324568}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -202,55 +215,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Take Hit_4
-      rect:
-        serializedVersion: 2
-        x: 503
-        y: 64
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1e9699d57f987e550800000000000000
-      internalID: 6190067908364298721
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Take Hit_5
-      rect:
-        serializedVersion: 2
-        x: 507
-        y: 48
-        width: 37
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 29900e6e40ccf3060800000000000000
-      internalID: 6935486272599230866
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d80b77d4ff4961b4698ce02b8964cc9e
     internalID: 0
     vertices: []
     indices: 
@@ -264,8 +233,6 @@ TextureImporter:
       Take Hit_1: -889859373511162655
       Take Hit_2: -3088938797480143695
       Take Hit_3: -9206091644520726168
-      Take Hit_4: 6190067908364298721
-      Take Hit_5: 6935486272599230866
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

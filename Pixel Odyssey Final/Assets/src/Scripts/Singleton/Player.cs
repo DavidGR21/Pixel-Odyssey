@@ -1,5 +1,7 @@
 using UnityEngine;
-
+/// <summary>
+/// Clase encargada de gestionar al jugador como un singleton.
+/// </summary>
 public class Player : MonoBehaviour
 {
     private static Player instance;

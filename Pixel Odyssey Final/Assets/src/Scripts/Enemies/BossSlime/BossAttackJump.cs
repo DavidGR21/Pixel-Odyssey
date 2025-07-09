@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
-
+/// <summary>
+/// Clase que representa el ataque de salto del jefe Slime.
+/// </summary>
 public class BossAttackJump : BossAttackBase
 {
     [Header("Condiciones del Ataque")]

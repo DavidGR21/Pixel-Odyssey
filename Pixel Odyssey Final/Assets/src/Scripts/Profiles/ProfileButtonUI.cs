@@ -1,7 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-
+/// <summary>
+/// Clase encargada de gestionar el botón de perfil en la interfaz de usuario.
+/// Permite seleccionar un perfil, eliminarlo y manejar efectos de hover.
+/// Se utiliza en conjunto con el ProfileManager para gestionar los perfiles del jugador.
+/// </summary>
 public class ProfileButtonUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public int profileId;
@@ -16,13 +20,13 @@ public class ProfileButtonUI : MonoBehaviour, IPointerEnterHandler, IPointerExit
     {
         // Quitar efecto hover
     }
-
-   // En ProfileButtonUI.cs o ProfileSlotUI.cs
-public void OnProfileSelected(int profileId)
-{
-    ProfileManager.Instance.SetActiveProfile(profileId);
-    GameManager.Instance.PlayGame();
-}
+    //Metodo para manejar la selección del perfil
+    public void OnProfileSelected(int profileId)
+    {
+        ProfileManager.Instance.SetActiveProfile(profileId);
+        GameManager.Instance.PlayGame();
+    }
+    // Método para manejar la eliminación del perfil
     public void OnDeleteProfile(int profileId)
     {
         ProfileManager.Instance.DeleteProfile(profileId);

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 622614951137109772}
   - component: {fileID: 1833434378212470303}
-  - component: {fileID: 8621163929947502741}
+  - component: {fileID: 8760297215416237010}
   m_Layer: 0
   m_Name: Rango
   m_TagString: Untagged
@@ -79,7 +79,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8621163929947502741
+--- !u!114 &8760297215416237010
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,7 +88,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5273797279623188579}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e990c3cb83e795f4280a6a04ae98c029, type: 3}
+  m_Script: {fileID: 11500000, guid: 90a929b6bdaa18542b4f0113f9b2753b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5318791810628185415
@@ -104,8 +104,13 @@ GameObject:
   - component: {fileID: 234710875230024532}
   - component: {fileID: 708216939640263945}
   - component: {fileID: 7674721027732243211}
-  - component: {fileID: 7634319349199755413}
   - component: {fileID: 4904513621195694383}
+  - component: {fileID: -1443725931430540419}
+  - component: {fileID: -427637129587736810}
+  - component: {fileID: -4083839171765284921}
+  - component: {fileID: 7634319349199755413}
+  - component: {fileID: 6836615824927804179}
+  - component: {fileID: 5732483547592028742}
   m_Layer: 0
   m_Name: Goblin
   m_TagString: Enemy
@@ -246,8 +251,8 @@ BoxCollider2D:
   m_Offset: {x: -0.0032373667, y: -0.0031877756}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.09375, y: 1.1875}
+    pivot: {x: 0.5079462, y: 0.4324568}
+    oldSize: {x: 4.6875, y: 4.6875}
     newSize: {x: 1.09375, y: 1.1875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -282,36 +287,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7634319349199755413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5318791810628185415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e76fb945799b9624c94740c637cc9767, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  speedWalk: 4
-  speedRun: 10
-  visionRange: 14
-  attackRange: 2.8
-  direccion: 0
-  rutina: 0
-  cronometro: 0
-  target: {fileID: 0}
-  groundCheck: {fileID: 1420955813695629130}
-  wallCheck: {fileID: 7641122987352795987}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  checkRadius: 0.1
-  damage: 2
-  hitCollider: {fileID: 8410608645369673588}
-  rangeCollider: {fileID: 5273797279623188579}
 --- !u!114 &4904513621195694383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,6 +300,98 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 234710875230024532}
+--- !u!114 &-1443725931430540419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5318791810628185415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eb7cdabe270c5f49b56b0f5754b05ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-427637129587736810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5318791810628185415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b62d871bd26b04499d795f05eb8031, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-4083839171765284921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5318791810628185415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fefcbdf6527f8f7439c66f4137834028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7634319349199755413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5318791810628185415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e76fb945799b9624c94740c637cc9767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  damage: 10
+  hitCollider: {fileID: 8410608645369673588}
+  rangeCollider: {fileID: 5273797279623188579}
+  attackCooldown: 2
+  stunDuration: 0.5
+--- !u!114 &6836615824927804179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5318791810628185415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99afe206df7edeb4fb9a9a668338b2fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedWalk: 4
+  speedRun: 10
+  visionRange: 14
+  attackRange: 2.8
+  direction: 0
+  rutine: 0
+  chronometer: 0
+  target: {fileID: 0}
+  groundCheck: {fileID: 1420955813695629130}
+  wallCheck: {fileID: 7641122987352795987}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  checkRadius: 0.1
+--- !u!114 &5732483547592028742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5318791810628185415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca28694b4809e847b1476a81a6d4864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5884256821230296323
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,7 +464,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2045216458164119628}
   - component: {fileID: 7658520168208539822}
-  - component: {fileID: 4602284164817597295}
+  - component: {fileID: 5457345718135137576}
   m_Layer: 0
   m_Name: Hit
   m_TagString: Untagged
@@ -466,7 +533,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4602284164817597295
+--- !u!114 &5457345718135137576
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -475,7 +542,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8410608645369673588}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69242b08e8a2d8f469f50d23b17ce2ed, type: 3}
+  m_Script: {fileID: 11500000, guid: ae81e1633bfeb1647a2a48846f1b689d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackForce: 5

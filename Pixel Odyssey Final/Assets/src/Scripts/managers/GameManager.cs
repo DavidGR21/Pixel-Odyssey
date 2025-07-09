@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
-
+/// <summary>
+/// Clase encargada de gestionar el estado del juego y la carga de escenas.
+/// Permite iniciar el juego, restaurar el estado desde la persistencia y manejar la pantalla de carga.
+/// Utiliza un patrón singleton para asegurar que solo haya una instancia de GameManager en la escena.
+/// </summary>
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-
     private void Awake()
     {
 
@@ -13,6 +16,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
         }
         else
         {
@@ -35,29 +39,47 @@ public class GameManager : MonoBehaviour
         }
         return path;
     }
+    public void RestoreLevelFromPersistence()
+    {
+        var persistence = FindObjectOfType<PersistenceController>();
+        if (persistence == null)
+        {
+            return;
+        }
+
+        PlayerData data = persistence.LoadGameData();
+        if (data == null || string.IsNullOrEmpty(data.CurrentScene))
+        {
+            Debug.LogWarning("[GameManager] No hay datos guardados para restaurar.");
+            return;
+        }
+
+        bool spawnPoint = !string.IsNullOrEmpty(data.SpawnPointName);
+
+        StartCoroutine(PlayAndLoadWithBootstrap("MainScene", data.CurrentScene, spawnPoint));
+    }
     public void PlayGame()
     {
         int profileId = ProfileManager.Instance.ActiveProfileId;
         var persistence = FindObjectOfType<PersistenceController>();
         if (persistence == null)
         {
-            Debug.LogError("[GameManager] PersistenceController no encontrado en PlayGame");
             return;
         }
 
         string bootstrapScene = "MainScene";
         string sceneToLoad = bootstrapScene;
-
+        bool spawnPoint = false;
         // Intenta cargar los datos del perfil
         PlayerData data = persistence.LoadGameData();
         if (data != null && !string.IsNullOrEmpty(data.CurrentScene))
         {
+            spawnPoint = !string.IsNullOrEmpty(data.SpawnPointName);
             sceneToLoad = data.CurrentScene;
         }
         else
         {
             // Si no hay datos, crea un nuevo PlayerData para este perfil
-            Debug.Log("[GameManager] No hay datos guardados, creando datos por defecto para el perfil " + profileId);
             data = new PlayerData
             {
                 ProfileId = profileId,
@@ -73,40 +95,45 @@ public class GameManager : MonoBehaviour
             sceneToLoad = bootstrapScene;
         }
 
-        Debug.Log("Escena a cargar: " + sceneToLoad);
-        StartCoroutine(PlayAndLoadWithBootstrap(bootstrapScene, sceneToLoad));
+        StartCoroutine(PlayAndLoadWithBootstrap(bootstrapScene, sceneToLoad, spawnPoint));
     }
 
-    private IEnumerator PlayAndLoadWithBootstrap(string bootstrapScene, string targetScene)
+    private IEnumerator PlayAndLoadWithBootstrap(string bootstrapScene, string targetScene, bool spawnPoint)
     {
-
-        Debug.Log("Iniciando carga de escena...");
-        Debug.Log("Escena objetivo: " + targetScene);
-        Debug.Log(bootstrapScene == targetScene);
-
-        if (bootstrapScene == targetScene)
+        // 1. Instancia la pantalla de carga y hazla persistente
+        GameObject loadingScreen = null;
+        if (loadingScreenPrefab != null)
         {
-            Debug.Log("La escena guardada es la bootstrap, cargando solo una vez.");
+            loadingScreen = Instantiate(loadingScreenPrefab);
+            DontDestroyOnLoad(loadingScreen);
+        }
+        else
+        {
+            Debug.LogWarning("[LoadingScreen] No se asignó el prefab de pantalla de carga.");
+        }
+
+        if (bootstrapScene == targetScene && (spawnPoint == false))
+        {
             SceneManager.LoadScene(bootstrapScene, LoadSceneMode.Single);
+            if (loadingScreen != null)
+            {
+                Destroy(loadingScreen);
+            }
             yield break;
         }
-        Debug.Log(bootstrapScene + " " + LoadSceneMode.Single);
 
-        // 1. Carga la escena bootstrap primero
+        // 2. Carga la escena bootstrap primero
         var op1 = SceneManager.LoadSceneAsync(bootstrapScene, LoadSceneMode.Single);
         yield return op1;
-        Debug.Log("Escena bootstrap cargada: " + bootstrapScene);
 
-        // 2. Espera un frame para que los objetos persistentes se inicialicen
+        // 3. Espera un frame para que los objetos persistentes se inicialicen
         yield return null;
-        Debug.Log("Frame de espera tras bootstrap.");
 
-        // 3. Carga la escena guardada
+        // 4. Carga la escena guardada
         var op2 = SceneManager.LoadSceneAsync(targetScene, LoadSceneMode.Single);
         yield return op2;
-        Debug.Log("Escena guardada cargada: " + targetScene);
 
-        // 4. Espera hasta que el jugador esté en la escena (máximo 2 segundos)
+        // 5. Espera hasta que el jugador esté en la escena (máximo 2 segundos)
         GameObject player = null;
         float timer = 0f;
         while (player == null && timer < 2f)
@@ -118,28 +145,25 @@ public class GameManager : MonoBehaviour
                 timer += Time.deltaTime;
             }
         }
-        Debug.Log(player != null ? "Jugador encontrado tras esperar." : "Jugador NO encontrado tras esperar.");
 
-        // 5. Obtén los datos del perfil activo después de cargar la escena
+        // 6. Obtén los datos del perfil activo después de cargar la escena
         var persistence = FindObjectOfType<PersistenceController>();
         PlayerData data = null;
         if (persistence != null)
         {
             data = persistence.LoadGameData();
         }
-        Debug.Log("persistence =" + (persistence != null));
-        Debug.Log("Datos del juego cargados: " + (data != null ? data.CurrentScene : "null"));
         if (player != null && data != null)
         {
             player.transform.position = new Vector3(data.PositionX, data.PositionY, data.PositionZ);
-            Debug.Log("[GameManager] Posición del jugador restaurada: " + player.transform.position);
 
             // Restaurar salud y escudo
             var healthPlayer = player.GetComponent<HealthPlayer>();
             if (healthPlayer != null)
             {
                 healthPlayer.RestoreHealthAndShield(data.Health, data.Shield);
-                Debug.Log("[GameManager] Salud y escudo restaurados: " + data.Health + " / " + data.Shield);
+                healthPlayer.Revive(data.Health, data.Shield);
+
             }
             else
             {
@@ -154,5 +178,27 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogWarning("[GameManager] No se encontraron datos del perfil después de cargar la escena.");
         }
+
+        // 7. Solo aquí, cuando el jugador ya está en su posición final y restaurado, destruye la pantalla de carga
+        if (player != null && data != null)
+        {
+            player.transform.position = new Vector3(data.PositionX, data.PositionY, data.PositionZ);
+
+        }
+
+        // Espera un frame extra para asegurar que todo se ha actualizado visualmente
+        yield return null;
+
+        // Espera 1 segundo extra antes de quitar la pantalla de carga
+        yield return new WaitForSeconds(1.2f);
+
+        if (loadingScreen != null)
+        {
+            Destroy(loadingScreen);
+        }
     }
+
+    public GameObject loadingScreenPrefab; // Asigna el prefab en el inspector
+
+
 }

@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace Assets.src.Scripts.Player.States
 {
+    /// <summary>
+    /// Clase que representa el contexto de movimiento del jugador.
+    /// Esta clase gestiona el estado actual del jugador y permite transiciones entre diferentes estados de movimiento.
+    /// Contiene una referencia al jugador y al estado actual, y proporciona métodos para actualizar el estado y realizar transiciones.
+    /// </summary>
     // PlayerMovementContext.cs
     public class PlayerMovementContext
     {

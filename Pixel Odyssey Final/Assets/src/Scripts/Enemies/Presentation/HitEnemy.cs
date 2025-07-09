@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
-
-public class HitEnemigo2D : MonoBehaviour
+/// <summary>
+/// Clase encargada de manejar el daño al jugador cuando entra en contacto con el collider del enemigo.
+/// Esta clase debe ser asignada a un GameObject que tenga un componente IMeleeEnemy.
+/// Utiliza un BoxCollider2D para detectar colisiones con el jugador y aplicar daño.
+/// </summary>
+public class HitEnemy : MonoBehaviour
 {
     private IMeleeEnemy meleeEnemy;
     [SerializeField] private float knockbackForce = 5f;
@@ -47,5 +51,25 @@ public class HitEnemigo2D : MonoBehaviour
     public void ResetDamage()
     {
         hasDealtDamage = false;
+
+        // Buscar todos los colliders dentro del área del BoxCollider2D
+        var box = GetComponent<BoxCollider2D>();
+        if (box != null)
+        {
+            Collider2D[] colliders = Physics2D.OverlapBoxAll(
+                box.bounds.center,
+                box.bounds.size,
+                0f
+            );
+            foreach (var col in colliders)
+            {
+                if (col.CompareTag("Player"))
+                {
+                    TryDealDamage(col);
+                    Debug.Log("[HitEnemigo2D] Daño aplicado inmediatamente en ResetDamage porque el jugador ya estaba dentro.");
+                    break; // Solo dañar una vez
+                }
+            }
+        }
     }
 }

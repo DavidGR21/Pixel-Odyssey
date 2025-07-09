@@ -1,5 +1,9 @@
 using UnityEngine;
-
+/// <summary>
+/// Clase encargada de gestionar el final del tutorial.
+/// Muestra un mensaje de finalización del tutorial cuando el jugador entra en el área de colisión.
+/// Al salir del área, oculta el mensaje.
+/// </summary>
 public class TutorialEnd : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other)

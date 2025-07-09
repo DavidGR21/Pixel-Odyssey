@@ -1,5 +1,7 @@
 using UnityEngine;
-
+/// <summary>
+/// Clase encargada de gestionar el tutorial de espacios libres.
+/// </summary>
 public class TutorialTrigger : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)

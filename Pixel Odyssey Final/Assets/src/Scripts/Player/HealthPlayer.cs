@@ -1,8 +1,15 @@
 using UnityEngine;
 using System;
 using System.Collections; // Added to include IEnumerator
-
+/// <summary>
+/// Clase encargada de gestionar la salud y el escudo del jugador.
+/// Implementa la interfaz IHealth para definir el comportamiento de salud del jugador.
+/// Permite al jugador recibir daño, curarse, restaurar escudo y manejar eventos de muerte y cambio de salud.
+/// </summary>
 public class HealthPlayer : MonoBehaviour, IHealth
+
+// Este patrón permite que otros objetos se suscriban a cambios en el estado del jugador (vida, escudo, muerte).
+// Así, por ejemplo, una barra de vida en la UI puede actualizarse automáticamente cuando cambia currentHealth.
 {
     [Header("Vida")]
     [SerializeField] public float maxHealth = 100f;
@@ -78,6 +85,8 @@ public class HealthPlayer : MonoBehaviour, IHealth
         {
             if (animator != null)
                 animator.SetTrigger("Hurt");
+            var movement = GetComponent<MovementPlayer>();
+            movement?.audioHandler?.PlayDamageSound();
 
             if (rb != null)
             {
@@ -125,9 +134,48 @@ public class HealthPlayer : MonoBehaviour, IHealth
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         }
 
-        Destroy(gameObject, 3f);
+        //  if (PauseManager.Instance != null)
+        //    PauseManager.Instance.ShowGameOverMenu();
+        //   Destroy(gameObject, 3f);
+        StartCoroutine(ShowGameOverMenuDelayed());
+
     }
 
+    private IEnumerator ShowGameOverMenuDelayed()
+    {
+        yield return new WaitForSeconds(1f);
+        if (PauseManager.Instance != null)
+            PauseManager.Instance.ShowGameOverMenu();
+    }
+    public void Revive(float health, float shield)
+    {
+        // Restaurar salud y escudo
+        RestoreHealthAndShield(health, shield);
+
+        // Reactivar componentes de movimiento y ataque
+        var movement = GetComponent<MovementPlayer>();
+        if (movement != null)
+            movement.enabled = true;
+
+        var attack = GetComponent<atackPlayer>();
+        if (attack != null)
+            attack.enabled = true;
+
+        if (attackScript != null)
+            attackScript.canMove = true;
+
+        // Quitar restricciones del Rigidbody2D
+        if (rb != null)
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+        // Resetear animación a estado idle o similar
+        if (animator != null)
+        {
+            animator.Play("PlayerIdle");
+            Debug.Log("Animacion idle");
+        }   
+        // Si tienes otros estados a restaurar, hazlo aquí
+    }
 
     public void Heal(float amount)
     {

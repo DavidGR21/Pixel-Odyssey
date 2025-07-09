@@ -1,9 +1,14 @@
 using UnityEngine;
-
+/// <summary>
+/// Clase que representa una pociÃ³n en el juego.
+/// /// Esta clase hereda de MonoBehaviour y se encarga de manejar la recolecciÃ³n de la pociï¿½ï¿½n por parte del jugador.
+/// Al recoger la pociÃ³n, se cura al jugador una cantidad determinada y se reproduce una animaciï¿½ï¿½n de recolecciï¿½ï¿½n.
+/// La pociÃ³n se destruye despues de un breve retraso para permitir que la animaciï¿½ï¿½n se reproduzca correctamente.
+/// </summary>
 public class Potion : MonoBehaviour
 {
     [SerializeField] private float healAmount = 20f;
-    [SerializeField] private float destroyDelay = 0.5f; // Tiempo de la animación
+    [SerializeField] private float destroyDelay = 0.5f; // Tiempo de la animaciï¿½n
 
     private bool isCollected = false;
     private Animator animator;
@@ -25,14 +30,14 @@ public class Potion : MonoBehaviour
             // Curar al jugador
             playerHealth.Heal(healAmount);
 
-            // Activar animación al tomar la poción
+            // Activar animaciï¿½n al tomar la pociï¿½n
             if (animator != null)
                 animator.SetTrigger("Collect");
 
-            // Desactivar el collider para evitar múltiples contactos
+            // Desactivar el collider para evitar mï¿½ltiples contactos
             GetComponent<Collider2D>().enabled = false;
 
-            // Destruir luego de la animación
+            // Destruir luego de la animaciï¿½n
             Destroy(gameObject, destroyDelay);
         }
     }
