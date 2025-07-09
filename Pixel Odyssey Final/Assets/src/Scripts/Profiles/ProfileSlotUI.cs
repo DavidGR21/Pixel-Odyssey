@@ -19,10 +19,46 @@ public class ProfileSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public GameObject cornerBottomLeft;
     public GameObject cornerBottomRight;
 
+    [Header("User Management")]
+    public Button changePasswordButton;  // ← Asegúrate de que esta línea esté
+
     private void Start()
     {
+        Debug.Log($"🔧 ProfileSlotUI Start() - ProfileId: {profileId}");
+        
         UpdateProfileInfo();
         SetCornersActive(false);
+        
+        // Debug para el botón de cambio de contraseña
+        if (changePasswordButton != null)
+        {
+            Debug.Log($"✅ ChangePasswordButton encontrado en ProfileSlotUI ProfileId: {profileId}");
+            changePasswordButton.onClick.AddListener(OnChangePasswordClicked);
+            Debug.Log($"✅ Listener agregado al ChangePasswordButton ProfileId: {profileId}");
+        }
+        else
+        {
+            Debug.LogError($"❌ ChangePasswordButton es NULL en ProfileSlotUI ProfileId: {profileId}");
+        }
+    }
+
+    private void OnChangePasswordClicked()
+    {
+        Debug.Log($"🔘 ProfileSlotUI: OnChangePasswordClicked ejecutado - ProfileId: {profileId}");
+        
+        // Buscar incluyendo objetos inactivos
+        var changePasswordUI = FindObjectOfType<ChangePasswordUI>(true);
+        Debug.Log($"🔍 ChangePasswordUI encontrado (incluyendo inactivos): {changePasswordUI != null}");
+        
+        if (changePasswordUI != null)
+        {
+            Debug.Log($"🚀 Llamando ShowPanel con ProfileId: {profileId}");
+            changePasswordUI.ShowPanel(profileId);
+        }
+        else
+        {
+            Debug.LogError("❌ ChangePasswordUI no encontrado en la escena.");
+        }
     }
 
     public void UpdateProfileInfo()
@@ -76,5 +112,22 @@ public class ProfileSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         if (cornerBottomLeft != null) cornerBottomLeft.SetActive(active);
         if (cornerBottomRight != null) cornerBottomRight.SetActive(active);
     }
-  
+
+    // Agrega este método temporal en ProfileSlotUI para debug:
+    [ContextMenu("Find All ChangePasswordUI")]
+    public void FindAllChangePasswordUI()
+    {
+        var allChangePasswordUI = FindObjectsOfType<ChangePasswordUI>();
+        Debug.Log($"🔍 Total ChangePasswordUI encontrados: {allChangePasswordUI.Length}");
+        
+        for (int i = 0; i < allChangePasswordUI.Length; i++)
+        {
+            Debug.Log($"  [{i}] {allChangePasswordUI[i].name} - Active: {allChangePasswordUI[i].gameObject.activeInHierarchy}");
+        }
+        
+        if (allChangePasswordUI.Length == 0)
+        {
+            Debug.LogError("❌ NO hay ningún ChangePasswordUI en la escena");
+        }
+    }
 }

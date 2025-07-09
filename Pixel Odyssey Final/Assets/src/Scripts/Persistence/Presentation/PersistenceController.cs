@@ -2,15 +2,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// Controlador de persistencia con soporte para SQLite.
-/// SQLite es la opción por defecto ya que es más fácil de configurar en Unity.
+/// Controlador de persistencia con soporte para usuarios y contraseñas.
 /// Mantiene compatibilidad con implementaciones anteriores.
 /// </summary>
 public class PersistenceController : MonoBehaviour
 {
     [Header("Repository Configuration")]
     public RepositoryFactory.RepositoryType repositoryType = RepositoryFactory.RepositoryType.SQLite;
-    public DatabaseConfig databaseConfig; // Opcional para SQLite, requerido para MySQL
+    public DatabaseConfig databaseConfig;
 
     private SaveGame saveGame;
     private LoadGame loadGame;
@@ -23,7 +22,7 @@ public class PersistenceController : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
+        
         DontDestroyOnLoad(gameObject);
         InitializeRepository();
     }
@@ -35,22 +34,21 @@ public class PersistenceController : MonoBehaviour
             unitOfWork = new UnitOfWork(repositoryType, databaseConfig);
             saveGame = new SaveGame(unitOfWork);
             loadGame = new LoadGame(unitOfWork);
-
+            
             Debug.Log($"Repositorio inicializado: {repositoryType}");
-
+            
             if (repositoryType == RepositoryFactory.RepositoryType.SQLite)
             {
-                string dbPath = System.IO.Path.Combine(Application.persistentDataPath,
+                string dbPath = System.IO.Path.Combine(Application.persistentDataPath, 
                     databaseConfig?.databaseName ?? "PixelOdyssey.db");
                 Debug.Log($"Base de datos SQLite ubicada en: {dbPath}");
             }
         }
         catch (System.Exception ex)
         {
-            Debug.LogError($"Error inicializando repositorio {repositoryType}: {ex.Message}");
+            Debug.Log($"Error inicializando repositorio {repositoryType}: {ex.Message}");
             Debug.LogWarning("Usando File repository como fallback.");
-
-            // Fallback a File repository
+            
             unitOfWork = new UnitOfWork(RepositoryFactory.RepositoryType.File);
             saveGame = new SaveGame(unitOfWork);
             loadGame = new LoadGame(unitOfWork);
@@ -220,9 +218,177 @@ public class PersistenceController : MonoBehaviour
         }
         else
         {
-            Debug.LogError("❌ ERROR: No se pudieron cargar los datos");
+            Debug.Log("❌ ERROR: No se pudieron cargar los datos");
         }
         
         Debug.Log("=== Fin del test ===");
+    }
+
+    /// <summary>
+    /// Cambia la contraseña de un perfil de usuario.
+    /// </summary>
+    public bool ChangePassword(int profileId, string currentPassword, string newPassword, out string errorMessage)
+    {
+        errorMessage = "";
+
+        try
+        {
+            Debug.Log($"🔧 ChangePassword iniciado - ProfileId: {profileId}");
+            
+            // Validar nueva contraseña
+            if (!PasswordHelper.IsValidPassword(newPassword, out errorMessage))
+            {
+                Debug.Log($"❌ Contraseña inválida: {errorMessage}");
+                return false;
+            }
+
+            // Cargar datos del perfil
+            var playerData = loadGame.Execute(profileId);
+            if (playerData == null)
+            {
+                errorMessage = "Perfil no encontrado.";
+                Debug.Log($"❌ {errorMessage}");
+                return false;
+            }
+
+            Debug.Log($"🔧 Perfil cargado: {playerData.ProfileName}");
+            Debug.Log($"🔧 Contraseña actual existe: {!string.IsNullOrEmpty(playerData.CurrentPasswordHash)}");
+
+            // Verificar contraseña actual si existe
+            if (!string.IsNullOrEmpty(playerData.CurrentPasswordHash))
+            {
+                if (!PasswordHelper.VerifyPassword(currentPassword, playerData.CurrentPasswordHash))
+                {
+                    errorMessage = "La contraseña actual es incorrecta.";
+                    Debug.Log($"❌ {errorMessage}");
+                    return false;
+                }
+                Debug.Log("✅ Contraseña actual verificada");
+            }
+
+            // Hashear nueva contraseña
+            string newPasswordHash = PasswordHelper.HashPassword(newPassword);
+            Debug.Log($"🔧 Nueva contraseña hasheada: {newPasswordHash.Substring(0, 10)}...");
+
+            // Cambiar contraseña
+            if (!playerData.ChangePassword(newPasswordHash, out errorMessage))
+            {
+                Debug.Log($"❌ Error en ChangePassword del dominio: {errorMessage}");
+                return false;
+            }
+
+            Debug.Log($"✅ Contraseña cambiada en el dominio");
+            Debug.Log($"🔧 Historial de contraseñas: {playerData.PasswordHistory?.Count ?? 0} entradas");
+
+            // Guardar cambios
+            Debug.Log("🔧 Guardando cambios en la base de datos...");
+            saveGame.Execute(playerData);
+            Debug.Log($"✅ Contraseña cambiada exitosamente para perfil {profileId}");
+            
+            return true;
+        }
+        catch (System.Exception ex)
+        {
+            Debug.Log($"❌ Error cambiando contraseña: {ex.Message}");
+            Debug.Log($"❌ StackTrace: {ex.StackTrace}");
+            errorMessage = "Error interno del sistema.";
+            return false;
+        }
+    }
+
+    /// <summary>
+    /// Establece una contraseña inicial para un perfil.
+    /// </summary>
+    public bool SetInitialPassword(int profileId, string password, out string errorMessage)
+    {
+        errorMessage = "";
+
+        try
+        {
+            Debug.Log($"🔧 SetInitialPassword iniciado - ProfileId: {profileId}");
+            
+            if (!PasswordHelper.IsValidPassword(password, out errorMessage))
+            {
+                Debug.Log($"❌ Contraseña inválida: {errorMessage}");
+                return false;
+            }
+
+            var playerData = loadGame.Execute(profileId);
+            if (playerData == null)
+            {
+                errorMessage = "Perfil no encontrado.";
+                Debug.Log($"❌ {errorMessage}");
+                return false;
+            }
+
+            Debug.Log($"🔧 Perfil cargado: {playerData.ProfileName}");
+
+            // Solo permitir si no tiene contraseña
+            if (!string.IsNullOrEmpty(playerData.CurrentPasswordHash))
+            {
+                errorMessage = "Este perfil ya tiene una contraseña establecida.";
+                Debug.LogWarning($"⚠️ {errorMessage}");
+                return false;
+            }
+
+            string passwordHash = PasswordHelper.HashPassword(password);
+            Debug.Log($"🔧 Contraseña inicial hasheada: {passwordHash.Substring(0, 10)}...");
+
+            playerData.CurrentPasswordHash = passwordHash;
+            
+            if (playerData.PasswordHistory == null)
+                playerData.PasswordHistory = new System.Collections.Generic.List<string>();
+            
+            playerData.PasswordHistory.Add(passwordHash);
+            playerData.LastPasswordChange = System.DateTime.Now;
+
+            Debug.Log("🔧 Guardando contraseña inicial en la base de datos...");
+            saveGame.Execute(playerData);
+            Debug.Log($"✅ Contraseña inicial establecida para perfil {profileId}");
+            
+            return true;
+        }
+        catch (System.Exception ex)
+        {
+            Debug.Log($"❌ Error estableciendo contraseña inicial: {ex.Message}");
+            Debug.Log($"❌ StackTrace: {ex.StackTrace}");
+            errorMessage = "Error interno del sistema.";
+            return false;
+        }
+    }
+
+    /// <summary>
+    /// Verifica si un perfil tiene contraseña establecida.
+    /// </summary>
+    public bool HasPassword(int profileId)
+    {
+        try
+        {
+            var playerData = loadGame.Execute(profileId);
+            return playerData != null && !string.IsNullOrEmpty(playerData.CurrentPasswordHash);
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    /// <summary>
+    /// Verifica una contraseña para un perfil.
+    /// </summary>
+    public bool VerifyPassword(int profileId, string password)
+    {
+        try
+        {
+            var playerData = loadGame.Execute(profileId);
+            if (playerData == null || string.IsNullOrEmpty(playerData.CurrentPasswordHash))
+                return false;
+
+            return PasswordHelper.VerifyPassword(password, playerData.CurrentPasswordHash);
+        }
+        catch
+        {
+            return false;
+        }
     }
 }
