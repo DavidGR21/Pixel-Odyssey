@@ -46,8 +46,9 @@ public class ProfileSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         Debug.Log($"🔘 ProfileSlotUI: OnChangePasswordClicked ejecutado - ProfileId: {profileId}");
         
-        var changePasswordUI = FindObjectOfType<ChangePasswordUI>();
-        Debug.Log($"🔍 ChangePasswordUI encontrado: {changePasswordUI != null}");
+        // Buscar incluyendo objetos inactivos
+        var changePasswordUI = FindObjectOfType<ChangePasswordUI>(true);
+        Debug.Log($"🔍 ChangePasswordUI encontrado (incluyendo inactivos): {changePasswordUI != null}");
         
         if (changePasswordUI != null)
         {
@@ -112,4 +113,21 @@ public class ProfileSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         if (cornerBottomRight != null) cornerBottomRight.SetActive(active);
     }
 
+    // Agrega este método temporal en ProfileSlotUI para debug:
+    [ContextMenu("Find All ChangePasswordUI")]
+    public void FindAllChangePasswordUI()
+    {
+        var allChangePasswordUI = FindObjectsOfType<ChangePasswordUI>();
+        Debug.Log($"🔍 Total ChangePasswordUI encontrados: {allChangePasswordUI.Length}");
+        
+        for (int i = 0; i < allChangePasswordUI.Length; i++)
+        {
+            Debug.Log($"  [{i}] {allChangePasswordUI[i].name} - Active: {allChangePasswordUI[i].gameObject.activeInHierarchy}");
+        }
+        
+        if (allChangePasswordUI.Length == 0)
+        {
+            Debug.LogError("❌ NO hay ningún ChangePasswordUI en la escena");
+        }
+    }
 }

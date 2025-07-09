@@ -46,7 +46,7 @@ public class PersistenceController : MonoBehaviour
         }
         catch (System.Exception ex)
         {
-            Debug.LogError($"Error inicializando repositorio {repositoryType}: {ex.Message}");
+            Debug.Log($"Error inicializando repositorio {repositoryType}: {ex.Message}");
             Debug.LogWarning("Usando File repository como fallback.");
             
             unitOfWork = new UnitOfWork(RepositoryFactory.RepositoryType.File);
@@ -218,7 +218,7 @@ public class PersistenceController : MonoBehaviour
         }
         else
         {
-            Debug.LogError("❌ ERROR: No se pudieron cargar los datos");
+            Debug.Log("❌ ERROR: No se pudieron cargar los datos");
         }
         
         Debug.Log("=== Fin del test ===");
@@ -233,9 +233,12 @@ public class PersistenceController : MonoBehaviour
 
         try
         {
+            Debug.Log($"🔧 ChangePassword iniciado - ProfileId: {profileId}");
+            
             // Validar nueva contraseña
             if (!PasswordHelper.IsValidPassword(newPassword, out errorMessage))
             {
+                Debug.Log($"❌ Contraseña inválida: {errorMessage}");
                 return false;
             }
 
@@ -244,8 +247,12 @@ public class PersistenceController : MonoBehaviour
             if (playerData == null)
             {
                 errorMessage = "Perfil no encontrado.";
+                Debug.Log($"❌ {errorMessage}");
                 return false;
             }
+
+            Debug.Log($"🔧 Perfil cargado: {playerData.ProfileName}");
+            Debug.Log($"🔧 Contraseña actual existe: {!string.IsNullOrEmpty(playerData.CurrentPasswordHash)}");
 
             // Verificar contraseña actual si existe
             if (!string.IsNullOrEmpty(playerData.CurrentPasswordHash))
@@ -253,27 +260,37 @@ public class PersistenceController : MonoBehaviour
                 if (!PasswordHelper.VerifyPassword(currentPassword, playerData.CurrentPasswordHash))
                 {
                     errorMessage = "La contraseña actual es incorrecta.";
+                    Debug.Log($"❌ {errorMessage}");
                     return false;
                 }
+                Debug.Log("✅ Contraseña actual verificada");
             }
 
             // Hashear nueva contraseña
             string newPasswordHash = PasswordHelper.HashPassword(newPassword);
+            Debug.Log($"🔧 Nueva contraseña hasheada: {newPasswordHash.Substring(0, 10)}...");
 
             // Cambiar contraseña
             if (!playerData.ChangePassword(newPasswordHash, out errorMessage))
             {
+                Debug.Log($"❌ Error en ChangePassword del dominio: {errorMessage}");
                 return false;
             }
 
+            Debug.Log($"✅ Contraseña cambiada en el dominio");
+            Debug.Log($"🔧 Historial de contraseñas: {playerData.PasswordHistory?.Count ?? 0} entradas");
+
             // Guardar cambios
+            Debug.Log("🔧 Guardando cambios en la base de datos...");
             saveGame.Execute(playerData);
-            Debug.Log($"Contraseña cambiada exitosamente para perfil {profileId}");
+            Debug.Log($"✅ Contraseña cambiada exitosamente para perfil {profileId}");
+            
             return true;
         }
         catch (System.Exception ex)
         {
-            Debug.LogError($"Error cambiando contraseña: {ex.Message}");
+            Debug.Log($"❌ Error cambiando contraseña: {ex.Message}");
+            Debug.Log($"❌ StackTrace: {ex.StackTrace}");
             errorMessage = "Error interno del sistema.";
             return false;
         }
@@ -288,8 +305,11 @@ public class PersistenceController : MonoBehaviour
 
         try
         {
+            Debug.Log($"🔧 SetInitialPassword iniciado - ProfileId: {profileId}");
+            
             if (!PasswordHelper.IsValidPassword(password, out errorMessage))
             {
+                Debug.Log($"❌ Contraseña inválida: {errorMessage}");
                 return false;
             }
 
@@ -297,17 +317,23 @@ public class PersistenceController : MonoBehaviour
             if (playerData == null)
             {
                 errorMessage = "Perfil no encontrado.";
+                Debug.Log($"❌ {errorMessage}");
                 return false;
             }
+
+            Debug.Log($"🔧 Perfil cargado: {playerData.ProfileName}");
 
             // Solo permitir si no tiene contraseña
             if (!string.IsNullOrEmpty(playerData.CurrentPasswordHash))
             {
                 errorMessage = "Este perfil ya tiene una contraseña establecida.";
+                Debug.LogWarning($"⚠️ {errorMessage}");
                 return false;
             }
 
             string passwordHash = PasswordHelper.HashPassword(password);
+            Debug.Log($"🔧 Contraseña inicial hasheada: {passwordHash.Substring(0, 10)}...");
+
             playerData.CurrentPasswordHash = passwordHash;
             
             if (playerData.PasswordHistory == null)
@@ -316,13 +342,16 @@ public class PersistenceController : MonoBehaviour
             playerData.PasswordHistory.Add(passwordHash);
             playerData.LastPasswordChange = System.DateTime.Now;
 
+            Debug.Log("🔧 Guardando contraseña inicial en la base de datos...");
             saveGame.Execute(playerData);
-            Debug.Log($"Contraseña inicial establecida para perfil {profileId}");
+            Debug.Log($"✅ Contraseña inicial establecida para perfil {profileId}");
+            
             return true;
         }
         catch (System.Exception ex)
         {
-            Debug.LogError($"Error estableciendo contraseña inicial: {ex.Message}");
+            Debug.Log($"❌ Error estableciendo contraseña inicial: {ex.Message}");
+            Debug.Log($"❌ StackTrace: {ex.StackTrace}");
             errorMessage = "Error interno del sistema.";
             return false;
         }
