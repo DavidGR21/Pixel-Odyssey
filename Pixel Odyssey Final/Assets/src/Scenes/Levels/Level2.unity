@@ -1178,8 +1178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bd67d137ee796548a5f3ef4b990f764, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Level1
-  spawnPointName: Nivel 1F
+  sceneToLoad: LevelNew
+  spawnPointName: Nivel NewF
 --- !u!61 &730259376
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31562,6 +31562,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72a64a73faa5d34449dc2559ecb9d80e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  repositoryType: 1
+  databaseConfig: {fileID: 0}
 --- !u!4 &1959684732
 Transform:
   m_ObjectHideFlags: 0
