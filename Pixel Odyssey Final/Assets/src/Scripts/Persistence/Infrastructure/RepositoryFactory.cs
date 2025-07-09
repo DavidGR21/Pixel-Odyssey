@@ -1,13 +1,38 @@
 /// <summary>
-/// Clase encargada de crear instancias del repositorio de juegos.
-/// Utiliza el patrón Factory para encapsular la creación del repositorio.
-/// Esta clase es parte de la infraestructura y se encarga de proporcionar una instancia del repositorio de juegos.
-/// Puede ser extendida para crear diferentes implementaciones del repositorio si es necesario.
+/// Factory mejorado que permite elegir entre diferentes implementaciones de repositorio.
+/// Ahora incluye soporte para SQLite como opción principal.
+/// Mantiene los principios SOLID y permite fácil extensión.
 /// </summary>
 public static class RepositoryFactory
 {
-    public static IGameRepository Create()
+    public enum RepositoryType
     {
-        return new FileGameRepository();
+        File,
+        SQLite,
+        MySQL
+    }
+
+    public static IGameRepository Create(RepositoryType type = RepositoryType.SQLite, DatabaseConfig config = null)
+    {
+        switch (type)
+        {
+            case RepositoryType.File:
+                return new FileGameRepository();
+            
+            case RepositoryType.SQLite:
+                string databaseName = config?.databaseName ?? "PixelOdyssey.db";
+                return new SQLiteGameRepository(databaseName);
+            
+            case RepositoryType.MySQL:
+                if (config == null)
+                {
+                    throw new System.ArgumentException("DatabaseConfig es requerido para MySQL repository");
+                }
+                // Implementación futura de MySQL
+                throw new System.NotImplementedException("MySQL repository no implementado aún");
+            
+            default:
+                return new SQLiteGameRepository();
+        }
     }
 }

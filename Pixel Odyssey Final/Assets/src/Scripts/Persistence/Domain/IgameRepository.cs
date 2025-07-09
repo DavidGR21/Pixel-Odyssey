@@ -7,5 +7,6 @@ public interface IGameRepository
 {
     void Save(PlayerData data);
     PlayerData Load(int profileId);
-
+    bool DeleteProfile(int profileId);
+    PlayerData[] LoadAllProfiles();
 }

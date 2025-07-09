@@ -1,28 +1,49 @@
 /// <summary>
-/// Clase que implementa un patrón Unit of Work para manejar transacciones y acceso a repositorios.
-/// Esta clase es parte de la infraestructura y se encarga de proporcionar una instancia del repositorio de juegos.
-/// Permite realizar operaciones de commit y rollback, encapsulando la lógica de persistencia.
-/// Puede ser extendida para manejar múltiples repositorios si es necesario.
+/// Unit of Work mejorado que permite trabajar con diferentes tipos de repositorios.
+/// Mantiene el principio de responsabilidad única y permite transacciones.
+/// Implementa IDisposable para manejo correcto de recursos.
 /// </summary>
-public class UnitOfWork : IUnitOfWork
+public class UnitOfWork : IUnitOfWork, System.IDisposable
 {
-    private readonly FileGameRepository _gameRepository;
+    private readonly IGameRepository _gameRepository;
     private bool _committed = false;
+    private bool _disposed = false;
 
-    public UnitOfWork()
+    public UnitOfWork(RepositoryFactory.RepositoryType repositoryType = RepositoryFactory.RepositoryType.File, 
+                      DatabaseConfig databaseConfig = null)
     {
-        _gameRepository = new FileGameRepository();
+        _gameRepository = RepositoryFactory.Create(repositoryType, databaseConfig);
     }
 
     public IGameRepository GameRepository => _gameRepository;
 
     public void Commit()
     {
-        _committed = true;
+        if (!_disposed)
+        {
+            _committed = true;
+            // Aquí podrías implementar lógica de transacciones si fuera necesario
+        }
     }
 
     public void Rollback()
     {
-        _committed = false;
+        if (!_disposed)
+        {
+            _committed = false;
+            // Aquí podrías implementar lógica de rollback si fuera necesario
+        }
+    }
+
+    public void Dispose()
+    {
+        if (!_disposed)
+        {
+            if (_gameRepository is System.IDisposable disposableRepo)
+            {
+                disposableRepo.Dispose();
+            }
+            _disposed = true;
+        }
     }
 }
